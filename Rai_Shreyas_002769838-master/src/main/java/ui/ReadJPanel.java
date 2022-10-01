@@ -27,7 +27,7 @@ public class ReadJPanel extends javax.swing.JPanel {
      * Creates new form readJPanel
      */
     EmployeeDatabase employeeDatabase;
-    
+    private String imagePath;
     public ReadJPanel(EmployeeDatabase employeeDatabase) {
         initComponents();
         
@@ -49,7 +49,6 @@ public class ReadJPanel extends javax.swing.JPanel {
         ViewButton = new javax.swing.JButton();
         DeleteButton = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jPhoto = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -267,7 +266,6 @@ public class ReadJPanel extends javax.swing.JPanel {
                                             .addComponent(jTeam_Info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jStart_Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(116, 116, 116))
@@ -306,7 +304,7 @@ public class ReadJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jAge, jEmail, jGender, jLevel, jMobile, jPhoto, jPosition, jStart_Date, jTeam_Info});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jAge, jEmail, jGender, jLevel, jMobile, jPosition, jStart_Date, jTeam_Info});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,7 +327,7 @@ public class ReadJPanel extends javax.swing.JPanel {
                     .addComponent(DeleteButton)
                     .addComponent(jCreateButton))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -372,14 +370,14 @@ public class ReadJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel10)
                             .addComponent(jEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(55, 55, 55))
+                        .addComponent(jLabel12)
+                        .addGap(56, 56, 56))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(55, 55, 55))))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jAge, jEmail, jEmployee_ID, jFilterText, jGender, jLevel, jMobile, jPhoto, jPosition, jStart_Date, jTeam_Info, jTextName});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jAge, jEmail, jEmployee_ID, jFilterText, jGender, jLevel, jMobile, jPosition, jStart_Date, jTeam_Info, jTextName});
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -405,6 +403,11 @@ public class ReadJPanel extends javax.swing.JPanel {
         jMobile.setText(String.valueOf(selectedEmp.getMobile()));
         jEmail.setText(selectedEmp.getEmail());
         //jPhoto.setText(employee.getPhoto());
+      //Image displayImage = new ImageIcon(imagePath).getImage().getScaledInstance(jImage.getWidth(),jImage.getHeight(),Image.SCALE_SMOOTH);
+
+        Image displayImage = new ImageIcon(selectedEmp.getImage()).getImage().getScaledInstance(jImage.getWidth(),jImage.getHeight(),Image.SCALE_SMOOTH);
+        jReadLabelImage.setIcon(new ImageIcon(displayImage));
+        
     }//GEN-LAST:event_ViewButtonActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
@@ -500,7 +503,7 @@ public class ReadJPanel extends javax.swing.JPanel {
         int showOpenDialogue = browseImage.showOpenDialog(null);
         if (showOpenDialogue ==JFileChooser.APPROVE_OPTION) {
             File selectedImageFile = browseImage.getSelectedFile();
-            String imagePath = selectedImageFile.getAbsolutePath();
+            imagePath = selectedImageFile.getAbsolutePath();
             JOptionPane.showMessageDialog(null, imagePath);
             
             //Display
@@ -511,7 +514,12 @@ public class ReadJPanel extends javax.swing.JPanel {
 
     private void jCreateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCreateButtonActionPerformed
         // TODO add your handling code here:
+                //DefaultTableModel model = (DefaultTableModel) empTable.getModel();
+                        //DefaultTableModel model = (DefaultTableModel) empTable.getModel();
+
+
         Employee emp = employeeDatabase.addNewEmployee();
+        
         emp.setName(jTextName.getText());
         emp.setEmployee_id(jEmployee_ID.getText());
         emp.setAge(Integer.parseInt(jAge.getText()));
@@ -522,8 +530,11 @@ public class ReadJPanel extends javax.swing.JPanel {
         emp.setPosition(jPosition.getText());
         emp.setMobile(Integer.parseInt(jMobile.getText()));
         emp.setEmail(jEmail.getText());
-        //emp.setImage(imagePath.getText());
-        //emp.setImagePath(imagePath.getText());
+        emp.setImage(imagePath);
+        
+        //Image displayImage = new ImageIcon(imagePath).getImage().getScaledInstance(jImage.getWidth(),jImage.getHeight(),Image.SCALE_SMOOTH);
+        //jReadLabelImage.setIcon(new ImageIcon(displayImage));
+         
         //Validation CHeck
         displayEmp();
         if(jTextName.getText().trim().isEmpty()){
@@ -618,7 +629,6 @@ public class ReadJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jLevel;
     private javax.swing.JTextField jMobile;
-    private javax.swing.JTextField jPhoto;
     private javax.swing.JTextField jPosition;
     private javax.swing.JLabel jReadLabelImage;
     private javax.swing.JScrollPane jScrollPane1;
