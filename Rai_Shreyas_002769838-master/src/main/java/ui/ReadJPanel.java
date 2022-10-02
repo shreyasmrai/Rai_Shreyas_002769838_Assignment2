@@ -4,6 +4,7 @@
  */
 package ui;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -87,14 +88,20 @@ public class ReadJPanel extends javax.swing.JPanel {
 
         empTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Shreyas Rai", "30887", "25", "Male", "10/01/22", "Trainee", "SD Group", "SDE", "8576939501", null, null},
-                {"Aman Gupta", "28091", "25", "Male", "07/25/22", "Trainee", "BA Group", "SDE", "8976543210", null, null},
-                {"Sanket Somalkar", "30221", "24", "Male", "01/01/22", "Associate", "SD Group", "SDE", "8206481868", null, null}
+
             },
             new String [] {
                 "Name", "Employee_ID", "Age", "Gender", "Start Date", "Level", "Team Information", "Position Title", "Mobile", "Email", "Photo"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         empTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 empTableMouseClicked(evt);
@@ -131,9 +138,16 @@ public class ReadJPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("YuMincho +36p Kana", 3, 14)); // NOI18N
         jLabel2.setText("Name");
 
+        jGender.setForeground(new java.awt.Color(204, 204, 204));
+        jGender.setText("MALE/FEMALE/OTHERS");
         jGender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jGenderActionPerformed(evt);
+            }
+        });
+        jGender.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jGenderKeyPressed(evt);
             }
         });
 
@@ -201,6 +215,14 @@ public class ReadJPanel extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("YuMincho +36p Kana", 3, 14)); // NOI18N
         jLabel8.setText("Level");
 
+        jEmail.setForeground(new java.awt.Color(204, 204, 204));
+        jEmail.setText("abc@xyz.com");
+        jEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jEmailKeyPressed(evt);
+            }
+        });
+
         UpdateButton.setText("UPDATE");
         UpdateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,15 +253,12 @@ public class ReadJPanel extends javax.swing.JPanel {
         jImageLayout.setHorizontalGroup(
             jImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jImageLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jReadLabelImage, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(jReadLabelImage, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jImageLayout.setVerticalGroup(
             jImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jImageLayout.createSequentialGroup()
-                .addComponent(jReadLabelImage, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jReadLabelImage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
         );
 
         jBrowserRead.setText("Browse Image");
@@ -255,6 +274,14 @@ public class ReadJPanel extends javax.swing.JPanel {
         jCreateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCreateButtonActionPerformed(evt);
+            }
+        });
+
+        jStart_Date.setForeground(new java.awt.Color(204, 204, 204));
+        jStart_Date.setText("MM/DD/YY");
+        jStart_Date.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jStart_DateKeyPressed(evt);
             }
         });
 
@@ -296,15 +323,16 @@ public class ReadJPanel extends javax.swing.JPanel {
                                     .addComponent(jTextName)
                                     .addComponent(jBrowserRead, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jStart_Date))
-                                .addGap(125, 125, 125)
+                                .addGap(190, 190, 190)
                                 .addComponent(jImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jCreateButton)
+                                        .addGap(55, 55, 55))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(11, 11, 11)
-                                        .addComponent(jSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jCreateButton))
-                                .addGap(55, 55, 55)
+                                        .addComponent(jSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(ViewButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -336,12 +364,11 @@ public class ReadJPanel extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jFilterText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jFilterText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ViewButton)
                     .addComponent(UpdateButton)
@@ -372,31 +399,29 @@ public class ReadJPanel extends javax.swing.JPanel {
                         .addGap(7, 7, 7)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
-                            .addComponent(jLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jTeam_Info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jMobile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(jBrowserRead))
-                        .addGap(56, 56, 56))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(55, 55, 55))))
+                            .addComponent(jLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jTeam_Info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(jMobile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(jEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jBrowserRead))
+                .addGap(56, 56, 56))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jAge, jEmail, jEmployee_ID, jFilterText, jGender, jLevel, jMobile, jPosition, jTeam_Info, jTextName});
@@ -707,6 +732,37 @@ public class ReadJPanel extends javax.swing.JPanel {
         Image i = icon.getImage().getScaledInstance(jReadLabelImage.getWidth(), jReadLabelImage.getHeight(), Image.SCALE_SMOOTH);
         jReadLabelImage.setIcon(new ImageIcon(i));
     }//GEN-LAST:event_empTableMouseClicked
+
+    private void jStart_DateKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jStart_DateKeyPressed
+        // TODO add your handling code here:
+        if(jStart_Date.getForeground()!=Color.BLACK){
+            if(jStart_Date.getText().equals("MM/DD/YY")){
+                jStart_Date.setText("");
+            }
+        }
+        jStart_Date.setForeground(Color.BLACK);
+        
+    }//GEN-LAST:event_jStart_DateKeyPressed
+
+    private void jGenderKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jGenderKeyPressed
+        // TODO add your handling code here:
+        if(jGender.getForeground()!=Color.BLACK){
+            if(jGender.getText().equals("MALE/FEMALE/OTHERS")){
+                jGender.setText("");
+            }
+        }
+        jGender.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jGenderKeyPressed
+
+    private void jEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jEmailKeyPressed
+        // TODO add your handling code here:abc@xyz.com
+        if(jEmail.getForeground()!=Color.BLACK){
+            if(jEmail.getText().equals("abc@xyz.com")){
+                jEmail.setText("");
+            }
+        }
+        jEmail.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jEmailKeyPressed
     private void filter(String query)
     {
         DefaultTableModel model = (DefaultTableModel) empTable.getModel();
@@ -794,3 +850,9 @@ public class ReadJPanel extends javax.swing.JPanel {
         //jPhoto.setText(employee.getPhoto());**/
     }
 }
+
+
+
+
+                              
+
