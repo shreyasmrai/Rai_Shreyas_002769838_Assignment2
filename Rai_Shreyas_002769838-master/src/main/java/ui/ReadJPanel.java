@@ -80,6 +80,8 @@ public class ReadJPanel extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox<>();
         jCreateButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 153, 153));
+
         empTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Shreyas Rai", "30887", "25", "Male", "10/01/22", "Trainee", "SD Group", "SDE", "8576939501", null, null},
@@ -135,6 +137,11 @@ public class ReadJPanel extends javax.swing.JPanel {
                 jTextNameActionPerformed(evt);
             }
         });
+        jTextName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextNameKeyTyped(evt);
+            }
+        });
 
         jStart_Date.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,6 +151,12 @@ public class ReadJPanel extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("YuMincho +36p Kana", 3, 14)); // NOI18N
         jLabel4.setText("Age");
+
+        jEmployee_ID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jEmployee_IDKeyPressed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("YuMincho +36p Kana", 3, 14)); // NOI18N
         jLabel5.setText("Gender");
@@ -159,6 +172,11 @@ public class ReadJPanel extends javax.swing.JPanel {
                 jAgeActionPerformed(evt);
             }
         });
+        jAge.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jAgeKeyPressed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("YuMincho +36p Kana", 3, 14)); // NOI18N
         jLabel6.setText("Start Date");
@@ -171,6 +189,12 @@ public class ReadJPanel extends javax.swing.JPanel {
 
         jLabel7.setFont(new java.awt.Font("YuMincho +36p Kana", 3, 14)); // NOI18N
         jLabel7.setText("Position Title");
+
+        jMobile.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jMobileKeyPressed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("YuMincho +36p Kana", 3, 14)); // NOI18N
         jLabel8.setText("Level");
@@ -480,6 +504,7 @@ public class ReadJPanel extends javax.swing.JPanel {
             model.setValueAt(jMobile.getText(), i, 8);
             model.setValueAt(jEmail.getText(), i, 9);
             //model.setValueAt(jPhoto.getText(), i, 10);
+           model.setValueAt(jReadLabelImage.getText(), i, 11);
            
         }
     }//GEN-LAST:event_UpdateButtonActionPerformed
@@ -588,13 +613,51 @@ public class ReadJPanel extends javax.swing.JPanel {
         
         
     }//GEN-LAST:event_jCreateButtonActionPerformed
+
+    private void jTextNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextNameKeyTyped
+        // TODO add your handling code here:
+         char invalidInput=evt.getKeyChar();
+        if(Character.isLetter(invalidInput)||Character.isWhitespace(invalidInput)){
+            jTextName.setEditable(true);
+        }
+        else{
+          JOptionPane.showMessageDialog(null, "Please Enter characters only");
+    } 
+    }//GEN-LAST:event_jTextNameKeyTyped
+
+    private void jEmployee_IDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jEmployee_IDKeyPressed
+        // TODO add your handling code here:
+        char invalidInput=evt.getKeyChar();
+        if(Character.isLetter(invalidInput)){
+            
+                    JOptionPane.showMessageDialog(null, "INVALID INPUT!!");
+        }
+    }//GEN-LAST:event_jEmployee_IDKeyPressed
+
+    private void jAgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jAgeKeyPressed
+        // TODO add your handling code here:
+         char invalidInput=evt.getKeyChar();
+        if(Character.isLetter(invalidInput)){
+            
+                    JOptionPane.showMessageDialog(null, "INVALID INPUT!!");
+        } 
+    }//GEN-LAST:event_jAgeKeyPressed
+
+    private void jMobileKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jMobileKeyPressed
+        // TODO add your handling code here:
+         char invalidInput=evt.getKeyChar();
+        if(Character.isLetter(invalidInput)){
+            
+                    JOptionPane.showMessageDialog(null, "INVALID INPUT!!");
+        }
+    }//GEN-LAST:event_jMobileKeyPressed
     private void filter(String query)
     {
         DefaultTableModel model = (DefaultTableModel) empTable.getModel();
-        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(model);
-        empTable.setRowSorter(tr);
+        TableRowSorter<DefaultTableModel> trs = new TableRowSorter<DefaultTableModel>(model);
+        empTable.setRowSorter(trs);
         
-        tr.setRowFilter(RowFilter.regexFilter(query));
+        trs.setRowFilter(RowFilter.regexFilter(query));
         
     }
     

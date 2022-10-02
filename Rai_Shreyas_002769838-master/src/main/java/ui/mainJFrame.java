@@ -4,6 +4,11 @@
  */
 package ui;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import model.EmployeeDatabase;
 
 /**
@@ -12,6 +17,7 @@ import model.EmployeeDatabase;
  */
 public class mainJFrame extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form mainJFrame
      */
@@ -22,7 +28,8 @@ public class mainJFrame extends javax.swing.JFrame {
         
         employeeDatabase = new EmployeeDatabase();
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,9 +43,11 @@ public class mainJFrame extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         create = new javax.swing.JButton();
         read = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
+        jImage = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel3.setBackground(new java.awt.Color(0, 204, 204));
 
         create.setText("CREATE");
         create.addActionListener(new java.awt.event.ActionListener() {
@@ -82,18 +91,20 @@ public class mainJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setLeftComponent(jPanel3);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jImage.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout jImageLayout = new javax.swing.GroupLayout(jImage);
+        jImage.setLayout(jImageLayout);
+        jImageLayout.setHorizontalGroup(
+            jImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 289, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jImageLayout.setVerticalGroup(
+            jImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        jSplitPane1.setRightComponent(jPanel4);
+        jSplitPane1.setRightComponent(jImage);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,7 +133,7 @@ public class mainJFrame extends javax.swing.JFrame {
         ReadJPanel readpanel = new ReadJPanel(employeeDatabase);
         jSplitPane1.setRightComponent(readpanel);
     }//GEN-LAST:event_readActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
@@ -155,13 +166,18 @@ public class mainJFrame extends javax.swing.JFrame {
             public void run() {
                 new mainJFrame().setVisible(true);
             }
+            
+            
+    //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton create;
+    private javax.swing.JPanel jImage;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton read;
     // End of variables declaration//GEN-END:variables

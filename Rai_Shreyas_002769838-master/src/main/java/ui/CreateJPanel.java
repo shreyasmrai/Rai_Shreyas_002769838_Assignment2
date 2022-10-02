@@ -5,6 +5,8 @@
 package ui;
 
 import java.awt.Image;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
@@ -12,6 +14,7 @@ import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import model.Employee;
 import model.EmployeeDatabase;
@@ -68,6 +71,9 @@ public class CreateJPanel extends javax.swing.JPanel {
         jButtonBrowse = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jImage = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(0, 153, 153));
+        setForeground(new java.awt.Color(102, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("YuMincho +36p Kana", 3, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -317,6 +323,9 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void jTextNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNameActionPerformed
         // TODO add your handling code here:
+        
+ 
+        
     }//GEN-LAST:event_jTextNameActionPerformed
 
     private void jAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAgeActionPerformed
@@ -407,6 +416,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void jButtonBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBrowseActionPerformed
         // TODO add your handling code here:
+       
         JFileChooser browseImage = new JFileChooser();
         FileNameExtensionFilter nameExtension = new FileNameExtensionFilter("IMAGES","png","jpeg");
         browseImage.addChoosableFileFilter(nameExtension);
