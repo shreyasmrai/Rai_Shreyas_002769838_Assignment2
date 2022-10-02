@@ -46,29 +46,19 @@
                               </Group>
                               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jMobile" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jPosition" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTeam_Info" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLevel" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jStart_Date" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jEmail" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jGender" linkSize="3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jAge" linkSize="3" alignment="0" pref="195" max="32767" attributes="0"/>
-                                          <Component id="jEmployee_ID" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextName" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jBrowserRead" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jMobile" linkSize="3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jPosition" linkSize="3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTeam_Info" linkSize="3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLevel" linkSize="3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jEmail" linkSize="3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jGender" linkSize="3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jAge" linkSize="3" alignment="0" pref="195" max="32767" attributes="0"/>
+                                  <Component id="jEmployee_ID" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextName" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jBrowserRead" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jStart_Date" alignment="0" max="32767" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
                               <Component id="jImage" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
@@ -119,10 +109,12 @@
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="192" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jFilterText" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jSearch" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jFilterText" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -137,7 +129,6 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextName" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jBrowserRead" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -155,11 +146,11 @@
                           <Component id="jGender" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jStart_Date" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jStart_Date" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLevel" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -185,7 +176,10 @@
                           <Component id="jEmail" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBrowserRead" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
@@ -402,11 +396,6 @@
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextNameKeyTyped"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jStart_Date">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jStart_DateActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -565,6 +554,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCreateButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jStart_Date">
     </Component>
   </SubComponents>
 </Form>

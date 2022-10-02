@@ -41,7 +41,6 @@ public class mainJFrame extends javax.swing.JFrame {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel3 = new javax.swing.JPanel();
-        create = new javax.swing.JButton();
         read = new javax.swing.JButton();
         jImage = new javax.swing.JPanel();
 
@@ -49,14 +48,7 @@ public class mainJFrame extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 204, 204));
 
-        create.setText("CREATE");
-        create.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createActionPerformed(evt);
-            }
-        });
-
-        read.setText("READ");
+        read.setText("For Employee Details Click Here -->");
         read.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 readActionPerformed(evt);
@@ -69,25 +61,16 @@ public class mainJFrame extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(create)
-                    .addComponent(read))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addComponent(read)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {create, read});
-
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(create)
-                .addGap(101, 101, 101)
+                .addGap(126, 126, 126)
                 .addComponent(read)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
-
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {create, read});
 
         jSplitPane1.setLeftComponent(jPanel3);
 
@@ -121,12 +104,6 @@ public class mainJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
-        // TODO add your handling code here:
-        CreateJPanel createPanel = new CreateJPanel(employeeDatabase);
-        jSplitPane1.setRightComponent(createPanel);
-    }//GEN-LAST:event_createActionPerformed
 
     private void readActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readActionPerformed
         // TODO add your handling code here:
@@ -175,7 +152,6 @@ public class mainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton create;
     private javax.swing.JPanel jImage;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSplitPane jSplitPane1;

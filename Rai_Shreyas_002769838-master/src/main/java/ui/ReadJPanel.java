@@ -6,6 +6,7 @@ package ui;
 
 import java.awt.Image;
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -29,6 +30,7 @@ public class ReadJPanel extends javax.swing.JPanel {
      */
     EmployeeDatabase employeeDatabase;
     private String imagePath;
+    //private String date;
     public ReadJPanel(EmployeeDatabase employeeDatabase) {
         initComponents();
         
@@ -57,7 +59,6 @@ public class ReadJPanel extends javax.swing.JPanel {
         jGender = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jTextName = new javax.swing.JTextField();
-        jStart_Date = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jEmployee_ID = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -80,6 +81,7 @@ public class ReadJPanel extends javax.swing.JPanel {
         jBrowserRead = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jCreateButton = new javax.swing.JButton();
+        jStart_Date = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(0, 153, 153));
 
@@ -146,12 +148,6 @@ public class ReadJPanel extends javax.swing.JPanel {
         jTextName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextNameKeyTyped(evt);
-            }
-        });
-
-        jStart_Date.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jStart_DateActionPerformed(evt);
             }
         });
 
@@ -289,24 +285,18 @@ public class ReadJPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel10))
                                 .addGap(61, 61, 61)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jMobile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTeam_Info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jStart_Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(116, 116, 116))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jAge, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                            .addComponent(jEmployee_ID, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextName, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jBrowserRead)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                    .addComponent(jMobile)
+                                    .addComponent(jPosition)
+                                    .addComponent(jTeam_Info)
+                                    .addComponent(jLevel)
+                                    .addComponent(jEmail)
+                                    .addComponent(jGender)
+                                    .addComponent(jAge, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                    .addComponent(jEmployee_ID)
+                                    .addComponent(jTextName)
+                                    .addComponent(jBrowserRead, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jStart_Date))
+                                .addGap(125, 125, 125)
                                 .addComponent(jImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,7 +324,7 @@ public class ReadJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jAge, jEmail, jGender, jLevel, jMobile, jPosition, jStart_Date, jTeam_Info});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jAge, jEmail, jGender, jLevel, jMobile, jPosition, jTeam_Info});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,10 +336,11 @@ public class ReadJPanel extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFilterText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jFilterText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ViewButton)
@@ -361,8 +352,7 @@ public class ReadJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBrowserRead))
+                            .addComponent(jTextName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -376,10 +366,10 @@ public class ReadJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel5)
                             .addComponent(jGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(jStart_Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(7, 7, 7)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
                             .addComponent(jLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -400,14 +390,16 @@ public class ReadJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel10)
                             .addComponent(jEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(jBrowserRead))
                         .addGap(56, 56, 56))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(55, 55, 55))))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jAge, jEmail, jEmployee_ID, jFilterText, jGender, jLevel, jMobile, jPosition, jStart_Date, jTeam_Info, jTextName});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jAge, jEmail, jEmployee_ID, jFilterText, jGender, jLevel, jMobile, jPosition, jTeam_Info, jTextName});
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -465,7 +457,7 @@ public class ReadJPanel extends javax.swing.JPanel {
         jPosition.setText("");
         jMobile.setText("");
         jEmail.setText("");
-        //jPhoto.setText("");
+        //jReadLabelImage.setText("");
 
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
@@ -476,10 +468,6 @@ public class ReadJPanel extends javax.swing.JPanel {
     private void jTextNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextNameActionPerformed
-
-    private void jStart_DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStart_DateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jStart_DateActionPerformed
 
     private void jLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLevelActionPerformed
         // TODO add your handling code here:
@@ -504,7 +492,7 @@ public class ReadJPanel extends javax.swing.JPanel {
             model.setValueAt(jEmployee_ID.getText(), i, 1);
             model.setValueAt(jAge.getText(), i, 2);
             model.setValueAt(jGender.getText(), i, 3);
-            model.setValueAt(jStart_Date.getText(), i, 4);
+           // model.setValueAt(jStartDate.setText(date), i, 4);
             model.setValueAt(jLevel.getText(), i, 5);
             model.setValueAt(jTeam_Info.getText(), i, 6);
             model.setValueAt(jPosition.getText(), i, 7);
@@ -567,6 +555,8 @@ public class ReadJPanel extends javax.swing.JPanel {
         emp.setAge(Integer.parseInt(jAge.getText()));
         emp.setGender(jGender.getText());
         emp.setStart_date(jStart_Date.getText());
+        /**SimpleDateFormat sdf =new SimpleDateFormat("MM-DD-YYYY");
+        String date = sdf.format(jStart_Date.);**/
         emp.setLevel(jLevel.getText());
         emp.setTeam_info(jTeam_Info.getText());
         emp.setPosition(jPosition.getText());
@@ -606,9 +596,9 @@ public class ReadJPanel extends javax.swing.JPanel {
         if(jAge.getText().trim().isEmpty()){
                     JOptionPane.showMessageDialog(null, "Age  cannot be Null !!");
         }
-        if(jStart_Date.getText().trim().isEmpty()){
+        /**if(jStartDate.getText().trim().isEmpty()){
                     JOptionPane.showMessageDialog(null, "Start Date  cannot be Null !!");
-        }
+        }**/
         if (!(Pattern.matches("^[a-zA-Z0-9]+[@]{1}+[a-zA-Z0-9]+[.]{1}+[a-zA-Z0-9]+$", jEmail.getText()))) 
             {
             JOptionPane.showMessageDialog(null, "Email address is invalid", "Error", JOptionPane.ERROR_MESSAGE);
@@ -620,6 +610,7 @@ public class ReadJPanel extends javax.swing.JPanel {
         jAge.setText("");
         jGender.setText("");
         jStart_Date.setText("");
+        //jStart_Date.setDate(null);
         jLevel.setText("");
         jTeam_Info.setText("");
         jPosition.setText("");
@@ -683,7 +674,8 @@ public class ReadJPanel extends javax.swing.JPanel {
         jEmployee_ID.setText(model.getValueAt(empTable.getSelectedRow(), 1).toString());
         jAge.setText(model.getValueAt(empTable.getSelectedRow(), 2).toString());
         jGender.setText(model.getValueAt(empTable.getSelectedRow(), 3).toString());
-        jStart_Date.setText(model.getValueAt(empTable.getSelectedRow(), 4).toString());
+        //jStartDate.setText(model.getValueAt(empTable.getSelectedRow(), 4).toString());
+        
         jLevel.setText(model.getValueAt(empTable.getSelectedRow(), 5).toString());
         jTeam_Info.setText(model.getValueAt(empTable.getSelectedRow(), 6).toString());
         jPosition.setText(model.getValueAt(empTable.getSelectedRow(), 7).toString());
