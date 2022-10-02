@@ -437,23 +437,22 @@ public class ReadJPanel extends javax.swing.JPanel {
             return;
         }
         DefaultTableModel model = (DefaultTableModel) empTable.getModel();
-        Employee selectedEmp = (Employee) model.getValueAt(selected, 0);
         
-        jTextName.setText(selectedEmp.getName());
-        jEmployee_ID.setText(selectedEmp.getEmployee_id());
-        jAge.setText(String.valueOf(selectedEmp.getAge()));
-        jGender.setText(selectedEmp.getGender());
-        jStart_Date.setText(selectedEmp.getStart_date());
-        jLevel.setText(selectedEmp.getLevel());
-        jTeam_Info.setText(selectedEmp.getTeam_info());
-        jPosition.setText(selectedEmp.getPosition());
-        jMobile.setText(String.valueOf(selectedEmp.getMobile()));
-        jEmail.setText(selectedEmp.getEmail());
-        //jPhoto.setText(employee.getPhoto());
-      //Image displayImage = new ImageIcon(imagePath).getImage().getScaledInstance(jImage.getWidth(),jImage.getHeight(),Image.SCALE_SMOOTH);
+        jTextName.setText(model.getValueAt(empTable.getSelectedRow(), 0).toString());
+        jEmployee_ID.setText(model.getValueAt(empTable.getSelectedRow(), 1).toString());
+        jAge.setText(model.getValueAt(empTable.getSelectedRow(), 2).toString());
+        jGender.setText(model.getValueAt(empTable.getSelectedRow(), 3).toString());
+        //jStartDate.setText(model.getValueAt(empTable.getSelectedRow(), 4).toString());
+        
+        jLevel.setText(model.getValueAt(empTable.getSelectedRow(), 5).toString());
+        jTeam_Info.setText(model.getValueAt(empTable.getSelectedRow(), 6).toString());
+        jPosition.setText(model.getValueAt(empTable.getSelectedRow(), 7).toString());
+        jMobile.setText(model.getValueAt(empTable.getSelectedRow(), 8).toString());
+        jEmail.setText(model.getValueAt(empTable.getSelectedRow(), 9).toString());
 
-        Image displayImage = new ImageIcon(selectedEmp.getImage()).getImage().getScaledInstance(jImage.getWidth(),jImage.getHeight(),Image.SCALE_SMOOTH);
-        jReadLabelImage.setIcon(new ImageIcon(displayImage));
+        ImageIcon icon = new ImageIcon(model.getValueAt(empTable.getSelectedRow(), 10).toString());
+        Image i = icon.getImage().getScaledInstance(jReadLabelImage.getWidth(), jReadLabelImage.getHeight(), Image.SCALE_SMOOTH);
+        jReadLabelImage.setIcon(new ImageIcon(i));
         
     }//GEN-LAST:event_ViewButtonActionPerformed
 
@@ -483,6 +482,7 @@ public class ReadJPanel extends javax.swing.JPanel {
         jMobile.setText("");
         jEmail.setText("");
         //jReadLabelImage.setText("");
+        jReadLabelImage.setIcon(null);
 
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
@@ -642,6 +642,7 @@ public class ReadJPanel extends javax.swing.JPanel {
         jMobile.setText("");
         jEmail.setText("");
         //jPhoto.setText("");
+        jReadLabelImage.setIcon(null);
         
         
         
@@ -687,7 +688,7 @@ public class ReadJPanel extends javax.swing.JPanel {
 
     private void empTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empTableMouseClicked
         // TODO add your handling code here:
-            int selected = empTable.getSelectedRow();
+           int selected = empTable.getSelectedRow();
         
         if(selected<0){
             JOptionPane.showMessageDialog(this, "Select The Row To View");
