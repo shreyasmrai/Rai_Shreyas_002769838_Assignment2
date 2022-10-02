@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.RowFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
@@ -92,6 +93,11 @@ public class ReadJPanel extends javax.swing.JPanel {
                 "Name", "Employee_ID", "Age", "Gender", "Start Date", "Level", "Team Information", "Position Title", "Mobile", "Email", "Photo"
             }
         ));
+        empTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                empTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(empTable);
 
         ViewButton.setText("VIEW");
@@ -492,7 +498,8 @@ public class ReadJPanel extends javax.swing.JPanel {
         int i = empTable.getSelectedRow();
         DefaultTableModel model = (DefaultTableModel) empTable.getModel();
         if(i >= 0)
-        {
+        {           Employee emp = employeeDatabase.addNewEmployee();
+
             model.setValueAt(jTextName.getText(), i, 0);
             model.setValueAt(jEmployee_ID.getText(), i, 1);
             model.setValueAt(jAge.getText(), i, 2);
@@ -503,9 +510,19 @@ public class ReadJPanel extends javax.swing.JPanel {
             model.setValueAt(jPosition.getText(), i, 7);
             model.setValueAt(jMobile.getText(), i, 8);
             model.setValueAt(jEmail.getText(), i, 9);
-            //model.setValueAt(jPhoto.getText(), i, 10);
+            model.setValueAt(imagePath, i, 10);
            model.setValueAt(jReadLabelImage.getText(), i, 11);
+           emp.setImage(imagePath);
+           jScrollPane1.revalidate();
+           jScrollPane1.repaint();
            
+           Image displayImage = new ImageIcon(imagePath).getImage().getScaledInstance(jImage.getWidth(),jImage.getHeight(),Image.SCALE_SMOOTH);
+            jReadLabelImage.setIcon(new ImageIcon(displayImage));
+                        JOptionPane.showMessageDialog(this, "Updated Successfully !!");
+
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Error");
         }
     }//GEN-LAST:event_UpdateButtonActionPerformed
 
@@ -651,6 +668,53 @@ public class ReadJPanel extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(null, "INVALID INPUT!!");
         }
     }//GEN-LAST:event_jMobileKeyPressed
+
+    private void empTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empTableMouseClicked
+        // TODO add your handling code here:
+            int selected = empTable.getSelectedRow();
+        
+        if(selected<0){
+            JOptionPane.showMessageDialog(this, "Select The Row To View");
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) empTable.getModel();
+        
+        jTextName.setText(model.getValueAt(empTable.getSelectedRow(), 0).toString());
+        jEmployee_ID.setText(model.getValueAt(empTable.getSelectedRow(), 1).toString());
+        jAge.setText(model.getValueAt(empTable.getSelectedRow(), 2).toString());
+        jGender.setText(model.getValueAt(empTable.getSelectedRow(), 3).toString());
+        jStart_Date.setText(model.getValueAt(empTable.getSelectedRow(), 4).toString());
+        jLevel.setText(model.getValueAt(empTable.getSelectedRow(), 5).toString());
+        jTeam_Info.setText(model.getValueAt(empTable.getSelectedRow(), 6).toString());
+        jPosition.setText(model.getValueAt(empTable.getSelectedRow(), 7).toString());
+        jMobile.setText(model.getValueAt(empTable.getSelectedRow(), 8).toString());
+        jEmail.setText(model.getValueAt(empTable.getSelectedRow(), 9).toString());
+        
+        
+        
+        
+        /**Employee selectedEmp = (Employee) model.getValueAt(selected, 0);
+        
+        jTextName.setText(selectedEmp.getName());
+        jEmployee_ID.setText(selectedEmp.getEmployee_id());
+        jAge.setText(String.valueOf(selectedEmp.getAge()));
+        jGender.setText(selectedEmp.getGender());
+        jStart_Date.setText(selectedEmp.getStart_date());
+        jLevel.setText(selectedEmp.getLevel());
+        jTeam_Info.setText(selectedEmp.getTeam_info());
+        jPosition.setText(selectedEmp.getPosition());
+        jMobile.setText(String.valueOf(selectedEmp.getMobile()));
+        jEmail.setText(selectedEmp.getEmail());
+        //jPhoto.setText(employee.getPhoto());
+      //Image displayImage = new ImageIcon(imagePath).getImage().getScaledInstance(jImage.getWidth(),jImage.getHeight(),Image.SCALE_SMOOTH);
+
+        Image displayImage = new ImageIcon(selectedEmp.getImage()).getImage().getScaledInstance(jImage.getWidth(),jImage.getHeight(),Image.SCALE_SMOOTH);
+        jReadLabelImage.setIcon(new ImageIcon(displayImage));**/
+       
+        ImageIcon icon = new ImageIcon(model.getValueAt(empTable.getSelectedRow(), 10).toString());
+        Image i = icon.getImage().getScaledInstance(jReadLabelImage.getWidth(), jReadLabelImage.getHeight(), Image.SCALE_SMOOTH);
+        jReadLabelImage.setIcon(new ImageIcon(i));
+    }//GEN-LAST:event_empTableMouseClicked
     private void filter(String query)
     {
         DefaultTableModel model = (DefaultTableModel) empTable.getModel();
