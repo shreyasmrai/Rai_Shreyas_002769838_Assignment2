@@ -4,33 +4,61 @@
  */
 package model;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author shreyasrai
  */
-public class Doctor extends javax.swing.JPanel {
-    private ArrayList<Person> doctor;
+public class Doctor {
+
     
-    public Doctor() {
-        this.doctor = new ArrayList<Person>();
+    private String docname;
+    private String dochospital;
+    private String docphone;
+    private String docemail;
+    private String docgender;
+
+    public String getDocname() {
+        return docname;
     }
 
-    public ArrayList<Person> getEmployeeDatabase() {
-        return doctor;
+    public void setDocname(String docname) {
+        this.docname = docname;
     }
 
-    public void setEmployeeDatabase(ArrayList<Person> employeeDatabase) {
-        this.doctor = employeeDatabase;
+    public String getDochospital() {
+        return dochospital;
     }
-    public Person addNewEmployee(){
-        Person newPerson = new Person();
-        doctor.add(newPerson);
-        return newPerson;
+
+    public void setDochospital(String dochospital) {
+        this.dochospital = dochospital;
     }
-   
-    public void deleteemp(Person p){
-        doctor.remove(p);
+
+    public String getDocphone() {
+        return docphone;
+    }
+
+    public void setDocphone(String docphone) {
+        this.docphone = docphone;
+    }
+
+    public String getDocemail() {
+        return docemail;
+    }
+
+    public void setDocemail(String docemail) {
+        this.docemail = docemail;
+    }
+
+    public String getDocgender() {
+        return docgender;
+    }
+
+    public void setDocgender(String docgender) {
+        this.docgender = docgender;
+    }
+    
+    @Override
+    public String toString(){
+        return docname;
     }
 }

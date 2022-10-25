@@ -5,6 +5,7 @@
 package UI;
 
 import javax.swing.JOptionPane;
+import model.DoctorDatabase;
 
 /**
  *
@@ -15,8 +16,12 @@ public class System1 extends javax.swing.JPanel {
     /**
      * Creates new form System1
      */
-    public System1() {
+    DoctorDatabase doctordatabase;
+    public System1(DoctorDatabase doctordatabase) {
         initComponents();
+        
+        this.doctordatabase=doctordatabase;
+        
     }
 
     /**
@@ -64,9 +69,6 @@ public class System1 extends javax.swing.JPanel {
                         .addGap(147, 147, 147)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(77, 77, 77)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(unamed)
@@ -74,7 +76,10 @@ public class System1 extends javax.swing.JPanel {
                         .addGap(99, 99, 99)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(userD, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                            .addComponent(pswdD))))
+                            .addComponent(pswdD)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(jButton1)))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -90,15 +95,15 @@ public class System1 extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pswdd)
                     .addComponent(pswdD))
-                .addGap(62, 62, 62)
+                .addGap(74, 74, 74)
                 .addComponent(jButton1)
-                .addGap(62, 62, 62))
+                .addGap(50, 50, 50))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     if( userD.getText().matches("system") && pswdD.getText().matches("system")){
-            System2 system = new System2();
+            System2 system = new System2(doctordatabase);
             system.setVisible(true);
             
         }else{

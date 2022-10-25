@@ -4,17 +4,28 @@
  */
 package UI;
 
+
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.DoctorDatabase;
+import model.Doctor;
+
 /**
  *
  * @author shreyasrai
  */
 public class System2 extends javax.swing.JFrame {
 
+    DoctorDatabase doctordatabase;
     /**
      * Creates new form System2
+     * @param doctordatabase
      */
-    public System2() {
+    public System2(DoctorDatabase doctordatabase) {
         initComponents();
+        
+        this.doctordatabase = doctordatabase;
+        displayDoc();
     }
 
     /**
@@ -29,21 +40,134 @@ public class System2 extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        dochospi = new javax.swing.JTextField();
+        dochospital = new javax.swing.JLabel();
+        docname = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        docTable = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        docphone = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        docemail = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        docgender = new javax.swing.JTextField();
+        doccreate = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setText("Name");
+
+        dochospi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dochospiActionPerformed(evt);
+            }
+        });
+
+        dochospital.setText("Hospital");
+
+        docTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Hospital", "Phone", "Email", "Gender"
+            }
+        ));
+        jScrollPane1.setViewportView(docTable);
+
+        jLabel2.setText("Phone");
+
+        docphone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                docphoneActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Email");
+
+        docemail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                docemailActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Gender");
+
+        docgender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                docgenderActionPerformed(evt);
+            }
+        });
+
+        doccreate.setText("CREATE");
+        doccreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                doccreateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(dochospital, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dochospi)
+                            .addComponent(docname)
+                            .addComponent(docphone)
+                            .addComponent(docemail)
+                            .addComponent(docgender))
+                        .addGap(567, 567, 567))))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(doccreate)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 424, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(docname))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dochospital)
+                    .addComponent(dochospi))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(docphone))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(docemail))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(docgender))
+                .addGap(37, 37, 37)
+                .addComponent(doccreate)
+                .addGap(143, 143, 143))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -69,7 +193,7 @@ public class System2 extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGap(0, 659, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Patient", jPanel2);
@@ -82,7 +206,7 @@ public class System2 extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGap(0, 659, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Community", jPanel3);
@@ -95,7 +219,7 @@ public class System2 extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGap(0, 659, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Hospital", jPanel4);
@@ -120,47 +244,85 @@ public class System2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void dochospiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dochospiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dochospiActionPerformed
+
+    private void docphoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docphoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_docphoneActionPerformed
+
+    private void docemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docemailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_docemailActionPerformed
+
+    private void docgenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docgenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_docgenderActionPerformed
+
+    private void doccreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doccreateActionPerformed
+        // TODO add your handling code here:
+        
+        model.Doctor doc = doctordatabase.addNewDoctor();
+        
+        //doc.setDocname(docname.getText());
+        doc.setDocname(docname.getText());
+        doc.setDochospital(dochospi.getText());
+        doc.setDocphone(docphone.getText());
+        doc.setDocemail(docemail.getText());
+        doc.setDocgender(docgender.getText());
+        
+        JOptionPane.showMessageDialog(this, "Information Saved Successfully !!");
+        
+        displayDoc();
+    }//GEN-LAST:event_doccreateActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(System2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(System2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(System2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(System2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new System2().setVisible(true);
-            }
-        });
+    
+    
+    private void displayDoc(){
+        
+       DefaultTableModel model = (DefaultTableModel) docTable.getModel();
+       model.setRowCount(0);
+        
+       for(Doctor doc : doctordatabase.getDoctorDatabase()){
+           
+           Object[] row1 = new Object[5];
+           row1[0] = doc;
+           //row1[0] = doc.getDocname();
+           row1[1] = doc.getDochospital();
+           row1[2] = doc.getDocphone();
+           row1[3] = doc.getDocemail();
+           row1[4] = doc.getDocgender();
+           
+           //row1[5] = doc.get
+         
+           
+           model.addRow(row1);
+    }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable docTable;
+    private javax.swing.JButton doccreate;
+    private javax.swing.JTextField docemail;
+    private javax.swing.JTextField docgender;
+    private javax.swing.JTextField dochospi;
+    private javax.swing.JLabel dochospital;
+    private javax.swing.JTextField docname;
+    private javax.swing.JTextField docphone;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }

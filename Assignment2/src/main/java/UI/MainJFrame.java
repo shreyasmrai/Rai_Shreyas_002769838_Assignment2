@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import model.Doctor;
+import model.DoctorDatabase;
 
 /**
  *
@@ -21,9 +22,13 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    ImageIcon myImage;
     
-    public ImageIcon setIcon(String m) {
+    DoctorDatabase doctordatabase;
+    
+    
+    //ImageIcon myImage;
+    
+    /*public ImageIcon setIcon(String m) {
         if (m != null) {
             myImage = new ImageIcon(m);
         } 
@@ -32,10 +37,12 @@ public class MainJFrame extends javax.swing.JFrame {
         ImageIcon i = new ImageIcon(img2);
         return i;
 
-    }
+    }*/
     public MainJFrame() {
         initComponents();
-        jDisplayImage.setIcon(setIcon( "/Users/shreyasrai/Desktop/CO-OP/Rai_Shreyas_002769838/Assignment2/hospi.jpg"));
+        //this.doctordatabase=doctordatabase;
+        doctordatabase = new DoctorDatabase();
+        //jDisplayImage.setIcon(setIcon( "/Users/shreyasrai/Desktop/CO-OP/Rai_Shreyas_002769838/Assignment2/hospi.jpg"));
     }
 
     /**
@@ -177,7 +184,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        System1 systempanel = new System1();
+        System1 systempanel = new System1(doctordatabase);
         //jSplitPane1.setRightComponent(systempanel);    // TODO add your handling code here:
         jSplitPane1.setBottomComponent(systempanel);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
