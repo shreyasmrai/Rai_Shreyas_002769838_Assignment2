@@ -16,6 +16,33 @@ public class Doctor {
     private String docphone;
     private String docemail;
     private String docgender;
+    private String docage;
+    private String docspeciality;
+    private String docexperience;
+
+    public String getDocage() {
+        return docage;
+    }
+
+    public void setDocage(String docage) {
+        this.docage = docage;
+    }
+
+    public String getDocspeciality() {
+        return docspeciality;
+    }
+
+    public void setDocspeciality(String docspeciality) {
+        this.docspeciality = docspeciality;
+    }
+
+    public String getDocexperience() {
+        return docexperience;
+    }
+
+    public void setDocexperience(String docexperience) {
+        this.docexperience = docexperience;
+    }
 
     public String getDocname() {
         return docname;

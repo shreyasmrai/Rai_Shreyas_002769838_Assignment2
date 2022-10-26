@@ -6,6 +6,7 @@ package UI;
 
 import javax.swing.JOptionPane;
 import model.DoctorDatabase;
+import model.PersonDatabase;
 
 /**
  *
@@ -17,10 +18,13 @@ public class System1 extends javax.swing.JPanel {
      * Creates new form System1
      */
     DoctorDatabase doctordatabase;
-    public System1(DoctorDatabase doctordatabase) {
+    PersonDatabase persondatabase;
+    
+    public System1(DoctorDatabase doctordatabase, PersonDatabase persondatabase) {
         initComponents();
         
         this.doctordatabase=doctordatabase;
+        this.persondatabase=persondatabase;
         
     }
 
@@ -103,10 +107,12 @@ public class System1 extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     if( userD.getText().matches("system") && pswdD.getText().matches("system")){
-            System2 system = new System2(doctordatabase);
-            system.setVisible(true);
+        //h
+        System2 system = new System2(doctordatabase, persondatabase);
+        system.setVisible(true);
             
-        }else{
+        }
+    else{
             JOptionPane.showMessageDialog(this, "Incorrect credential");
         }    // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed

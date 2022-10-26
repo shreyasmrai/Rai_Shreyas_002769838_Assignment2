@@ -9,58 +9,82 @@ package model;
  * @author shreyasrai
  */
 public class Person {
-    private String name;
-    private int age;
-    private String gender;
-    private int mobile;
-    private String email;
+    private String pname;
+    private int page;
+    private String pgender;
+    private int pphone;
+    private String pemail;
+    private String pbg;
+    private int pw;
+    private int pid; 
 
-    public String getName() {
-        return name;
+
+    public String getPname() {
+        return pname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPname(String pname) {
+        this.pname = pname;
     }
 
-    public int getAge() {
-        return age;
+    public int getPage() {
+        return page;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setPage(int page) {
+        this.page = page;
     }
 
-    public String getGender() {
-        return gender;
+    public String getPgender() {
+        return pgender;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setPgender(String pgender) {
+        this.pgender = pgender;
     }
 
-    public int getMobile() {
-        return mobile;
+    public int getPphone() {
+        return pphone;
     }
 
-    public void setMobile(int mobile) {
-        this.mobile = mobile;
+    public void setPphone(int pphone) {
+        this.pphone = pphone;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPemail() {
+        return pemail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPemail(String pemail) {
+        this.pemail = pemail;
     }
 
-    public String getImage() {
-        return image;
+    public String getPbg() {
+        return pbg;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setPbg(String pbg) {
+        this.pbg = pbg;
     }
-    private String image;
+
+    public int getPw() {
+        return pw;
+    }
+
+    public void setPw(int pw) {
+        this.pw = pw;
+    }
+
+    public int getPid() {
+        return pid;
+    }
+
+    public void setPid(int pid) {
+        this.pid = pid;
+    }
+    @Override
+    public String toString(){
+        return pname;
+    }
+   
 }

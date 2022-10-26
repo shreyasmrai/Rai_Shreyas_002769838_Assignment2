@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import model.Doctor;
 import model.DoctorDatabase;
+import model.PersonDatabase;
 
 /**
  *
@@ -24,11 +25,12 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     
     DoctorDatabase doctordatabase;
+    PersonDatabase persondatabase;
     
     
-    //ImageIcon myImage;
+    ImageIcon myImage;
     
-    /*public ImageIcon setIcon(String m) {
+    public ImageIcon setIcon(String m) {
         if (m != null) {
             myImage = new ImageIcon(m);
         } 
@@ -37,11 +39,12 @@ public class MainJFrame extends javax.swing.JFrame {
         ImageIcon i = new ImageIcon(img2);
         return i;
 
-    }*/
+    }
     public MainJFrame() {
         initComponents();
         //this.doctordatabase=doctordatabase;
         doctordatabase = new DoctorDatabase();
+        persondatabase = new PersonDatabase();
         //jDisplayImage.setIcon(setIcon( "/Users/shreyasrai/Desktop/CO-OP/Rai_Shreyas_002769838/Assignment2/hospi.jpg"));
     }
 
@@ -72,7 +75,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
         jButton1.setBackground(new java.awt.Color(0, 204, 153));
         jButton1.setText("Doctor");
@@ -147,11 +150,11 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +187,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        System1 systempanel = new System1(doctordatabase);
+        System1 systempanel = new System1(doctordatabase, persondatabase);
         //jSplitPane1.setRightComponent(systempanel);    // TODO add your handling code here:
         jSplitPane1.setBottomComponent(systempanel);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
