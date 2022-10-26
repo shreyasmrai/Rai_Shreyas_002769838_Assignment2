@@ -21,17 +21,17 @@ public class HospitalDatabase {
         return hospital;
     }
 
-    public void setDoctorDatabase(ArrayList<Hospital> hospital) {
+    public void setHospitalDatabase(ArrayList<Hospital> hospital) {
         this.hospital = hospital;
     }
    
-    public Hospital addNewDoctor(){
+    public Hospital addNewHospital(){
         Hospital newHos = new Hospital();
         hospital.add(newHos);
         return newHos;
     }
    
-    public void deletedper(Hospital h){
+    public void deletedhos(Hospital h){
         hospital.remove(h);
     }
 }

@@ -10,9 +10,12 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import model.CommunityDatabase;
 import model.Doctor;
 import model.DoctorDatabase;
+import model.HospitalDatabase;
 import model.PersonDatabase;
+import model.Hospital;
 
 /**
  *
@@ -26,6 +29,8 @@ public class MainJFrame extends javax.swing.JFrame {
     
     DoctorDatabase doctordatabase;
     PersonDatabase persondatabase;
+    CommunityDatabase communitydatabase;
+    HospitalDatabase hospitaldatabase;
     
     
     ImageIcon myImage;
@@ -45,6 +50,8 @@ public class MainJFrame extends javax.swing.JFrame {
         //this.doctordatabase=doctordatabase;
         doctordatabase = new DoctorDatabase();
         persondatabase = new PersonDatabase();
+        communitydatabase=new CommunityDatabase();
+        hospitaldatabase=new HospitalDatabase();
         //jDisplayImage.setIcon(setIcon( "/Users/shreyasrai/Desktop/CO-OP/Rai_Shreyas_002769838/Assignment2/hospi.jpg"));
     }
 
@@ -187,7 +194,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        System1 systempanel = new System1(doctordatabase, persondatabase);
+        System1 systempanel = new System1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
         //jSplitPane1.setRightComponent(systempanel);    // TODO add your handling code here:
         jSplitPane1.setBottomComponent(systempanel);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed

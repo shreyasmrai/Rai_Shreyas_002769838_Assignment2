@@ -9,10 +9,14 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import model.CommunityDatabase;
 import model.DoctorDatabase;
 import model.Doctor;
 import model.Person;
 import model.PersonDatabase;
+import model.Community;
+import model.HospitalDatabase;
+import model.Hospital;
 
 /**
  *
@@ -22,18 +26,26 @@ public class System2 extends javax.swing.JFrame {
 
     DoctorDatabase doctordatabase;
     PersonDatabase persondatabase;
+    CommunityDatabase communitydatabase;
+    HospitalDatabase hospitaldatabase;
     /**
      * Creates new form System2
      * @param doctordatabase
      * @param persondatabase
+     * @param communitydatabase
+     * @param hospitaldatabase
      */
-    public System2(DoctorDatabase doctordatabase, PersonDatabase persondatabase) {
+    public System2(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
         initComponents();
         
         this.doctordatabase = doctordatabase;
         this.persondatabase = persondatabase;
+        this.communitydatabase = communitydatabase;
+        this.hospitaldatabase = hospitaldatabase;
         displayDoc();
         displayPer();
+        displayCom();
+        displayHos();
     }
 
     /**
@@ -96,7 +108,7 @@ public class System2 extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jPanel_patient = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        docTable1 = new javax.swing.JTable();
+        hTable = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         dochospital1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -119,7 +131,7 @@ public class System2 extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jPanel_patient1 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        docTable3 = new javax.swing.JTable();
+        cTable = new javax.swing.JTable();
         jLabel23 = new javax.swing.JLabel();
         dochospital3 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
@@ -539,7 +551,7 @@ public class System2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Patient", jPanel_hospital);
 
-        docTable1.setModel(new javax.swing.table.DefaultTableModel(
+        hTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -558,12 +570,12 @@ public class System2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        docTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        hTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                docTable1MouseClicked(evt);
+                hTableMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(docTable1);
+        jScrollPane2.setViewportView(hTable);
 
         jLabel8.setText("Name");
 
@@ -739,7 +751,7 @@ public class System2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Hospital", jPanel_patient);
 
-        docTable3.setModel(new javax.swing.table.DefaultTableModel(
+        cTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -758,12 +770,12 @@ public class System2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        docTable3.addMouseListener(new java.awt.event.MouseAdapter() {
+        cTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                docTable3MouseClicked(evt);
+                cTableMouseClicked(evt);
             }
         });
-        jScrollPane4.setViewportView(docTable3);
+        jScrollPane4.setViewportView(cTable);
 
         jLabel23.setText("Name");
 
@@ -1060,9 +1072,25 @@ public class System2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void docTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_docTable1MouseClicked
+    private void hTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hTableMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_docTable1MouseClicked
+        int selected = hTable.getSelectedRow();
+        
+        if(selected<0){
+            JOptionPane.showMessageDialog(this, "Select The Row To View");
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) hTable.getModel();
+        
+        hname.setText(model.getValueAt(hTable.getSelectedRow(), 0).toString());
+        hid.setText(model.getValueAt(hTable.getSelectedRow(), 1).toString());
+        hphone.setText(model.getValueAt(hTable.getSelectedRow(), 2).toString());
+        hemail.setText(model.getValueAt(hTable.getSelectedRow(), 3).toString());
+        hcommunity.setText(model.getValueAt(hTable.getSelectedRow(), 4).toString());
+        hcity.setText(model.getValueAt(hTable.getSelectedRow(), 5).toString());
+        hstate.setText(model.getValueAt(hTable.getSelectedRow(), 6).toString());
+        hPIN.setText(model.getValueAt(hTable.getSelectedRow(), 7).toString());
+    }//GEN-LAST:event_hTableMouseClicked
 
     private void hidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hidActionPerformed
         // TODO add your handling code here:
@@ -1082,14 +1110,83 @@ public class System2 extends javax.swing.JFrame {
 
     private void hcreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hcreateActionPerformed
         // TODO add your handling code here:
+        model.Hospital hos = hospitaldatabase.addNewHospital();
+        
+        
+        hos.setHname(hname.getText());
+        hos.setHid(Integer.parseInt(hid.getText()));
+        hos.setHphone(Integer.parseInt(hphone.getText()));
+        hos.setHemail(hemail.getText());
+        hos.setHcommunity(hcommunity.getText());
+        hos.setHcity(hcity.getText());
+        hos.setHstate(hstate.getText());
+        hos.sethPIN(Integer.parseInt(hPIN.getText()));
+        
+        JOptionPane.showMessageDialog(this, "Information Saved Successfully !!");
+        
+        displayHos();
+        hname.setText("");
+        hid.setText("");
+        hphone.setText("");
+        hemail.setText("");
+        hcommunity.setText("");
+        hcity.setText("");
+        hstate.setText("");
+        hPIN.setText("");
     }//GEN-LAST:event_hcreateActionPerformed
 
     private void hdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hdeleteActionPerformed
         // TODO add your handling code here:
+        
+        int selected = hTable.getSelectedRow();
+        
+        if(selected<0){
+            JOptionPane.showMessageDialog(this, "Select The Row To Delete");
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) hTable.getModel();
+        Hospital selectedHos = (Hospital) model.getValueAt(selected, 0);
+        
+        //hospitaldatabase.deletedhos(selectedHos);
+        hospitaldatabase.deletedhos(selectedHos);
+        JOptionPane.showMessageDialog(this, "Entry Removed !!");
+        
+       displayHos();
+        hname.setText("");
+        hid.setText("");
+        hphone.setText("");
+        hemail.setText("");
+        hcommunity.setText("");
+        hcity.setText("");
+        hstate.setText("");
+        hPIN.setText("");
     }//GEN-LAST:event_hdeleteActionPerformed
 
     private void hupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hupdateActionPerformed
         // TODO add your handling code here:
+        int i = hTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) hTable.getModel();
+        if(i >= 0)
+        {           
+            Hospital hos = hospitaldatabase.addNewHospital();
+
+            model.setValueAt(hname.getText(), i, 0);
+            model.setValueAt(hid.getText(), i, 1);
+            model.setValueAt(hphone.getText(), i, 2);
+            model.setValueAt(hemail.getText(), i, 3);
+            model.setValueAt(hcommunity.getText(), i, 4);
+            model.setValueAt(hcity.getText(), i, 5);
+            model.setValueAt(hstate.getText(), i, 6);
+            model.setValueAt(hPIN.getText(), i, 7);
+           
+           
+             JOptionPane.showMessageDialog(this, "Updated Successfully !!");
+
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
+
     }//GEN-LAST:event_hupdateActionPerformed
 
     private void pTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pTableMouseClicked
@@ -1208,9 +1305,24 @@ public class System2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_pupdateActionPerformed
 
-    private void docTable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_docTable3MouseClicked
+    private void cTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cTableMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_docTable3MouseClicked
+         int selected = cTable.getSelectedRow();
+        
+        if(selected<0){
+            JOptionPane.showMessageDialog(this, "Select The Row To View");
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) cTable.getModel();
+        
+        cname.setText(model.getValueAt(cTable.getSelectedRow(), 0).toString());
+        cid.setText(model.getValueAt(cTable.getSelectedRow(), 1).toString());
+        ccity.setText(model.getValueAt(cTable.getSelectedRow(), 2).toString());
+        cstate.setText(model.getValueAt(cTable.getSelectedRow(), 3).toString());
+        cpin.setText(model.getValueAt(cTable.getSelectedRow(), 4).toString());
+        ccountry.setText(model.getValueAt(cTable.getSelectedRow(), 5).toString());
+     
+    }//GEN-LAST:event_cTableMouseClicked
 
     private void cidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidActionPerformed
         // TODO add your handling code here:
@@ -1230,14 +1342,75 @@ public class System2 extends javax.swing.JFrame {
 
     private void ccreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ccreateActionPerformed
         // TODO add your handling code here:
+        model.Community com = communitydatabase.addNewCommunity();
+        
+        //doc.setDocname(docname.getText());
+        com.setCname(cname.getText());
+        com.setCid(Integer.parseInt(cid.getText()));
+        com.setCstate(cstate.getText());
+        com.setCpin(Integer.parseInt(cpin.getText()));
+        com.setCcountry(ccountry.getText());
+        com.setCcity(ccity.getText());
+       
+        
+        JOptionPane.showMessageDialog(this, "Information Saved Successfully !!");
+        
+        displayCom();
+        cname.setText("");
+        cid.setText("");
+        cstate.setText("");
+        ccity.setText("");
+        cpin.setText("");
+        ccountry.setText("");
     }//GEN-LAST:event_ccreateActionPerformed
 
     private void cdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdeleteActionPerformed
         // TODO add your handling code here:
+                int selected = cTable.getSelectedRow();
+        
+        if(selected<0){
+            JOptionPane.showMessageDialog(this, "Select The Row To Delete");
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) cTable.getModel();
+        Community selectedCom = (Community) model.getValueAt(selected, 0);
+        
+       // doctordatabase.deleteemp(selectedEmp);
+        communitydatabase.deletedcom(selectedCom);
+        JOptionPane.showMessageDialog(this, "Entry Removed !!");
+        
+        displayCom();
+        cname.setText("");
+        cid.setText("");
+        cstate.setText("");
+        ccity.setText("");
+        cpin.setText("");
+        ccountry.setText("");
+
     }//GEN-LAST:event_cdeleteActionPerformed
 
     private void cupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cupdateActionPerformed
         // TODO add your handling code here:
+        int i = cTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) cTable.getModel();
+        if(i >= 0)
+        {           
+            Community com = communitydatabase.addNewCommunity();
+
+            model.setValueAt(cname.getText(), i, 0);
+            model.setValueAt(cid.getText(), i, 1);
+            model.setValueAt(cstate.getText(), i, 2);
+            model.setValueAt(ccity.getText(), i, 3);
+            model.setValueAt(cpin.getText(), i, 4);
+            model.setValueAt(ccountry.getText(), i, 5);
+            
+           
+             JOptionPane.showMessageDialog(this, "Updated Successfully !!");
+
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
     }//GEN-LAST:event_cupdateActionPerformed
 
     private void docnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docnameActionPerformed
@@ -1295,8 +1468,50 @@ public class System2 extends javax.swing.JFrame {
            
        }
     }
+        private void displayCom() {
+                
+       DefaultTableModel model = (DefaultTableModel) cTable.getModel();
+       model.setRowCount(0);
+        
+       for(Community com : communitydatabase.getCommunityDatabase()){
+           
+           Object[] row1 = new Object[6];
+           row1[0] = com;
+           //row1[0] = doc.getDocname();
+           row1[1] = com.getCid();
+           row1[2] = com.getCcity();
+           row1[3] = com.getCstate();
+           row1[4] = com.getCpin();
+           row1[5] = com.getCcountry();
+         
+           
+           model.addRow(row1);
+    }
+    }
+        private void displayHos() {
+            DefaultTableModel model = (DefaultTableModel) hTable.getModel();
+       model.setRowCount(0);
+       
+       for(Hospital hos : hospitaldatabase.getHospitalDatabase()){
+           
+           Object[] row2 = new Object[8];
+           row2[0] = hos;
+           //row1[1] = per.getPname();
+           row2[1] = hos.getHid();
+           row2[2] = hos.getHphone();
+           row2[3] = hos.getHemail();
+           row2[4] = hos.getHcommunity();
+           row2[5] = hos.getHcity();
+           row2[6] = hos.getHstate();
+           row2[7] = hos.gethPIN();
+           
+           model.addRow(row2);
+           
+       }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable cTable;
     private javax.swing.JTextField ccity;
     private javax.swing.JTextField ccountry;
     private javax.swing.JButton ccreate;
@@ -1307,8 +1522,6 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JTextField cstate;
     private javax.swing.JButton cupdate;
     private javax.swing.JTable docTable;
-    private javax.swing.JTable docTable1;
-    private javax.swing.JTable docTable3;
     private javax.swing.JTextField docage;
     private javax.swing.JButton doccreate;
     private javax.swing.JButton docdelete;
@@ -1324,6 +1537,7 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JTextField docphone;
     private javax.swing.JTextField docspeciality;
     private javax.swing.JTextField hPIN;
+    private javax.swing.JTable hTable;
     private javax.swing.JTextField hcity;
     private javax.swing.JTextField hcommunity;
     private javax.swing.JButton hcreate;
@@ -1389,4 +1603,8 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JButton pupdate;
     private javax.swing.JTextField pw;
     // End of variables declaration//GEN-END:variables
+
+    
+
+
 }

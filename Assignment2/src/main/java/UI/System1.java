@@ -5,7 +5,9 @@
 package UI;
 
 import javax.swing.JOptionPane;
+import model.CommunityDatabase;
 import model.DoctorDatabase;
+import model.HospitalDatabase;
 import model.PersonDatabase;
 
 /**
@@ -19,12 +21,15 @@ public class System1 extends javax.swing.JPanel {
      */
     DoctorDatabase doctordatabase;
     PersonDatabase persondatabase;
-    
-    public System1(DoctorDatabase doctordatabase, PersonDatabase persondatabase) {
+    CommunityDatabase communitydatabase;
+    HospitalDatabase hospitaldatabase;
+    public System1(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
         initComponents();
         
         this.doctordatabase=doctordatabase;
         this.persondatabase=persondatabase;
+        this.communitydatabase=communitydatabase;
+        this.hospitaldatabase=hospitaldatabase;
         
     }
 
@@ -108,7 +113,7 @@ public class System1 extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     if( userD.getText().matches("system") && pswdD.getText().matches("system")){
         //h
-        System2 system = new System2(doctordatabase, persondatabase);
+        System2 system = new System2(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
         system.setVisible(true);
             
         }

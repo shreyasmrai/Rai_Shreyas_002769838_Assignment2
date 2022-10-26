@@ -25,13 +25,13 @@ public class CommunityDatabase {
         this.community = community;
     }
    
-    public Community addNewDoctor(){
+    public Community addNewCommunity(){
         Community newCom = new Community();
         community.add(newCom);
         return newCom;
     }
    
-    public void deletedper(Community c){
+    public void deletedcom(Community c){
         community.remove(c);
     }
 }
