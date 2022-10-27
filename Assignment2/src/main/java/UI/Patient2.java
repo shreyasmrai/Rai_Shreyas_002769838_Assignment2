@@ -4,6 +4,11 @@
  */
 package UI;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.Person;
+import model.PersonDatabase;
+
 /**
  *
  * @author shreyasrai
@@ -13,8 +18,12 @@ public class Patient2 extends javax.swing.JFrame {
     /**
      * Creates new form Patient2
      */
+    PersonDatabase persondatabase;
+    Person person;
     public Patient2() {
         initComponents();
+        this.persondatabase = persondatabase;
+        this.person = person;
     }
 
     /**
@@ -31,7 +40,6 @@ public class Patient2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setText("jTextField1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -43,16 +51,16 @@ public class Patient2 extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(190, 190, 190)
+                .addGap(31, 31, 31)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(569, Short.MAX_VALUE))
+                .addContainerGap(728, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(81, 81, 81)
+                .addGap(80, 80, 80)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(472, Short.MAX_VALUE))
+                .addContainerGap(473, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -78,6 +86,9 @@ public class Patient2 extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
         
+        
+       // pname.setText(model.getValueAt(pTable.getSelectedRow(), 0).toString());
+        //jTextField1.setText(pname);
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**

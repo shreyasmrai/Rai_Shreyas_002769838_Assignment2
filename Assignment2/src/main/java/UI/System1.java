@@ -46,20 +46,14 @@ public class System1 extends javax.swing.JPanel {
         unamed = new javax.swing.JLabel();
         pswdd = new javax.swing.JLabel();
         userD = new javax.swing.JTextField();
-        pswdD = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        pswdD = new javax.swing.JPasswordField();
 
         jLabel1.setText("System Login");
 
         unamed.setText("User Name");
 
         pswdd.setText("Password");
-
-        pswdD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pswdDActionPerformed(evt);
-            }
-        });
 
         jButton1.setText("Submit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +97,7 @@ public class System1 extends javax.swing.JPanel {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pswdd)
-                    .addComponent(pswdD))
+                    .addComponent(pswdD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(74, 74, 74)
                 .addComponent(jButton1)
                 .addGap(50, 50, 50))
@@ -122,15 +116,11 @@ public class System1 extends javax.swing.JPanel {
         }    // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void pswdDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswdDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pswdDActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField pswdD;
+    private javax.swing.JPasswordField pswdD;
     private javax.swing.JLabel pswdd;
     private javax.swing.JLabel unamed;
     private javax.swing.JTextField userD;

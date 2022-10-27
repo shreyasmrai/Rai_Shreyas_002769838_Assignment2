@@ -7,6 +7,7 @@ package UI;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.CommunityDatabase;
@@ -58,6 +59,7 @@ public class System2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jRadioButton1 = new javax.swing.JRadioButton();
+        jPasswordField1 = new javax.swing.JPasswordField();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel_doc = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -83,6 +85,9 @@ public class System2 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        dpswd = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         jPanel_hospital = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         pTable = new javax.swing.JTable();
@@ -106,6 +111,9 @@ public class System2 extends javax.swing.JFrame {
         pdelete = new javax.swing.JButton();
         pupdate = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
+        ppswd = new javax.swing.JTextField();
         jPanel_patient = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         hTable = new javax.swing.JTable();
@@ -129,6 +137,9 @@ public class System2 extends javax.swing.JFrame {
         hdelete = new javax.swing.JButton();
         hupdate = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        hpswd = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
         jPanel_patient1 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         cTable = new javax.swing.JTable();
@@ -148,8 +159,13 @@ public class System2 extends javax.swing.JFrame {
         cdelete = new javax.swing.JButton();
         cupdate = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        cpswd = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
 
         jRadioButton1.setText("jRadioButton1");
+
+        jPasswordField1.setText("jPasswordField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -253,6 +269,15 @@ public class System2 extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Baloo Chettan 2", 1, 24)); // NOI18N
         jLabel31.setText("DOCTOR");
 
+        jLabel29.setText("Password");
+
+        jButton3.setText("LogOut");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -279,13 +304,17 @@ public class System2 extends javax.swing.JFrame {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel5))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel29)
+                            .addComponent(jButton3))
                         .addGap(25, 25, 25)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(docspeciality, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                            .addComponent(docage)
-                            .addComponent(docexperience))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dpswd)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(docspeciality, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                                .addComponent(docage)
+                                .addComponent(docexperience)))
+                        .addContainerGap())))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(doccreate)
@@ -325,9 +354,13 @@ public class System2 extends javax.swing.JFrame {
                     .addComponent(docexperience)
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(docemail))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel29)
+                        .addComponent(dpswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(docemail)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -336,7 +369,8 @@ public class System2 extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(doccreate)
                     .addComponent(docdelete)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(jButton3))
                 .addGap(143, 143, 143))
         );
 
@@ -443,6 +477,15 @@ public class System2 extends javax.swing.JFrame {
         jLabel32.setFont(new java.awt.Font("Baloo Chettan 2", 1, 24)); // NOI18N
         jLabel32.setText("PATIENT");
 
+        jButton2.setText("LogOut");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel28.setText("Password");
+
         javax.swing.GroupLayout jPanel_hospitalLayout = new javax.swing.GroupLayout(jPanel_hospital);
         jPanel_hospital.setLayout(jPanel_hospitalLayout);
         jPanel_hospitalLayout.setHorizontalGroup(
@@ -456,13 +499,6 @@ public class System2 extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addGroup(jPanel_hospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel_hospitalLayout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(pcreate)
-                                .addGap(38, 38, 38)
-                                .addComponent(pdelete)
-                                .addGap(38, 38, 38)
-                                .addComponent(pupdate))
-                            .addGroup(jPanel_hospitalLayout.createSequentialGroup()
                                 .addGroup(jPanel_hospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -473,7 +509,7 @@ public class System2 extends javax.swing.JFrame {
                                 .addGroup(jPanel_hospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel_hospitalLayout.createSequentialGroup()
                                         .addGroup(jPanel_hospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(pemail, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(pemail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                                             .addComponent(pphone, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(pid, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(pgender, javax.swing.GroupLayout.Alignment.LEADING))
@@ -483,13 +519,25 @@ public class System2 extends javax.swing.JFrame {
                                 .addGroup(jPanel_hospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel19)
-                                    .addComponent(jLabel20))
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel28))
                                 .addGap(25, 25, 25)
                                 .addGroup(jPanel_hospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(pbg)
                                     .addComponent(page)
-                                    .addComponent(pw, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(276, 276, 276)))
+                                    .addComponent(pw, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                                    .addComponent(ppswd))
+                                .addGap(157, 157, 157))
+                            .addGroup(jPanel_hospitalLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(pcreate)
+                                .addGap(38, 38, 38)
+                                .addComponent(pdelete)
+                                .addGap(38, 38, 38)
+                                .addComponent(pupdate)
+                                .addGap(144, 144, 144)))
+                        .addComponent(jButton2)
+                        .addGap(41, 41, 41)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_hospitalLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -517,7 +565,11 @@ public class System2 extends javax.swing.JFrame {
                         .addGroup(jPanel_hospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(pw)
                             .addComponent(jLabel21))
-                        .addGap(125, 125, 125))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel_hospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel28)
+                            .addComponent(ppswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(90, 90, 90))
                     .addGroup(jPanel_hospitalLayout.createSequentialGroup()
                         .addGroup(jPanel_hospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -545,7 +597,8 @@ public class System2 extends javax.swing.JFrame {
                 .addGroup(jPanel_hospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pcreate)
                     .addComponent(pdelete)
-                    .addComponent(pupdate))
+                    .addComponent(pupdate)
+                    .addComponent(jButton2))
                 .addGap(158, 158, 158))
         );
 
@@ -641,6 +694,21 @@ public class System2 extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Baloo Chettan 2", 1, 24)); // NOI18N
         jLabel22.setText("HOSPITAL");
 
+        jLabel33.setText("Password");
+
+        hpswd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hpswdActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("LogOut");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel_patientLayout = new javax.swing.GroupLayout(jPanel_patient);
         jPanel_patient.setLayout(jPanel_patientLayout);
         jPanel_patientLayout.setHorizontalGroup(
@@ -653,13 +721,6 @@ public class System2 extends javax.swing.JFrame {
                     .addGroup(jPanel_patientLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(jPanel_patientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel_patientLayout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(hcreate)
-                                .addGap(38, 38, 38)
-                                .addComponent(hdelete)
-                                .addGap(38, 38, 38)
-                                .addComponent(hupdate))
                             .addGroup(jPanel_patientLayout.createSequentialGroup()
                                 .addGroup(jPanel_patientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -678,13 +739,26 @@ public class System2 extends javax.swing.JFrame {
                                 .addGroup(jPanel_patientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel13)
-                                    .addComponent(jLabel12))
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel33))
                                 .addGap(25, 25, 25)
                                 .addGroup(jPanel_patientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(hstate)
                                     .addComponent(hcity)
-                                    .addComponent(hPIN, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addComponent(hPIN, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                                    .addComponent(hpswd))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel_patientLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(hcreate)
+                                .addGap(38, 38, 38)
+                                .addComponent(hdelete)
+                                .addGap(38, 38, 38)
+                                .addComponent(hupdate)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(127, 127, 127)
+                        .addComponent(jButton4)
+                        .addGap(70, 70, 70)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_patientLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -715,7 +789,11 @@ public class System2 extends javax.swing.JFrame {
                         .addGroup(jPanel_patientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(hPIN)
                             .addComponent(jLabel14))
-                        .addGap(125, 125, 125))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel_patientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel33)
+                            .addComponent(hpswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(99, 99, 99))
                     .addGroup(jPanel_patientLayout.createSequentialGroup()
                         .addGroup(jPanel_patientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -743,7 +821,8 @@ public class System2 extends javax.swing.JFrame {
                 .addGroup(jPanel_patientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(hcreate)
                     .addComponent(hdelete)
-                    .addComponent(hupdate))
+                    .addComponent(hupdate)
+                    .addComponent(jButton4))
                 .addGap(158, 158, 158))
         );
 
@@ -837,6 +916,21 @@ public class System2 extends javax.swing.JFrame {
         jLabel30.setFont(new java.awt.Font("Baloo Chettan 2", 1, 24)); // NOI18N
         jLabel30.setText("COMMUNITY");
 
+        jLabel34.setText("Password");
+
+        cpswd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cpswdActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("LogOut");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel_patient1Layout = new javax.swing.GroupLayout(jPanel_patient1);
         jPanel_patient1.setLayout(jPanel_patient1Layout);
         jPanel_patient1Layout.setHorizontalGroup(
@@ -845,17 +939,10 @@ public class System2 extends javax.swing.JFrame {
                 .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_patient1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 778, Short.MAX_VALUE))
                     .addGroup(jPanel_patient1Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel_patient1Layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(ccreate)
-                                .addGap(38, 38, 38)
-                                .addComponent(cdelete)
-                                .addGap(38, 38, 38)
-                                .addComponent(cupdate))
                             .addGroup(jPanel_patient1Layout.createSequentialGroup()
                                 .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -871,10 +958,24 @@ public class System2 extends javax.swing.JFrame {
                                     .addComponent(cname, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cpin, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(121, 121, 121)
-                                .addComponent(jLabel27)
-                                .addGap(60, 60, 60)
-                                .addComponent(ccountry, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel27)
+                                    .addComponent(jLabel34))
+                                .addGap(47, 47, 47)
+                                .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(ccountry, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                                    .addComponent(cpswd))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE))
+                            .addGroup(jPanel_patient1Layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(ccreate)
+                                .addGap(38, 38, 38)
+                                .addComponent(cdelete)
+                                .addGap(38, 38, 38)
+                                .addComponent(cupdate)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton5)
+                                .addGap(78, 78, 78)))))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_patient1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -897,7 +998,11 @@ public class System2 extends javax.swing.JFrame {
                         .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
                             .addComponent(ccountry))
-                        .addGap(207, 207, 207))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cpswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel34))
+                        .addGap(175, 175, 175))
                     .addGroup(jPanel_patient1Layout.createSequentialGroup()
                         .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -925,7 +1030,8 @@ public class System2 extends javax.swing.JFrame {
                 .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ccreate)
                     .addComponent(cdelete)
-                    .addComponent(cupdate))
+                    .addComponent(cupdate)
+                    .addComponent(jButton5))
                 .addGap(158, 158, 158))
         );
 
@@ -1417,6 +1523,46 @@ public class System2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_docnameActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        mjf.setVisible(true);
+        
+
+        // close current frame
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void hpswdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hpswdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hpswdActionPerformed
+
+    private void cpswdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpswdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpswdActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+         dispose();
+        MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        mjf.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+         dispose();
+        MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        mjf.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+         dispose();
+        MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        mjf.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1519,6 +1665,7 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JTextField cid;
     private javax.swing.JTextField cname;
     private javax.swing.JTextField cpin;
+    private javax.swing.JTextField cpswd;
     private javax.swing.JTextField cstate;
     private javax.swing.JButton cupdate;
     private javax.swing.JTable docTable;
@@ -1536,6 +1683,7 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JTextField docname;
     private javax.swing.JTextField docphone;
     private javax.swing.JTextField docspeciality;
+    private javax.swing.JTextField dpswd;
     private javax.swing.JTextField hPIN;
     private javax.swing.JTable hTable;
     private javax.swing.JTextField hcity;
@@ -1546,9 +1694,14 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JTextField hid;
     private javax.swing.JTextField hname;
     private javax.swing.JTextField hphone;
+    private javax.swing.JTextField hpswd;
     private javax.swing.JTextField hstate;
     private javax.swing.JButton hupdate;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1569,10 +1722,14 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1584,6 +1741,7 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel_hospital;
     private javax.swing.JPanel jPanel_patient;
     private javax.swing.JPanel jPanel_patient1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1600,6 +1758,7 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JTextField pid;
     private javax.swing.JTextField pname;
     private javax.swing.JTextField pphone;
+    private javax.swing.JTextField ppswd;
     private javax.swing.JButton pupdate;
     private javax.swing.JTextField pw;
     // End of variables declaration//GEN-END:variables
