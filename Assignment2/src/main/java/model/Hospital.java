@@ -17,6 +17,16 @@ public class Hospital {
     private int hid;
     private String hcity;
     private String hstate;
+        private String hpswd;
+
+    public String getHpswd() {
+        return hpswd;
+    }
+
+    public void setHpswd(String hpswd) {
+        this.hpswd = hpswd;
+    }
+
 
     public String getHname() {
         return hname;

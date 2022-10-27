@@ -88,6 +88,9 @@ public class System2 extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         dpswd = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        did = new javax.swing.JTextField();
         jPanel_hospital = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         pTable = new javax.swing.JTable();
@@ -159,8 +162,6 @@ public class System2 extends javax.swing.JFrame {
         cdelete = new javax.swing.JButton();
         cupdate = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        cpswd = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
 
         jRadioButton1.setText("jRadioButton1");
@@ -278,6 +279,16 @@ public class System2 extends javax.swing.JFrame {
             }
         });
 
+        jLabel35.setText("jLabel35");
+
+        jLabel36.setText("ID");
+
+        did.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                didActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -295,26 +306,39 @@ public class System2 extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(42, 42, 42)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dochospi, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                            .addComponent(dochospi, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
                             .addComponent(docname)
                             .addComponent(docphone)
                             .addComponent(docemail)
                             .addComponent(docgender))
                         .addGap(126, 126, 126)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel29)
-                            .addComponent(jButton3))
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dpswd)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(docspeciality, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                                .addComponent(docage)
-                                .addComponent(docexperience)))
-                        .addContainerGap())))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel35)
+                                .addContainerGap())
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jButton3)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addComponent(jLabel36)))
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(25, 25, 25)
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(dpswd)
+                                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(docspeciality, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                                                .addComponent(docage)
+                                                .addComponent(docexperience))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(did, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap())))))))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(doccreate)
@@ -333,45 +357,52 @@ public class System2 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(docname)
-                    .addComponent(jLabel5)
-                    .addComponent(docage))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dochospital)
-                    .addComponent(dochospi)
-                    .addComponent(jLabel6)
-                    .addComponent(docspeciality))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(docphone)
-                    .addComponent(docexperience)
-                    .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel29)
-                        .addComponent(dpswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(docemail)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(docgender))
-                .addGap(43, 43, 43)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(doccreate)
-                    .addComponent(docdelete)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3))
-                .addGap(143, 143, 143))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(docname)
+                            .addComponent(jLabel5)
+                            .addComponent(docage))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dochospital)
+                            .addComponent(dochospi)
+                            .addComponent(jLabel6)
+                            .addComponent(docspeciality))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(docphone)
+                            .addComponent(docexperience)
+                            .addComponent(jLabel7))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel29)
+                                .addComponent(dpswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3)
+                                .addComponent(docemail)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(docgender)
+                            .addComponent(jLabel36)
+                            .addComponent(did, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(doccreate)
+                            .addComponent(docdelete)
+                            .addComponent(jButton1)
+                            .addComponent(jButton3))
+                        .addGap(143, 143, 143))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel35)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout jPanel_docLayout = new javax.swing.GroupLayout(jPanel_doc);
@@ -485,6 +516,12 @@ public class System2 extends javax.swing.JFrame {
         });
 
         jLabel28.setText("Password");
+
+        ppswd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ppswdActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel_hospitalLayout = new javax.swing.GroupLayout(jPanel_hospital);
         jPanel_hospital.setLayout(jPanel_hospitalLayout);
@@ -838,7 +875,7 @@ public class System2 extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "ID", "City", "State", "PIN", "Country"
+                "Patient Name", "Patient ID", "Doctor Name", "Hospital", "Doctor ID", "Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -856,15 +893,15 @@ public class System2 extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(cTable);
 
-        jLabel23.setText("Name");
+        jLabel23.setText("Patient Name");
 
-        dochospital3.setText("ID");
+        dochospital3.setText("Patient ID");
 
-        jLabel24.setText("City");
+        jLabel24.setText("Doctor Name");
 
-        jLabel25.setText("State");
+        jLabel25.setText("Hospital");
 
-        jLabel26.setText("PIN");
+        jLabel26.setText("Doctor ID");
 
         cid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -890,7 +927,7 @@ public class System2 extends javax.swing.JFrame {
             }
         });
 
-        jLabel27.setText("Country");
+        jLabel27.setText("Date");
 
         ccreate.setText("CREATE");
         ccreate.addActionListener(new java.awt.event.ActionListener() {
@@ -914,15 +951,7 @@ public class System2 extends javax.swing.JFrame {
         });
 
         jLabel30.setFont(new java.awt.Font("Baloo Chettan 2", 1, 24)); // NOI18N
-        jLabel30.setText("COMMUNITY");
-
-        jLabel34.setText("Password");
-
-        cpswd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cpswdActionPerformed(evt);
-            }
-        });
+        jLabel30.setText("ENCOUNTER");
 
         jButton5.setText("LogOut");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -958,14 +987,10 @@ public class System2 extends javax.swing.JFrame {
                                     .addComponent(cname, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cpin, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(121, 121, 121)
-                                .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel27)
-                                    .addComponent(jLabel34))
-                                .addGap(47, 47, 47)
-                                .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(ccountry, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                                    .addComponent(cpswd))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE))
+                                .addComponent(jLabel27)
+                                .addGap(60, 60, 60)
+                                .addComponent(ccountry, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE))
                             .addGroup(jPanel_patient1Layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(ccreate)
@@ -998,11 +1023,7 @@ public class System2 extends javax.swing.JFrame {
                         .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
                             .addComponent(ccountry))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cpswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel34))
-                        .addGap(175, 175, 175))
+                        .addGap(213, 213, 213))
                     .addGroup(jPanel_patient1Layout.createSequentialGroup()
                         .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1037,7 +1058,7 @@ public class System2 extends javax.swing.JFrame {
 
         jPanel_patient1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {ccity, cid, cname, cpin, cstate});
 
-        jTabbedPane1.addTab("Community", jPanel_patient1);
+        jTabbedPane1.addTab("Encounter", jPanel_patient1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1089,6 +1110,8 @@ public class System2 extends javax.swing.JFrame {
         doc.setDocage(docage.getText());
         doc.setDocspeciality(docspeciality.getText());
         doc.setDocexperience(docexperience.getText());
+        doc.setDid(Integer.parseInt(did.getText()));
+        doc.setDpswd(dpswd.getText());
         
         JOptionPane.showMessageDialog(this, "Information Saved Successfully !!");
         
@@ -1101,6 +1124,8 @@ public class System2 extends javax.swing.JFrame {
         docage.setText("");
         docspeciality.setText("");
         docexperience.setText("");
+         dpswd.setText("");
+        did.setText("");
     }//GEN-LAST:event_doccreateActionPerformed
 
     private void docdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docdeleteActionPerformed
@@ -1127,6 +1152,8 @@ public class System2 extends javax.swing.JFrame {
         docage.setText("");
         docspeciality.setText("");
         docexperience.setText("");
+        dpswd.setText("");
+        did.setText("");
     }//GEN-LAST:event_docdeleteActionPerformed
 
     private void docTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_docTableMouseClicked
@@ -1147,6 +1174,8 @@ public class System2 extends javax.swing.JFrame {
         docage.setText(model.getValueAt(docTable.getSelectedRow(), 5).toString());
         docexperience.setText(model.getValueAt(docTable.getSelectedRow(), 6).toString());
         docspeciality.setText(model.getValueAt(docTable.getSelectedRow(), 7).toString());
+        did.setText(model.getValueAt(docTable.getSelectedRow(), 8).toString());
+        dpswd.setText(model.getValueAt(docTable.getSelectedRow(), 9).toString());
         
     }//GEN-LAST:event_docTableMouseClicked
 
@@ -1168,7 +1197,8 @@ public class System2 extends javax.swing.JFrame {
             model.setValueAt(docage.getText(), i, 5);
             model.setValueAt(docexperience.getText(), i, 6);
             model.setValueAt(docspeciality.getText(), i, 7);
-           
+                       model.setValueAt(did.getText(), i, 8);
+            model.setValueAt(dpswd.getText(), i, 9);
            
              JOptionPane.showMessageDialog(this, "Updated Successfully !!");
 
@@ -1227,6 +1257,8 @@ public class System2 extends javax.swing.JFrame {
         hos.setHcity(hcity.getText());
         hos.setHstate(hstate.getText());
         hos.sethPIN(Integer.parseInt(hPIN.getText()));
+                hos.setHpswd(hpswd.getText());
+
         
         JOptionPane.showMessageDialog(this, "Information Saved Successfully !!");
         
@@ -1239,6 +1271,8 @@ public class System2 extends javax.swing.JFrame {
         hcity.setText("");
         hstate.setText("");
         hPIN.setText("");
+                hpswd.setText("");
+
     }//GEN-LAST:event_hcreateActionPerformed
 
     private void hdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hdeleteActionPerformed
@@ -1266,6 +1300,8 @@ public class System2 extends javax.swing.JFrame {
         hcity.setText("");
         hstate.setText("");
         hPIN.setText("");
+                        hpswd.setText("");
+
     }//GEN-LAST:event_hdeleteActionPerformed
 
     private void hupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hupdateActionPerformed
@@ -1284,6 +1320,8 @@ public class System2 extends javax.swing.JFrame {
             model.setValueAt(hcity.getText(), i, 5);
             model.setValueAt(hstate.getText(), i, 6);
             model.setValueAt(hPIN.getText(), i, 7);
+                        model.setValueAt(hpswd.getText(), i, 8);
+
            
            
              JOptionPane.showMessageDialog(this, "Updated Successfully !!");
@@ -1313,6 +1351,7 @@ public class System2 extends javax.swing.JFrame {
         page.setText(model.getValueAt(pTable.getSelectedRow(), 5).toString());
         pbg.setText(model.getValueAt(pTable.getSelectedRow(), 6).toString());
         pw.setText(model.getValueAt(pTable.getSelectedRow(), 7).toString());
+        ppswd.setText(model.getValueAt(pTable.getSelectedRow(), 8).toString());
         
     }//GEN-LAST:event_pTableMouseClicked
 
@@ -1345,6 +1384,7 @@ public class System2 extends javax.swing.JFrame {
         per.setPage(Integer.parseInt(page.getText()));
         per.setPbg(pbg.getText());
         per.setPw(Integer.parseInt(pw.getText()));
+        per.setPpswd(ppswd.getText());
         
         JOptionPane.showMessageDialog(this, "Information Saved Successfully !!");
         
@@ -1357,6 +1397,7 @@ public class System2 extends javax.swing.JFrame {
         page.setText("");
         pbg.setText("");
         pw.setText("");
+        ppswd.setText("");
     }//GEN-LAST:event_pcreateActionPerformed
 
     private void pdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pdeleteActionPerformed
@@ -1383,6 +1424,7 @@ public class System2 extends javax.swing.JFrame {
         page.setText("");
         pbg.setText("");
         pw.setText("");
+        ppswd.setText("");
     }//GEN-LAST:event_pdeleteActionPerformed
 
     private void pupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pupdateActionPerformed
@@ -1401,6 +1443,8 @@ public class System2 extends javax.swing.JFrame {
             model.setValueAt(page.getText(), i, 5);
             model.setValueAt(pbg.getText(), i, 6);
             model.setValueAt(pw.getText(), i, 7);
+                        model.setValueAt(ppswd.getText(), i, 8);
+
            
            
              JOptionPane.showMessageDialog(this, "Updated Successfully !!");
@@ -1538,10 +1582,6 @@ public class System2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_hpswdActionPerformed
 
-    private void cpswdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpswdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cpswdActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
          dispose();
@@ -1563,6 +1603,14 @@ public class System2 extends javax.swing.JFrame {
         mjf.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void ppswdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppswdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ppswdActionPerformed
+
+    private void didActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_didActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_didActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1575,7 +1623,7 @@ public class System2 extends javax.swing.JFrame {
         
        for(Doctor doc : doctordatabase.getDoctorDatabase()){
            
-           Object[] row1 = new Object[8];
+           Object[] row1 = new Object[10];
            row1[0] = doc;
            //row1[0] = doc.getDocname();
            row1[1] = doc.getDochospital();
@@ -1585,6 +1633,8 @@ public class System2 extends javax.swing.JFrame {
            row1[5] = doc.getDocage();
            row1[6] = doc.getDocexperience();
            row1[7] = doc.getDocspeciality();
+           row1[8] = doc.getDid();
+           row1[9] = doc.getDpswd();
            
            //row1[5] = doc.get
          
@@ -1599,7 +1649,7 @@ public class System2 extends javax.swing.JFrame {
        
        for(Person per : persondatabase.getPersonDatabase()){
            
-           Object[] row2 = new Object[8];
+           Object[] row2 = new Object[9];
            row2[0] = per;
            //row1[1] = per.getPname();
            row2[1] = per.getPid();
@@ -1609,6 +1659,8 @@ public class System2 extends javax.swing.JFrame {
            row2[5] = per.getPage();
            row2[6] = per.getPbg();
            row2[7] = per.getPw();
+                      row2[8] = per.getPpswd();
+
            
            model.addRow(row2);
            
@@ -1640,7 +1692,7 @@ public class System2 extends javax.swing.JFrame {
        
        for(Hospital hos : hospitaldatabase.getHospitalDatabase()){
            
-           Object[] row2 = new Object[8];
+           Object[] row2 = new Object[9];
            row2[0] = hos;
            //row1[1] = per.getPname();
            row2[1] = hos.getHid();
@@ -1650,7 +1702,8 @@ public class System2 extends javax.swing.JFrame {
            row2[5] = hos.getHcity();
            row2[6] = hos.getHstate();
            row2[7] = hos.gethPIN();
-           
+                      row2[8] = hos.getHpswd();
+
            model.addRow(row2);
            
        }
@@ -1665,9 +1718,9 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JTextField cid;
     private javax.swing.JTextField cname;
     private javax.swing.JTextField cpin;
-    private javax.swing.JTextField cpswd;
     private javax.swing.JTextField cstate;
     private javax.swing.JButton cupdate;
+    private javax.swing.JTextField did;
     private javax.swing.JTable docTable;
     private javax.swing.JTextField docage;
     private javax.swing.JButton doccreate;
@@ -1729,7 +1782,8 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

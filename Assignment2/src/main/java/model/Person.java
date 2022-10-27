@@ -16,7 +16,16 @@ public class Person {
     private String pemail;
     private String pbg;
     private int pw;
-    private int pid; 
+    private int pid;
+    private String ppswd;
+
+    public String getPpswd() {
+        return ppswd;
+    }
+
+    public void setPpswd(String ppswd) {
+        this.ppswd = ppswd;
+    }
 
 
     public String getPname() {

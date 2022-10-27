@@ -19,7 +19,25 @@ public class Doctor {
     private String docage;
     private String docspeciality;
     private String docexperience;
+    private int did;
+    private String dpswd;
 
+    public String getDpswd() {
+        return dpswd;
+    }
+
+    public void setDpswd(String dpswd) {
+        this.dpswd = dpswd;
+    }
+
+    public int getDid() {
+        return did;
+    }
+
+    public void setDid(int did) {
+        this.did = did;
+    }
+    
     public String getDocage() {
         return docage;
     }
