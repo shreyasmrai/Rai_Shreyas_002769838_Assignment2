@@ -24,6 +24,15 @@ public class DoctorDatabase extends javax.swing.JPanel {
     public void setDoctorDatabase(ArrayList<Doctor> doctor) {
         this.doctor = doctor;
     }
+    
+    public Doctor getDoctor(String username, String pswd){
+        for(Doctor d: doctor){
+            if(d.getDocname().equals(username) && d.getDpswd().equals(pswd)){
+                return d;
+            }
+        }
+        return null;
+    }
    
     public Doctor addNewDoctor(){
         Doctor newDoc = new Doctor();

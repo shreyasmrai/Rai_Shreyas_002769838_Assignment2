@@ -16,6 +16,7 @@ import model.DoctorDatabase;
 import model.HospitalDatabase;
 import model.PersonDatabase;
 import model.Hospital;
+import model.Person;
 
 /**
  *
@@ -31,6 +32,7 @@ public class MainJFrame extends javax.swing.JFrame {
     PersonDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
+    
     
     
     ImageIcon myImage;

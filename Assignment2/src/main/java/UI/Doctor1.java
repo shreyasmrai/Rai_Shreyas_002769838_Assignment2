@@ -6,8 +6,10 @@ package UI;
 
 import javax.swing.JOptionPane;
 import model.CommunityDatabase;
+import model.Doctor;
 import model.DoctorDatabase;
 import model.HospitalDatabase;
+import model.Person;
 import model.PersonDatabase;
 
 /**
@@ -19,8 +21,18 @@ public class Doctor1 extends javax.swing.JPanel {
     /**
      * Creates new form Doctor
      */
+    DoctorDatabase doctordatabase;
+    PersonDatabase persondatabase;
+    CommunityDatabase communitydatabase;
+    HospitalDatabase hospitaldatabase;
+    
     public Doctor1(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
         initComponents();
+        
+        this.doctordatabase=doctordatabase;
+        this.persondatabase=persondatabase;
+        this.communitydatabase=communitydatabase;
+        this.hospitaldatabase=hospitaldatabase;
     }
 
     /**
@@ -105,10 +117,19 @@ public class Doctor1 extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if( userP.getText().matches("doctor") && pswdP.getText().matches("doctor")){
-            Doctor2 doctor = new Doctor2();
-            doctor.setVisible(true);
-
+        String username = userP.getText();
+        String pswd = pswdP.getText();
+        Doctor d = doctordatabase.getDoctor(username, pswd);
+        
+        //if( userP.getText().matches("patient") && pswdP.getText().matches("patient")){
+         //   Patient2 patient = new Patient2(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+         //   patient.setVisible(true);
+         if(d!=null){
+             Doctor2 doctor = new Doctor2(d,doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+             doctor.setVisible(true);
+            //MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase); 
+            //mjf.setVisible(false);
+          
         }else{
             JOptionPane.showMessageDialog(this, "Incorrect credential");
         }

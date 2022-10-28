@@ -106,4 +106,10 @@ public class Doctor {
     public String toString(){
         return docname;
     }
+    
+    @Override
+    public boolean equals(Object obj) {
+        final Doctor d = (Doctor) obj;
+        return this.docname==d.docname && this.dpswd==d.dpswd;
+    }
 }
