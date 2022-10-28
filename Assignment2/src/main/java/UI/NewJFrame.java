@@ -22,6 +22,7 @@ public class NewJFrame extends javax.swing.JFrame {
     PersonDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
+    
     public NewJFrame() {
         initComponents();
         doctordatabase = new DoctorDatabase();
@@ -74,6 +75,7 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
         mjf.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -107,6 +109,7 @@ public class NewJFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new NewJFrame().setVisible(true);
+                
             }
         });
     }

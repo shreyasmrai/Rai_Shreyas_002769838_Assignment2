@@ -5,6 +5,10 @@
 package UI;
 
 import javax.swing.JOptionPane;
+import model.CommunityDatabase;
+import model.DoctorDatabase;
+import model.HospitalDatabase;
+import model.PersonDatabase;
 
 /**
  *
@@ -15,7 +19,7 @@ public class Doctor1 extends javax.swing.JPanel {
     /**
      * Creates new form Doctor
      */
-    public Doctor1() {
+    public Doctor1(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
         initComponents();
     }
 

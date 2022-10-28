@@ -95,5 +95,12 @@ public class Person {
     public String toString(){
         return pname;
     }
+    @Override
+    public boolean equals(Object obj) {
+        final Person p = (Person) obj;
+        return this.pname==p.pname && this.ppswd==p.ppswd;
+    }
+        
+    
    
 }

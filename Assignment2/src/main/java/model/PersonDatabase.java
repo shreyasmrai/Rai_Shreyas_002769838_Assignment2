@@ -21,8 +21,21 @@ public class PersonDatabase {
         return person;
     }
 
-    public void setDoctorDatabase(ArrayList<Person> person) {
+    public void setPersonDatabase(ArrayList<Person> person) {
         this.person = person;
+    }
+    
+    //public boolean validatePerson(Person p){
+    //    return person.contains(p);
+    //}
+    
+    public Person getPerson(String username, String pswd){
+        for(Person p: person){
+            if(p.getPname().equals(username) && p.getPpswd().equals(pswd)){
+                return p;
+            }
+        }
+        return null;
     }
    
     public Person addNewPerson(){

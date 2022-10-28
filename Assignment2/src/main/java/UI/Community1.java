@@ -8,12 +8,12 @@ package UI;
  *
  * @author shreyasrai
  */
-public class Hospital extends javax.swing.JPanel {
+public class Community1 extends javax.swing.JPanel {
 
     /**
-     * Creates new form Hospital
+     * Creates new form Community1
      */
-    public Hospital() {
+    public Community1() {
         initComponents();
     }
 

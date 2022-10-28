@@ -197,21 +197,24 @@ public class MainJFrame extends javax.swing.JFrame {
         System1 systempanel = new System1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
         //jSplitPane1.setRightComponent(systempanel);    // TODO add your handling code here:
         jSplitPane1.setBottomComponent(systempanel);        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        Hospital1 hospitalpanel = new Hospital1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        jSplitPane1.setBottomComponent(hospitalpanel);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     Doctor1 doctorpanel = new Doctor1();
+     Doctor1 doctorpanel = new Doctor1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
         jSplitPane1.setBottomComponent(doctorpanel);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Patient1 patientpanel = new Patient1();
+        Patient1 patientpanel = new Patient1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
         jSplitPane1.setBottomComponent(patientpanel);
     }//GEN-LAST:event_jButton3ActionPerformed
 

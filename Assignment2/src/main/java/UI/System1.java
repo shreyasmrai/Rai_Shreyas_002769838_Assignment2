@@ -109,7 +109,9 @@ public class System1 extends javax.swing.JPanel {
         //h
         System2 system = new System2(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
         system.setVisible(true);
-            
+        //MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase); 
+        //mjf.setVisible(false);
+        
         }
     else{
             JOptionPane.showMessageDialog(this, "Incorrect credential");

@@ -4,42 +4,33 @@
  */
 package UI;
 
-
-import java.awt.Image;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import model.Community;
 import model.CommunityDatabase;
-import model.DoctorDatabase;
 import model.Doctor;
+import model.DoctorDatabase;
+import model.Hospital;
+import model.HospitalDatabase;
 import model.Person;
 import model.PersonDatabase;
-import model.Community;
-import model.HospitalDatabase;
-import model.Hospital;
 
 /**
  *
  * @author shreyasrai
  */
-public class System2 extends javax.swing.JFrame {
+public class Hospital2 extends javax.swing.JFrame {
 
+    /**
+     * Creates new form Hospital2
+     */
     DoctorDatabase doctordatabase;
     PersonDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
-    /**
-     * Creates new form System2
-     * @param doctordatabase
-     * @param persondatabase
-     * @param communitydatabase
-     * @param hospitaldatabase
-     */
-    public System2(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
+    
+    public Hospital2(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
         initComponents();
-        
-        this.doctordatabase = doctordatabase;
         this.persondatabase = persondatabase;
         this.communitydatabase = communitydatabase;
         this.hospitaldatabase = hospitaldatabase;
@@ -58,8 +49,6 @@ public class System2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel_doc = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -88,6 +77,7 @@ public class System2 extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         dpswd = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         did = new javax.swing.JTextField();
         jPanel_hospital = new javax.swing.JPanel();
@@ -162,10 +152,6 @@ public class System2 extends javax.swing.JFrame {
         cupdate = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
-
-        jRadioButton1.setText("jRadioButton1");
-
-        jPasswordField1.setText("jPasswordField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -278,6 +264,8 @@ public class System2 extends javax.swing.JFrame {
             }
         });
 
+        jLabel35.setText("jLabel35");
+
         jLabel36.setText("ID");
 
         did.addActionListener(new java.awt.event.ActionListener() {
@@ -303,34 +291,39 @@ public class System2 extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(42, 42, 42)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dochospi, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
+                            .addComponent(dochospi, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
                             .addComponent(docname)
                             .addComponent(docphone)
                             .addComponent(docemail)
                             .addComponent(docgender))
                         .addGap(126, 126, 126)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel29)
-                            .addComponent(jButton3)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(jLabel36)))
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel35)
+                                .addContainerGap())
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(dpswd)
-                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(docspeciality, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                                        .addComponent(docage)
-                                        .addComponent(docexperience))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(did, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))))
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jButton3)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addComponent(jLabel36)))
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(25, 25, 25)
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(dpswd)
+                                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(docspeciality, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                                                .addComponent(docage)
+                                                .addComponent(docexperience))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(did, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap())))))))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(doccreate)
@@ -340,7 +333,7 @@ public class System2 extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(279, Short.MAX_VALUE)
+                .addContainerGap(277, Short.MAX_VALUE)
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(255, 255, 255))
         );
@@ -350,46 +343,51 @@ public class System2 extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(docname)
-                    .addComponent(jLabel5)
-                    .addComponent(docage))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dochospital)
-                    .addComponent(dochospi)
-                    .addComponent(jLabel6)
-                    .addComponent(docspeciality))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(docphone)
-                    .addComponent(docexperience)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel29)
-                        .addComponent(dpswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(docemail)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(docgender)
-                    .addComponent(jLabel36)
-                    .addComponent(did, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(doccreate)
-                    .addComponent(docdelete)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3))
-                .addGap(143, 143, 143))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(docname)
+                            .addComponent(jLabel5)
+                            .addComponent(docage))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dochospital)
+                            .addComponent(dochospi)
+                            .addComponent(jLabel6)
+                            .addComponent(docspeciality))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(docphone)
+                            .addComponent(docexperience)
+                            .addComponent(jLabel7))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel29)
+                                .addComponent(dpswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3)
+                                .addComponent(docemail)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(docgender)
+                            .addComponent(jLabel36)
+                            .addComponent(did, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(doccreate)
+                            .addComponent(docdelete)
+                            .addComponent(jButton1)
+                            .addComponent(jButton3))
+                        .addGap(143, 143, 143))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel35)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout jPanel_docLayout = new javax.swing.GroupLayout(jPanel_doc);
@@ -533,7 +531,7 @@ public class System2 extends javax.swing.JFrame {
                                 .addGroup(jPanel_hospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel_hospitalLayout.createSequentialGroup()
                                         .addGroup(jPanel_hospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(pemail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                                            .addComponent(pemail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
                                             .addComponent(pphone, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(pid, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(pgender, javax.swing.GroupLayout.Alignment.LEADING))
@@ -741,7 +739,7 @@ public class System2 extends javax.swing.JFrame {
                 .addGroup(jPanel_patientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_patientLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE))
                     .addGroup(jPanel_patientLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(jPanel_patientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -770,8 +768,7 @@ public class System2 extends javax.swing.JFrame {
                                     .addComponent(hstate)
                                     .addComponent(hcity)
                                     .addComponent(hPIN, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                                    .addComponent(hpswd))
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(hpswd)))
                             .addGroup(jPanel_patientLayout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(hcreate)
@@ -779,7 +776,7 @@ public class System2 extends javax.swing.JFrame {
                                 .addComponent(hdelete)
                                 .addGap(38, 38, 38)
                                 .addComponent(hupdate)))
-                        .addGap(127, 127, 127)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton4)
                         .addGap(70, 70, 70)))
                 .addContainerGap())
@@ -788,9 +785,6 @@ public class System2 extends javax.swing.JFrame {
                 .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(224, 224, 224))
         );
-
-        jPanel_patientLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {dochospital1, hcommunity, hemail, hid, hname, hphone, jLabel10, jLabel11, jLabel8, jLabel9});
-
         jPanel_patientLayout.setVerticalGroup(
             jPanel_patientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_patientLayout.createSequentialGroup()
@@ -848,8 +842,6 @@ public class System2 extends javax.swing.JFrame {
                     .addComponent(jButton4))
                 .addGap(158, 158, 158))
         );
-
-        jPanel_patientLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {hcommunity, hemail, hid, hname, hphone});
 
         jTabbedPane1.addTab("Hospital", jPanel_patient);
 
@@ -954,7 +946,7 @@ public class System2 extends javax.swing.JFrame {
                 .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_patient1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 778, Short.MAX_VALUE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE))
                     .addGroup(jPanel_patient1Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -976,7 +968,7 @@ public class System2 extends javax.swing.JFrame {
                                 .addComponent(jLabel27)
                                 .addGap(60, 60, 60)
                                 .addComponent(ccountry, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 283, Short.MAX_VALUE))
                             .addGroup(jPanel_patient1Layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(ccreate)
@@ -993,9 +985,6 @@ public class System2 extends javax.swing.JFrame {
                 .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(224, 224, 224))
         );
-
-        jPanel_patient1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {ccity, cid, cname, cpin, cstate});
-
         jPanel_patient1Layout.setVerticalGroup(
             jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_patient1Layout.createSequentialGroup()
@@ -1042,8 +1031,6 @@ public class System2 extends javax.swing.JFrame {
                 .addGap(158, 158, 158))
         );
 
-        jPanel_patient1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {ccity, cid, cname, cpin, cstate});
-
         jTabbedPane1.addTab("Encounter", jPanel_patient1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1052,7 +1039,7 @@ public class System2 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -1070,6 +1057,33 @@ public class System2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dochospiActionPerformed
 
+    private void docnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_docnameActionPerformed
+
+    private void docTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_docTableMouseClicked
+        // TODO add your handling code here:
+        int selected = docTable.getSelectedRow();
+
+        if(selected<0){
+            JOptionPane.showMessageDialog(this, "Select The Row To View");
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) docTable.getModel();
+
+        docname.setText(model.getValueAt(docTable.getSelectedRow(), 0).toString());
+        dochospi.setText(model.getValueAt(docTable.getSelectedRow(), 1).toString());
+        docphone.setText(model.getValueAt(docTable.getSelectedRow(), 2).toString());
+        docemail.setText(model.getValueAt(docTable.getSelectedRow(), 3).toString());
+        docgender.setText(model.getValueAt(docTable.getSelectedRow(), 4).toString());
+        docage.setText(model.getValueAt(docTable.getSelectedRow(), 5).toString());
+        docexperience.setText(model.getValueAt(docTable.getSelectedRow(), 6).toString());
+        docspeciality.setText(model.getValueAt(docTable.getSelectedRow(), 7).toString());
+        did.setText(model.getValueAt(docTable.getSelectedRow(), 8).toString());
+        dpswd.setText(model.getValueAt(docTable.getSelectedRow(), 9).toString());
+
+    }//GEN-LAST:event_docTableMouseClicked
+
     private void docphoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docphoneActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_docphoneActionPerformed
@@ -1084,9 +1098,9 @@ public class System2 extends javax.swing.JFrame {
 
     private void doccreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doccreateActionPerformed
         // TODO add your handling code here:
-        
+
         model.Doctor doc = doctordatabase.addNewDoctor();
-        
+
         //doc.setDocname(docname.getText());
         doc.setDocname(docname.getText());
         doc.setDochospital(dochospi.getText());
@@ -1098,9 +1112,9 @@ public class System2 extends javax.swing.JFrame {
         doc.setDocexperience(docexperience.getText());
         doc.setDid(Integer.parseInt(did.getText()));
         doc.setDpswd(dpswd.getText());
-        
+
         JOptionPane.showMessageDialog(this, "Information Saved Successfully !!");
-        
+
         displayDoc();
         docname.setText("");
         dochospi.setText("");
@@ -1110,25 +1124,25 @@ public class System2 extends javax.swing.JFrame {
         docage.setText("");
         docspeciality.setText("");
         docexperience.setText("");
-         dpswd.setText("");
+        dpswd.setText("");
         did.setText("");
     }//GEN-LAST:event_doccreateActionPerformed
 
     private void docdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docdeleteActionPerformed
         // TODO add your handling code here:
         int selected = docTable.getSelectedRow();
-        
+
         if(selected<0){
             JOptionPane.showMessageDialog(this, "Select The Row To Delete");
             return;
         }
         DefaultTableModel model = (DefaultTableModel) docTable.getModel();
         Doctor selectedDoc = (Doctor) model.getValueAt(selected, 0);
-        
-       // doctordatabase.deleteemp(selectedEmp);
+
+        // doctordatabase.deleteemp(selectedEmp);
         doctordatabase.deletedoc(selectedDoc);
         JOptionPane.showMessageDialog(this, "Entry Removed !!");
-        
+
         displayDoc();
         docname.setText("");
         dochospi.setText("");
@@ -1142,37 +1156,13 @@ public class System2 extends javax.swing.JFrame {
         did.setText("");
     }//GEN-LAST:event_docdeleteActionPerformed
 
-    private void docTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_docTableMouseClicked
-        // TODO add your handling code here:
-        int selected = docTable.getSelectedRow();
-        
-        if(selected<0){
-            JOptionPane.showMessageDialog(this, "Select The Row To View");
-            return;
-        }
-        DefaultTableModel model = (DefaultTableModel) docTable.getModel();
-        
-        docname.setText(model.getValueAt(docTable.getSelectedRow(), 0).toString());
-        dochospi.setText(model.getValueAt(docTable.getSelectedRow(), 1).toString());
-        docphone.setText(model.getValueAt(docTable.getSelectedRow(), 2).toString());
-        docemail.setText(model.getValueAt(docTable.getSelectedRow(), 3).toString());
-        docgender.setText(model.getValueAt(docTable.getSelectedRow(), 4).toString());
-        docage.setText(model.getValueAt(docTable.getSelectedRow(), 5).toString());
-        docexperience.setText(model.getValueAt(docTable.getSelectedRow(), 6).toString());
-        docspeciality.setText(model.getValueAt(docTable.getSelectedRow(), 7).toString());
-        did.setText(model.getValueAt(docTable.getSelectedRow(), 8).toString());
-        dpswd.setText(model.getValueAt(docTable.getSelectedRow(), 9).toString());
-        
-    }//GEN-LAST:event_docTableMouseClicked
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
 
         int i = docTable.getSelectedRow();
         DefaultTableModel model = (DefaultTableModel) docTable.getModel();
         if(i >= 0)
-        {           
+        {
             Doctor doc = doctordatabase.addNewDoctor();
 
             model.setValueAt(docname.getText(), i, 0);
@@ -1183,10 +1173,10 @@ public class System2 extends javax.swing.JFrame {
             model.setValueAt(docage.getText(), i, 5);
             model.setValueAt(docexperience.getText(), i, 6);
             model.setValueAt(docspeciality.getText(), i, 7);
-                       model.setValueAt(did.getText(), i, 8);
+            model.setValueAt(did.getText(), i, 8);
             model.setValueAt(dpswd.getText(), i, 9);
-           
-             JOptionPane.showMessageDialog(this, "Updated Successfully !!");
+
+            JOptionPane.showMessageDialog(this, "Updated Successfully !!");
 
         }
         else {
@@ -1194,16 +1184,160 @@ public class System2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        mjf.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void didActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_didActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_didActionPerformed
+
+    private void pTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pTableMouseClicked
+        // TODO add your handling code here:
+        int selected = pTable.getSelectedRow();
+
+        if(selected<0){
+            JOptionPane.showMessageDialog(this, "Select The Row To View");
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) pTable.getModel();
+
+        pname.setText(model.getValueAt(pTable.getSelectedRow(), 0).toString());
+        pid.setText(model.getValueAt(pTable.getSelectedRow(), 1).toString());
+        pphone.setText(model.getValueAt(pTable.getSelectedRow(), 2).toString());
+        pemail.setText(model.getValueAt(pTable.getSelectedRow(), 3).toString());
+        pgender.setText(model.getValueAt(pTable.getSelectedRow(), 4).toString());
+        page.setText(model.getValueAt(pTable.getSelectedRow(), 5).toString());
+        pbg.setText(model.getValueAt(pTable.getSelectedRow(), 6).toString());
+        pw.setText(model.getValueAt(pTable.getSelectedRow(), 7).toString());
+        ppswd.setText(model.getValueAt(pTable.getSelectedRow(), 8).toString());
+
+    }//GEN-LAST:event_pTableMouseClicked
+
+    private void pidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pidActionPerformed
+
+    private void pphoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pphoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pphoneActionPerformed
+
+    private void pemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pemailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pemailActionPerformed
+
+    private void pgenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pgenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pgenderActionPerformed
+
+    private void pcreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcreateActionPerformed
+        // TODO add your handling code here:
+        model.Person per = persondatabase.addNewPerson();
+
+        per.setPname(pname.getText());
+        per.setPid(Integer.parseInt(pid.getText()));
+        per.setPphone(Integer.parseInt(pphone.getText()));
+        per.setPemail(pemail.getText());
+        per.setPgender(pgender.getText());
+        per.setPage(Integer.parseInt(page.getText()));
+        per.setPbg(pbg.getText());
+        per.setPw(Integer.parseInt(pw.getText()));
+        per.setPpswd(ppswd.getText());
+
+        JOptionPane.showMessageDialog(this, "Information Saved Successfully !!");
+
+        displayPer();
+        pname.setText("");
+        pid.setText("");
+        pphone.setText("");
+        pemail.setText("");
+        pgender.setText("");
+        page.setText("");
+        pbg.setText("");
+        pw.setText("");
+        ppswd.setText("");
+    }//GEN-LAST:event_pcreateActionPerformed
+
+    private void pdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pdeleteActionPerformed
+        // TODO add your handling code here:
+        int selected = pTable.getSelectedRow();
+
+        if(selected<0){
+            JOptionPane.showMessageDialog(this, "Select The Row To Delete");
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) pTable.getModel();
+        Person selectedPer = (Person) model.getValueAt(selected, 0);
+
+        // doctordatabase.deleteemp(selectedEmp);
+        persondatabase.deletedper(selectedPer);
+        JOptionPane.showMessageDialog(this, "Entry Removed !!");
+
+        displayPer();
+        pname.setText("");
+        pid.setText("");
+        pphone.setText("");
+        pemail.setText("");
+        pgender.setText("");
+        page.setText("");
+        pbg.setText("");
+        pw.setText("");
+        ppswd.setText("");
+    }//GEN-LAST:event_pdeleteActionPerformed
+
+    private void pupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pupdateActionPerformed
+        // TODO add your handling code here:
+        int i = pTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) pTable.getModel();
+        if(i >= 0)
+        {
+            Person per = persondatabase.addNewPerson();
+
+            model.setValueAt(pname.getText(), i, 0);
+            model.setValueAt(pid.getText(), i, 1);
+            model.setValueAt(pphone.getText(), i, 2);
+            model.setValueAt(pemail.getText(), i, 3);
+            model.setValueAt(pgender.getText(), i, 4);
+            model.setValueAt(page.getText(), i, 5);
+            model.setValueAt(pbg.getText(), i, 6);
+            model.setValueAt(pw.getText(), i, 7);
+            model.setValueAt(ppswd.getText(), i, 8);
+
+            JOptionPane.showMessageDialog(this, "Updated Successfully !!");
+
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
+    }//GEN-LAST:event_pupdateActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        mjf.setVisible(true);
+
+        // close current frame
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void ppswdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppswdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ppswdActionPerformed
+
     private void hTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hTableMouseClicked
         // TODO add your handling code here:
         int selected = hTable.getSelectedRow();
-        
+
         if(selected<0){
             JOptionPane.showMessageDialog(this, "Select The Row To View");
             return;
         }
         DefaultTableModel model = (DefaultTableModel) hTable.getModel();
-        
+
         hname.setText(model.getValueAt(hTable.getSelectedRow(), 0).toString());
         hid.setText(model.getValueAt(hTable.getSelectedRow(), 1).toString());
         hphone.setText(model.getValueAt(hTable.getSelectedRow(), 2).toString());
@@ -1233,8 +1367,7 @@ public class System2 extends javax.swing.JFrame {
     private void hcreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hcreateActionPerformed
         // TODO add your handling code here:
         model.Hospital hos = hospitaldatabase.addNewHospital();
-        
-        
+
         hos.setHname(hname.getText());
         hos.setHid(Integer.parseInt(hid.getText()));
         hos.setHphone(Integer.parseInt(hphone.getText()));
@@ -1243,11 +1376,10 @@ public class System2 extends javax.swing.JFrame {
         hos.setHcity(hcity.getText());
         hos.setHstate(hstate.getText());
         hos.sethPIN(Integer.parseInt(hPIN.getText()));
-                hos.setHpswd(hpswd.getText());
+        hos.setHpswd(hpswd.getText());
 
-        
         JOptionPane.showMessageDialog(this, "Information Saved Successfully !!");
-        
+
         displayHos();
         hname.setText("");
         hid.setText("");
@@ -1257,27 +1389,26 @@ public class System2 extends javax.swing.JFrame {
         hcity.setText("");
         hstate.setText("");
         hPIN.setText("");
-                hpswd.setText("");
-
+        hpswd.setText("");
     }//GEN-LAST:event_hcreateActionPerformed
 
     private void hdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hdeleteActionPerformed
         // TODO add your handling code here:
-        
+
         int selected = hTable.getSelectedRow();
-        
+
         if(selected<0){
             JOptionPane.showMessageDialog(this, "Select The Row To Delete");
             return;
         }
         DefaultTableModel model = (DefaultTableModel) hTable.getModel();
         Hospital selectedHos = (Hospital) model.getValueAt(selected, 0);
-        
+
         //hospitaldatabase.deletedhos(selectedHos);
         hospitaldatabase.deletedhos(selectedHos);
         JOptionPane.showMessageDialog(this, "Entry Removed !!");
-        
-       displayHos();
+
+        displayHos();
         hname.setText("");
         hid.setText("");
         hphone.setText("");
@@ -1286,8 +1417,7 @@ public class System2 extends javax.swing.JFrame {
         hcity.setText("");
         hstate.setText("");
         hPIN.setText("");
-                        hpswd.setText("");
-
+        hpswd.setText("");
     }//GEN-LAST:event_hdeleteActionPerformed
 
     private void hupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hupdateActionPerformed
@@ -1295,7 +1425,7 @@ public class System2 extends javax.swing.JFrame {
         int i = hTable.getSelectedRow();
         DefaultTableModel model = (DefaultTableModel) hTable.getModel();
         if(i >= 0)
-        {           
+        {
             Hospital hos = hospitaldatabase.addNewHospital();
 
             model.setValueAt(hname.getText(), i, 0);
@@ -1306,158 +1436,44 @@ public class System2 extends javax.swing.JFrame {
             model.setValueAt(hcity.getText(), i, 5);
             model.setValueAt(hstate.getText(), i, 6);
             model.setValueAt(hPIN.getText(), i, 7);
-                        model.setValueAt(hpswd.getText(), i, 8);
+            model.setValueAt(hpswd.getText(), i, 8);
 
-           
-           
-             JOptionPane.showMessageDialog(this, "Updated Successfully !!");
+            JOptionPane.showMessageDialog(this, "Updated Successfully !!");
 
         }
         else {
             JOptionPane.showMessageDialog(null, "Error");
         }
-
     }//GEN-LAST:event_hupdateActionPerformed
 
-    private void pTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pTableMouseClicked
+    private void hpswdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hpswdActionPerformed
         // TODO add your handling code here:
-        int selected = pTable.getSelectedRow();
-        
-        if(selected<0){
-            JOptionPane.showMessageDialog(this, "Select The Row To View");
-            return;
-        }
-        DefaultTableModel model = (DefaultTableModel) pTable.getModel();
-        
-        pname.setText(model.getValueAt(pTable.getSelectedRow(), 0).toString());
-        pid.setText(model.getValueAt(pTable.getSelectedRow(), 1).toString());
-        pphone.setText(model.getValueAt(pTable.getSelectedRow(), 2).toString());
-        pemail.setText(model.getValueAt(pTable.getSelectedRow(), 3).toString());
-        pgender.setText(model.getValueAt(pTable.getSelectedRow(), 4).toString());
-        page.setText(model.getValueAt(pTable.getSelectedRow(), 5).toString());
-        pbg.setText(model.getValueAt(pTable.getSelectedRow(), 6).toString());
-        pw.setText(model.getValueAt(pTable.getSelectedRow(), 7).toString());
-        ppswd.setText(model.getValueAt(pTable.getSelectedRow(), 8).toString());
-        
-    }//GEN-LAST:event_pTableMouseClicked
+    }//GEN-LAST:event_hpswdActionPerformed
 
-    private void pidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pidActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_pidActionPerformed
-
-    private void pphoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pphoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pphoneActionPerformed
-
-    private void pemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pemailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pemailActionPerformed
-
-    private void pgenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pgenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pgenderActionPerformed
-
-    private void pcreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcreateActionPerformed
-        // TODO add your handling code here:
-        model.Person per = persondatabase.addNewPerson();
-        
-        
-        per.setPname(pname.getText());
-        per.setPid(Integer.parseInt(pid.getText()));
-        per.setPphone(Integer.parseInt(pphone.getText()));
-        per.setPemail(pemail.getText());
-        per.setPgender(pgender.getText());
-        per.setPage(Integer.parseInt(page.getText()));
-        per.setPbg(pbg.getText());
-        per.setPw(Integer.parseInt(pw.getText()));
-        per.setPpswd(ppswd.getText());
-        
-        JOptionPane.showMessageDialog(this, "Information Saved Successfully !!");
-        
-        displayPer();
-        pname.setText("");
-        pid.setText("");
-        pphone.setText("");
-        pemail.setText("");
-        pgender.setText("");
-        page.setText("");
-        pbg.setText("");
-        pw.setText("");
-        ppswd.setText("");
-    }//GEN-LAST:event_pcreateActionPerformed
-
-    private void pdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pdeleteActionPerformed
-        // TODO add your handling code here:
-        int selected = pTable.getSelectedRow();
-        
-        if(selected<0){
-            JOptionPane.showMessageDialog(this, "Select The Row To Delete");
-            return;
-        }
-        DefaultTableModel model = (DefaultTableModel) pTable.getModel();
-        Person selectedPer = (Person) model.getValueAt(selected, 0);
-        
-       // doctordatabase.deleteemp(selectedEmp);
-        persondatabase.deletedper(selectedPer);
-        JOptionPane.showMessageDialog(this, "Entry Removed !!");
-        
-        displayPer();
-        pname.setText("");
-        pid.setText("");
-        pphone.setText("");
-        pemail.setText("");
-        pgender.setText("");
-        page.setText("");
-        pbg.setText("");
-        pw.setText("");
-        ppswd.setText("");
-    }//GEN-LAST:event_pdeleteActionPerformed
-
-    private void pupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pupdateActionPerformed
-        // TODO add your handling code here:
-        int i = pTable.getSelectedRow();
-        DefaultTableModel model = (DefaultTableModel) pTable.getModel();
-        if(i >= 0)
-        {           
-            Person per = persondatabase.addNewPerson();
-
-            model.setValueAt(pname.getText(), i, 0);
-            model.setValueAt(pid.getText(), i, 1);
-            model.setValueAt(pphone.getText(), i, 2);
-            model.setValueAt(pemail.getText(), i, 3);
-            model.setValueAt(pgender.getText(), i, 4);
-            model.setValueAt(page.getText(), i, 5);
-            model.setValueAt(pbg.getText(), i, 6);
-            model.setValueAt(pw.getText(), i, 7);
-                        model.setValueAt(ppswd.getText(), i, 8);
-
-           
-           
-             JOptionPane.showMessageDialog(this, "Updated Successfully !!");
-
-        }
-        else {
-            JOptionPane.showMessageDialog(null, "Error");
-        }
-    }//GEN-LAST:event_pupdateActionPerformed
+        dispose();
+        MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        mjf.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void cTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cTableMouseClicked
         // TODO add your handling code here:
-         int selected = cTable.getSelectedRow();
-        
+        int selected = cTable.getSelectedRow();
+
         if(selected<0){
             JOptionPane.showMessageDialog(this, "Select The Row To View");
             return;
         }
         DefaultTableModel model = (DefaultTableModel) cTable.getModel();
-        
+
         cname.setText(model.getValueAt(cTable.getSelectedRow(), 0).toString());
         cid.setText(model.getValueAt(cTable.getSelectedRow(), 1).toString());
         ccity.setText(model.getValueAt(cTable.getSelectedRow(), 2).toString());
         cstate.setText(model.getValueAt(cTable.getSelectedRow(), 3).toString());
         cpin.setText(model.getValueAt(cTable.getSelectedRow(), 4).toString());
         ccountry.setText(model.getValueAt(cTable.getSelectedRow(), 5).toString());
-     
+
     }//GEN-LAST:event_cTableMouseClicked
 
     private void cidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidActionPerformed
@@ -1479,7 +1495,7 @@ public class System2 extends javax.swing.JFrame {
     private void ccreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ccreateActionPerformed
         // TODO add your handling code here:
         model.Community com = communitydatabase.addNewCommunity();
-        
+
         //doc.setDocname(docname.getText());
         com.setCname(cname.getText());
         com.setCid(Integer.parseInt(cid.getText()));
@@ -1487,10 +1503,9 @@ public class System2 extends javax.swing.JFrame {
         com.setCpin(Integer.parseInt(cpin.getText()));
         com.setCcountry(ccountry.getText());
         com.setCcity(ccity.getText());
-       
-        
+
         JOptionPane.showMessageDialog(this, "Information Saved Successfully !!");
-        
+
         displayCom();
         cname.setText("");
         cid.setText("");
@@ -1502,19 +1517,19 @@ public class System2 extends javax.swing.JFrame {
 
     private void cdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdeleteActionPerformed
         // TODO add your handling code here:
-                int selected = cTable.getSelectedRow();
-        
+        int selected = cTable.getSelectedRow();
+
         if(selected<0){
             JOptionPane.showMessageDialog(this, "Select The Row To Delete");
             return;
         }
         DefaultTableModel model = (DefaultTableModel) cTable.getModel();
         Community selectedCom = (Community) model.getValueAt(selected, 0);
-        
-       // doctordatabase.deleteemp(selectedEmp);
+
+        // doctordatabase.deleteemp(selectedEmp);
         communitydatabase.deletedcom(selectedCom);
         JOptionPane.showMessageDialog(this, "Entry Removed !!");
-        
+
         displayCom();
         cname.setText("");
         cid.setText("");
@@ -1522,7 +1537,6 @@ public class System2 extends javax.swing.JFrame {
         ccity.setText("");
         cpin.setText("");
         ccountry.setText("");
-
     }//GEN-LAST:event_cdeleteActionPerformed
 
     private void cupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cupdateActionPerformed
@@ -1530,7 +1544,7 @@ public class System2 extends javax.swing.JFrame {
         int i = cTable.getSelectedRow();
         DefaultTableModel model = (DefaultTableModel) cTable.getModel();
         if(i >= 0)
-        {           
+        {
             Community com = communitydatabase.addNewCommunity();
 
             model.setValueAt(cname.getText(), i, 0);
@@ -1539,9 +1553,8 @@ public class System2 extends javax.swing.JFrame {
             model.setValueAt(ccity.getText(), i, 3);
             model.setValueAt(cpin.getText(), i, 4);
             model.setValueAt(ccountry.getText(), i, 5);
-            
-           
-             JOptionPane.showMessageDialog(this, "Updated Successfully !!");
+
+            JOptionPane.showMessageDialog(this, "Updated Successfully !!");
 
         }
         else {
@@ -1549,60 +1562,13 @@ public class System2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cupdateActionPerformed
 
-    private void docnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_docnameActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         dispose();
         MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
         mjf.setVisible(true);
-        
-
-        // close current frame
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void hpswdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hpswdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hpswdActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-         dispose();
-        MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
-        mjf.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-         dispose();
-        MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
-        mjf.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-         dispose();
-        MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
-        mjf.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void ppswdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppswdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ppswdActionPerformed
-
-    private void didActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_didActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_didActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    
-    
-    private void displayDoc(){
+private void displayDoc(){
         
        DefaultTableModel model = (DefaultTableModel) docTable.getModel();
        model.setRowCount(0);
@@ -1628,7 +1594,6 @@ public class System2 extends javax.swing.JFrame {
            model.addRow(row1);
     }
     }
-    
     private void displayPer(){
         DefaultTableModel model = (DefaultTableModel) pTable.getModel();
        model.setRowCount(0);
@@ -1645,14 +1610,14 @@ public class System2 extends javax.swing.JFrame {
            row2[5] = per.getPage();
            row2[6] = per.getPbg();
            row2[7] = per.getPw();
-           row2[8] = per.getPpswd();
+                      row2[8] = per.getPpswd();
 
            
            model.addRow(row2);
            
        }
     }
-        private void displayCom() {
+private void displayCom() {
                 
        DefaultTableModel model = (DefaultTableModel) cTable.getModel();
        model.setRowCount(0);
@@ -1694,6 +1659,11 @@ public class System2 extends javax.swing.JFrame {
            
        }
     }
+        
+    /**
+     * @param args the command line arguments
+     */
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable cTable;
@@ -1768,6 +1738,7 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1780,8 +1751,6 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel_hospital;
     private javax.swing.JPanel jPanel_patient;
     private javax.swing.JPanel jPanel_patient1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1801,8 +1770,4 @@ public class System2 extends javax.swing.JFrame {
     private javax.swing.JButton pupdate;
     private javax.swing.JTextField pw;
     // End of variables declaration//GEN-END:variables
-
-    
-
-
 }
