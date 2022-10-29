@@ -16,6 +16,8 @@ public class Community {
     private int cpin;
     private String ccountry;
 
+
+     
     public String getCname() {
         return cname;
     }
@@ -68,3 +70,4 @@ public class Community {
         return cname;
     }
 }
+

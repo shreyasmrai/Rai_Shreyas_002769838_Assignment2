@@ -20,6 +20,24 @@ public class HospitalDatabase {
     public ArrayList<Hospital> getHospitalDatabase() {
         return hospital;
     }
+    
+    /*public Hospital getHospital(String username, String pswd){
+        for(Hospital h: hospital){
+            if(h.getHname().equals(username) && h.getHpswd().equals(pswd)){
+                return h;
+            }
+        }
+        return null;
+    }*/
+    
+    public Hospital getHospi(String username, String pswd){
+        for(Hospital h: hospital){
+            if(h.getHname().equals(username) && h.getHpswd().equals(pswd)){
+                return h;
+            }
+        }
+        return null;
+    }
 
     public void setHospitalDatabase(ArrayList<Hospital> hospital) {
         this.hospital = hospital;

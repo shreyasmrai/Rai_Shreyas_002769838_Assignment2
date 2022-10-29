@@ -5,8 +5,11 @@
 package UI;
 
 import javax.swing.JOptionPane;
+import model.AppointmentDatabase;
 import model.CommunityDatabase;
+import model.Doctor;
 import model.DoctorDatabase;
+import model.Hospital;
 import model.HospitalDatabase;
 import model.PersonDatabase;
 
@@ -23,7 +26,8 @@ public class Hospital1 extends javax.swing.JPanel {
     PersonDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
-    public Hospital1(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
+    
+    public Hospital1(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
         initComponents();
         
         this.doctordatabase=doctordatabase;
@@ -139,13 +143,24 @@ public class Hospital1 extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if( userP.getText().matches("hospital") && pswdP.getText().matches("hospital")){
-            Hospital2 hospital2 = new Hospital2(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
-            hospital2.setVisible(true);
+        String username = userP.getText();
+        String pswd = pswdP.getText();
+        //Hospital h = hospitaldatabase.getHospital(username, pswd);
+        Hospital h = hospitaldatabase.getHospi(username, pswd);
+        
+         /*if(h!=null){
+             Hospital2 hospital;
+            hospital = new Hospital2(h, doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+             hospital.setVisible(true);*/
+         if(h!=null){
+             Hospital2 hos = new Hospital2(h,doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+             hos.setVisible(true);
+             
+         
         }else{
             JOptionPane.showMessageDialog(this, "Incorrect credential");
         }
-
+         
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

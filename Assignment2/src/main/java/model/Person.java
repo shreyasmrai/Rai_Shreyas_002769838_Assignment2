@@ -8,7 +8,7 @@ package model;
  *
  * @author shreyasrai
  */
-public class Person {
+public class Person extends Hospital {
     private String pname;
     private int page;
     private String pgender;
@@ -18,6 +18,16 @@ public class Person {
     private int pw;
     private int pid;
     private String ppswd;
+    
+    private Doctor doctor;
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
 
     public String getPpswd() {
         return ppswd;

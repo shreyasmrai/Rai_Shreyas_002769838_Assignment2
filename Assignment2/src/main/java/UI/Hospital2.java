@@ -28,16 +28,21 @@ public class Hospital2 extends javax.swing.JFrame {
     PersonDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
+    Hospital hospital;
     
-    public Hospital2(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
+    public Hospital2(Hospital h, DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
         initComponents();
+        this.doctordatabase = doctordatabase;
         this.persondatabase = persondatabase;
         this.communitydatabase = communitydatabase;
         this.hospitaldatabase = hospitaldatabase;
+        this.hospital=hospital;
         displayDoc();
         displayPer();
         displayCom();
         displayHos();
+        
+        //fillHospitalDetails();
     }
 
     /**
@@ -65,7 +70,6 @@ public class Hospital2 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         docgender = new javax.swing.JTextField();
         doccreate = new javax.swing.JButton();
-        docdelete = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         docage = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -100,7 +104,6 @@ public class Hospital2 extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         pw = new javax.swing.JTextField();
         pcreate = new javax.swing.JButton();
-        pdelete = new javax.swing.JButton();
         pupdate = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -126,7 +129,6 @@ public class Hospital2 extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         hPIN = new javax.swing.JTextField();
         hcreate = new javax.swing.JButton();
-        hdelete = new javax.swing.JButton();
         hupdate = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
@@ -148,7 +150,6 @@ public class Hospital2 extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         ccountry = new javax.swing.JTextField();
         ccreate = new javax.swing.JButton();
-        cdelete = new javax.swing.JButton();
         cupdate = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
@@ -232,13 +233,6 @@ public class Hospital2 extends javax.swing.JFrame {
             }
         });
 
-        docdelete.setText("DELETE");
-        docdelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                docdeleteActionPerformed(evt);
-            }
-        });
-
         jLabel5.setText("Age");
 
         jLabel6.setText("Speciality");
@@ -290,13 +284,13 @@ public class Hospital2 extends javax.swing.JFrame {
                             .addComponent(dochospital, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(42, 42, 42)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dochospi, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                            .addComponent(docname)
-                            .addComponent(docphone)
-                            .addComponent(docemail)
-                            .addComponent(docgender))
-                        .addGap(126, 126, 126)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(dochospi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                            .addComponent(docphone, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(docemail, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(docgender, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(docname))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 358, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel35)
@@ -327,9 +321,7 @@ public class Hospital2 extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(doccreate)
-                .addGap(38, 38, 38)
-                .addComponent(docdelete)
-                .addGap(38, 38, 38)
+                .addGap(153, 153, 153)
                 .addComponent(jButton1)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
@@ -381,7 +373,6 @@ public class Hospital2 extends javax.swing.JFrame {
                         .addGap(43, 43, 43)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(doccreate)
-                            .addComponent(docdelete)
                             .addComponent(jButton1)
                             .addComponent(jButton3))
                         .addGap(143, 143, 143))
@@ -476,13 +467,6 @@ public class Hospital2 extends javax.swing.JFrame {
             }
         });
 
-        pdelete.setText("DELETE");
-        pdelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pdeleteActionPerformed(evt);
-            }
-        });
-
         pupdate.setText("UPDATE");
         pupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -553,9 +537,7 @@ public class Hospital2 extends javax.swing.JFrame {
                             .addGroup(jPanel_hospitalLayout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(pcreate)
-                                .addGap(38, 38, 38)
-                                .addComponent(pdelete)
-                                .addGap(38, 38, 38)
+                                .addGap(153, 153, 153)
                                 .addComponent(pupdate)
                                 .addGap(144, 144, 144)))
                         .addComponent(jButton2)
@@ -618,7 +600,6 @@ public class Hospital2 extends javax.swing.JFrame {
                         .addGap(61, 61, 61)))
                 .addGroup(jPanel_hospitalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pcreate)
-                    .addComponent(pdelete)
                     .addComponent(pupdate)
                     .addComponent(jButton2))
                 .addGap(158, 158, 158))
@@ -699,13 +680,6 @@ public class Hospital2 extends javax.swing.JFrame {
             }
         });
 
-        hdelete.setText("DELETE");
-        hdelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hdeleteActionPerformed(evt);
-            }
-        });
-
         hupdate.setText("UPDATE");
         hupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -772,9 +746,7 @@ public class Hospital2 extends javax.swing.JFrame {
                             .addGroup(jPanel_patientLayout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(hcreate)
-                                .addGap(38, 38, 38)
-                                .addComponent(hdelete)
-                                .addGap(38, 38, 38)
+                                .addGap(153, 153, 153)
                                 .addComponent(hupdate)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton4)
@@ -837,7 +809,6 @@ public class Hospital2 extends javax.swing.JFrame {
                         .addGap(61, 61, 61)))
                 .addGroup(jPanel_patientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(hcreate)
-                    .addComponent(hdelete)
                     .addComponent(hupdate)
                     .addComponent(jButton4))
                 .addGap(158, 158, 158))
@@ -914,13 +885,6 @@ public class Hospital2 extends javax.swing.JFrame {
             }
         });
 
-        cdelete.setText("DELETE");
-        cdelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cdeleteActionPerformed(evt);
-            }
-        });
-
         cupdate.setText("UPDATE");
         cupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -972,9 +936,7 @@ public class Hospital2 extends javax.swing.JFrame {
                             .addGroup(jPanel_patient1Layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(ccreate)
-                                .addGap(38, 38, 38)
-                                .addComponent(cdelete)
-                                .addGap(38, 38, 38)
+                                .addGap(153, 153, 153)
                                 .addComponent(cupdate)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton5)
@@ -1025,7 +987,6 @@ public class Hospital2 extends javax.swing.JFrame {
                         .addGap(61, 61, 61)))
                 .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ccreate)
-                    .addComponent(cdelete)
                     .addComponent(cupdate)
                     .addComponent(jButton5))
                 .addGap(158, 158, 158))
@@ -1039,7 +1000,7 @@ public class Hospital2 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -1127,34 +1088,6 @@ public class Hospital2 extends javax.swing.JFrame {
         dpswd.setText("");
         did.setText("");
     }//GEN-LAST:event_doccreateActionPerformed
-
-    private void docdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docdeleteActionPerformed
-        // TODO add your handling code here:
-        int selected = docTable.getSelectedRow();
-
-        if(selected<0){
-            JOptionPane.showMessageDialog(this, "Select The Row To Delete");
-            return;
-        }
-        DefaultTableModel model = (DefaultTableModel) docTable.getModel();
-        Doctor selectedDoc = (Doctor) model.getValueAt(selected, 0);
-
-        // doctordatabase.deleteemp(selectedEmp);
-        doctordatabase.deletedoc(selectedDoc);
-        JOptionPane.showMessageDialog(this, "Entry Removed !!");
-
-        displayDoc();
-        docname.setText("");
-        dochospi.setText("");
-        docphone.setText("");
-        docemail.setText("");
-        docgender.setText("");
-        docage.setText("");
-        docspeciality.setText("");
-        docexperience.setText("");
-        dpswd.setText("");
-        did.setText("");
-    }//GEN-LAST:event_docdeleteActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -1261,33 +1194,6 @@ public class Hospital2 extends javax.swing.JFrame {
         ppswd.setText("");
     }//GEN-LAST:event_pcreateActionPerformed
 
-    private void pdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pdeleteActionPerformed
-        // TODO add your handling code here:
-        int selected = pTable.getSelectedRow();
-
-        if(selected<0){
-            JOptionPane.showMessageDialog(this, "Select The Row To Delete");
-            return;
-        }
-        DefaultTableModel model = (DefaultTableModel) pTable.getModel();
-        Person selectedPer = (Person) model.getValueAt(selected, 0);
-
-        // doctordatabase.deleteemp(selectedEmp);
-        persondatabase.deletedper(selectedPer);
-        JOptionPane.showMessageDialog(this, "Entry Removed !!");
-
-        displayPer();
-        pname.setText("");
-        pid.setText("");
-        pphone.setText("");
-        pemail.setText("");
-        pgender.setText("");
-        page.setText("");
-        pbg.setText("");
-        pw.setText("");
-        ppswd.setText("");
-    }//GEN-LAST:event_pdeleteActionPerformed
-
     private void pupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pupdateActionPerformed
         // TODO add your handling code here:
         int i = pTable.getSelectedRow();
@@ -1392,34 +1298,6 @@ public class Hospital2 extends javax.swing.JFrame {
         hpswd.setText("");
     }//GEN-LAST:event_hcreateActionPerformed
 
-    private void hdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hdeleteActionPerformed
-        // TODO add your handling code here:
-
-        int selected = hTable.getSelectedRow();
-
-        if(selected<0){
-            JOptionPane.showMessageDialog(this, "Select The Row To Delete");
-            return;
-        }
-        DefaultTableModel model = (DefaultTableModel) hTable.getModel();
-        Hospital selectedHos = (Hospital) model.getValueAt(selected, 0);
-
-        //hospitaldatabase.deletedhos(selectedHos);
-        hospitaldatabase.deletedhos(selectedHos);
-        JOptionPane.showMessageDialog(this, "Entry Removed !!");
-
-        displayHos();
-        hname.setText("");
-        hid.setText("");
-        hphone.setText("");
-        hemail.setText("");
-        hcommunity.setText("");
-        hcity.setText("");
-        hstate.setText("");
-        hPIN.setText("");
-        hpswd.setText("");
-    }//GEN-LAST:event_hdeleteActionPerformed
-
     private void hupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hupdateActionPerformed
         // TODO add your handling code here:
         int i = hTable.getSelectedRow();
@@ -1514,30 +1392,6 @@ public class Hospital2 extends javax.swing.JFrame {
         cpin.setText("");
         ccountry.setText("");
     }//GEN-LAST:event_ccreateActionPerformed
-
-    private void cdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdeleteActionPerformed
-        // TODO add your handling code here:
-        int selected = cTable.getSelectedRow();
-
-        if(selected<0){
-            JOptionPane.showMessageDialog(this, "Select The Row To Delete");
-            return;
-        }
-        DefaultTableModel model = (DefaultTableModel) cTable.getModel();
-        Community selectedCom = (Community) model.getValueAt(selected, 0);
-
-        // doctordatabase.deleteemp(selectedEmp);
-        communitydatabase.deletedcom(selectedCom);
-        JOptionPane.showMessageDialog(this, "Entry Removed !!");
-
-        displayCom();
-        cname.setText("");
-        cid.setText("");
-        cstate.setText("");
-        ccity.setText("");
-        cpin.setText("");
-        ccountry.setText("");
-    }//GEN-LAST:event_cdeleteActionPerformed
 
     private void cupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cupdateActionPerformed
         // TODO add your handling code here:
@@ -1660,17 +1514,28 @@ private void displayCom() {
        }
     }
         
+        
     /**
      * @param args the command line arguments
      */
+    /*private void fillHospitalDetails() {
     
+    hname.setText(hospital.getHname());
+    hid.setText(Integer.toString(hospital.getHid()));
+    hphone.setText(Integer.toString(hospital.getHphone()));
+    hemail.setText(hospital.getHemail());
+    hcommunity.setText(hospital.getHcommunity());
+    hcity.setText(hospital.getHcity());
+    hstate.setText(hospital.getHstate());
+    hPIN.setText(Integer.toString(hospital.gethPIN()));
+    
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable cTable;
     private javax.swing.JTextField ccity;
     private javax.swing.JTextField ccountry;
     private javax.swing.JButton ccreate;
-    private javax.swing.JButton cdelete;
     private javax.swing.JTextField cid;
     private javax.swing.JTextField cname;
     private javax.swing.JTextField cpin;
@@ -1680,7 +1545,6 @@ private void displayCom() {
     private javax.swing.JTable docTable;
     private javax.swing.JTextField docage;
     private javax.swing.JButton doccreate;
-    private javax.swing.JButton docdelete;
     private javax.swing.JTextField docemail;
     private javax.swing.JTextField docexperience;
     private javax.swing.JTextField docgender;
@@ -1698,7 +1562,6 @@ private void displayCom() {
     private javax.swing.JTextField hcity;
     private javax.swing.JTextField hcommunity;
     private javax.swing.JButton hcreate;
-    private javax.swing.JButton hdelete;
     private javax.swing.JTextField hemail;
     private javax.swing.JTextField hid;
     private javax.swing.JTextField hname;
@@ -1760,7 +1623,6 @@ private void displayCom() {
     private javax.swing.JTextField page;
     private javax.swing.JTextField pbg;
     private javax.swing.JButton pcreate;
-    private javax.swing.JButton pdelete;
     private javax.swing.JTextField pemail;
     private javax.swing.JTextField pgender;
     private javax.swing.JTextField pid;

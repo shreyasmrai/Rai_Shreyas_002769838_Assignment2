@@ -5,6 +5,7 @@
 package UI;
 
 import javax.swing.JOptionPane;
+import model.AppointmentDatabase;
 import model.CommunityDatabase;
 import model.DoctorDatabase;
 import model.HospitalDatabase;
@@ -26,14 +27,16 @@ public class Patient1 extends javax.swing.JPanel {
     PersonDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
+    AppointmentDatabase appointmentdatabase;
     
-    public Patient1(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
+    public Patient1(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
         initComponents();
         
         this.doctordatabase=doctordatabase;
         this.persondatabase=persondatabase;
         this.communitydatabase=communitydatabase;
         this.hospitaldatabase=hospitaldatabase;
+        this.appointmentdatabase=appointmentdatabase;
     }
 
     /**
@@ -124,11 +127,12 @@ public class Patient1 extends javax.swing.JPanel {
         String pswd = pswdP.getText();
         Person p = persondatabase.getPerson(username, pswd);
         
-        //if( userP.getText().matches("patient") && pswdP.getText().matches("patient")){
-         //   Patient2 patient = new Patient2(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
-         //   patient.setVisible(true);
+        /*if( userP.getText().matches("patient") && pswdP.getText().matches("patient")){
+        Patient2 patient = new Patient2(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        patient.setVisible(true);
+        }*/
          if(p!=null){
-             Patient2 patient = new Patient2(p,doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+             Patient2 patient = new Patient2(p,doctordatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
              patient.setVisible(true);
             //MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase); 
             //mjf.setVisible(false);

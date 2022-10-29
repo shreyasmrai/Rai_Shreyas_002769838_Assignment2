@@ -5,6 +5,7 @@
 package UI;
 
 import javax.swing.JOptionPane;
+import model.AppointmentDatabase;
 import model.CommunityDatabase;
 import model.Doctor;
 import model.DoctorDatabase;
@@ -25,14 +26,16 @@ public class Doctor1 extends javax.swing.JPanel {
     PersonDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
+    AppointmentDatabase appointmentdatabase;
     
-    public Doctor1(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
+    public Doctor1(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
         initComponents();
         
         this.doctordatabase=doctordatabase;
         this.persondatabase=persondatabase;
         this.communitydatabase=communitydatabase;
         this.hospitaldatabase=hospitaldatabase;
+        this.appointmentdatabase=appointmentdatabase;
     }
 
     /**
@@ -121,14 +124,9 @@ public class Doctor1 extends javax.swing.JPanel {
         String pswd = pswdP.getText();
         Doctor d = doctordatabase.getDoctor(username, pswd);
         
-        //if( userP.getText().matches("patient") && pswdP.getText().matches("patient")){
-         //   Patient2 patient = new Patient2(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
-         //   patient.setVisible(true);
          if(d!=null){
-             Doctor2 doctor = new Doctor2(d,doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+             Doctor2 doctor = new Doctor2(d,doctordatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
              doctor.setVisible(true);
-            //MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase); 
-            //mjf.setVisible(false);
           
         }else{
             JOptionPane.showMessageDialog(this, "Incorrect credential");

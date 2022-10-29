@@ -6,7 +6,9 @@ package UI;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import model.AppointmentDatabase;
 import model.CommunityDatabase;
+import model.Doctor;
 import model.DoctorDatabase;
 import model.HospitalDatabase;
 import model.Person;
@@ -25,14 +27,16 @@ public class Patient2 extends javax.swing.JFrame {
     DoctorDatabase doctordatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
+    AppointmentDatabase appointmentdatabase;
     Person person;
-    public Patient2(Person person, DoctorDatabase doctordatabase, PersonDatabase persondatabase1, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
+    public Patient2(Person person, DoctorDatabase doctordatabase, PersonDatabase persondatabase1, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
         initComponents();
         
         this.doctordatabase=doctordatabase;
         this.persondatabase=persondatabase;
         this.communitydatabase=communitydatabase;
         this.hospitaldatabase=hospitaldatabase;
+        this.appointmentdatabase=appointmentdatabase;
         this.person = person;
         
         fillPersonDetails();
@@ -51,18 +55,7 @@ public class Patient2 extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        cTable = new javax.swing.JTable();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        dropcomm = new javax.swing.JComboBox<>();
-        drophosp = new javax.swing.JComboBox<>();
-        dropdoc = new javax.swing.JComboBox<>();
-        droptime = new javax.swing.JComboBox<>();
-        jLabel18 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        patencTable = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -85,6 +78,21 @@ public class Patient2 extends javax.swing.JFrame {
         pbg = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        comdrop = new javax.swing.JComboBox<>();
+        hosdrop = new javax.swing.JComboBox<>();
+        docdrop = new javax.swing.JComboBox<>();
+        datedrop = new javax.swing.JComboBox<>();
+        jLabel18 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        com = new javax.swing.JTextField();
+        hos = new javax.swing.JTextField();
+        doc = new javax.swing.JTextField();
+        date = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,7 +101,7 @@ public class Patient2 extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(0, 153, 153));
         jLabel8.setText("ENCOUNTER HISTORY");
 
-        cTable.setModel(new javax.swing.table.DefaultTableModel(
+        patencTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -112,7 +120,7 @@ public class Patient2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(cTable);
+        jScrollPane4.setViewportView(patencTable);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -131,98 +139,10 @@ public class Patient2 extends javax.swing.JFrame {
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(372, Short.MAX_VALUE))
+                .addContainerGap(373, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Encounter History", jPanel3);
-
-        jLabel14.setText("COMMUNITY");
-
-        jLabel15.setText("HOSPITAL");
-
-        jLabel16.setText("DOCTOR");
-
-        jLabel17.setText("DATE AND TIME");
-
-        dropcomm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        drophosp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        dropdoc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        droptime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel18.setBackground(new java.awt.Color(0, 204, 204));
-        jLabel18.setFont(new java.awt.Font("Showcard Gothic", 1, 36)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel18.setText("BOOK APPOINTMENT");
-
-        jButton1.setText("CONFIRM");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(280, 280, 280)
-                        .addComponent(jLabel18))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(386, 386, 386)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(327, 327, 327)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(droptime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(dropdoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(drophosp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addGap(102, 102, 102)
-                                .addComponent(dropcomm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(236, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(dropcomm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(drophosp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(dropdoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel17)
-                    .addComponent(droptime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
-                .addComponent(jButton1)
-                .addContainerGap(277, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Book Appointment", jPanel4);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1000, 1000));
 
@@ -416,6 +336,141 @@ public class Patient2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Patient Details", jPanel1);
 
+        jLabel14.setText("COMMUNITY");
+
+        jLabel15.setText("HOSPITAL");
+
+        jLabel16.setText("DOCTOR");
+
+        jLabel17.setText("DATE AND TIME");
+
+        comdrop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Roxbury", "Dorchester", "Fenway", "Park Street" }));
+        comdrop.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comdropItemStateChanged(evt);
+            }
+        });
+        comdrop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comdropActionPerformed(evt);
+            }
+        });
+
+        hosdrop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Turfs Medical", "Boston Medical", "Apollo", " " }));
+        hosdrop.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                hosdropItemStateChanged(evt);
+            }
+        });
+
+        docdrop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dr. Joseph", "Dr. Brown", "Dr. Biden", "Dr. Obama" }));
+        docdrop.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                docdropItemStateChanged(evt);
+            }
+        });
+
+        datedrop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" }));
+        datedrop.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                datedropItemStateChanged(evt);
+            }
+        });
+
+        jLabel18.setBackground(new java.awt.Color(0, 204, 204));
+        jLabel18.setFont(new java.awt.Font("Showcard Gothic", 1, 36)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel18.setText("BOOK APPOINTMENT");
+
+        jButton1.setText("CONFIRM");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        doc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                docActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(212, 212, 212)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(47, 47, 47)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addComponent(jLabel15)
+                                                .addGap(92, 92, 92))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                                .addComponent(jLabel14)
+                                                .addGap(75, 75, 75)))
+                                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                            .addComponent(jLabel16)
+                                            .addGap(98, 98, 98)))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(jLabel17)
+                                        .addGap(120, 120, 120)))
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(docdrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(hosdrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(comdrop, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(datedrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(96, 96, 96)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(hos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(doc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(376, 376, 376)
+                        .addComponent(jButton1)))
+                .addContainerGap(151, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(comdrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(hosdrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(docdrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(doc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel17)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(datedrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(57, 57, 57)
+                .addComponent(jButton1)
+                .addContainerGap(263, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Book Appointment", jPanel4);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -481,17 +536,48 @@ public class Patient2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void docActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_docActionPerformed
+
+    private void comdropItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comdropItemStateChanged
+        // TODO add your handling code here:
+        dispcommunity();
+    }//GEN-LAST:event_comdropItemStateChanged
+
+    private void hosdropItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_hosdropItemStateChanged
+        // TODO add your handling code here:
+        disphosp();
+    }//GEN-LAST:event_hosdropItemStateChanged
+
+    private void docdropItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_docdropItemStateChanged
+        // TODO add your handling code here:
+        dispdoc();
+    }//GEN-LAST:event_docdropItemStateChanged
+
+    private void datedropItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_datedropItemStateChanged
+        // TODO add your handling code here:
+        dispdate();
+    }//GEN-LAST:event_datedropItemStateChanged
+
+    private void comdropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comdropActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comdropActionPerformed
+
     /**
      * @param args the command line arguments
      */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable cTable;
-    private javax.swing.JComboBox<String> dropcomm;
-    private javax.swing.JComboBox<String> dropdoc;
-    private javax.swing.JComboBox<String> drophosp;
-    private javax.swing.JComboBox<String> droptime;
+    private javax.swing.JTextField com;
+    private javax.swing.JComboBox<String> comdrop;
+    private javax.swing.JTextField date;
+    private javax.swing.JComboBox<String> datedrop;
+    private javax.swing.JTextField doc;
+    private javax.swing.JComboBox<String> docdrop;
+    private javax.swing.JTextField hos;
+    private javax.swing.JComboBox<String> hosdrop;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -517,6 +603,7 @@ public class Patient2 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField page;
+    private javax.swing.JTable patencTable;
     private javax.swing.JTextField pbg;
     private javax.swing.JTextField pemail;
     private javax.swing.JTextField pgender;
@@ -537,6 +624,23 @@ public class Patient2 extends javax.swing.JFrame {
     pw.setText(Integer.toString(person.getPw()));
     pbg.setText(person.getPbg());
     }
+
+    private void dispcommunity() {
+        com.setText(comdrop.getSelectedItem().toString());
+    }
+    private void disphosp() {
+        hos.setText(hosdrop.getSelectedItem().toString());
+    }
+    private void dispdoc() {
+        doc.setText(docdrop.getSelectedItem().toString());
+    }
+    private void dispdate() {
+        date.setText(datedrop.getSelectedItem().toString());
+    }
+    
+    
+    
+    
 }
 //per.setPid(Integer.parseInt(pid.getText()));
 //com.setCpin(Integer.parseInt(cpin.getText()));

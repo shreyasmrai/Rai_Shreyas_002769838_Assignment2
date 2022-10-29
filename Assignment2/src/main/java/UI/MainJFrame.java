@@ -10,6 +10,7 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import model.AppointmentDatabase;
 import model.CommunityDatabase;
 import model.Doctor;
 import model.DoctorDatabase;
@@ -32,7 +33,7 @@ public class MainJFrame extends javax.swing.JFrame {
     PersonDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
-    
+    AppointmentDatabase appointmentdatabase;
     
     
     ImageIcon myImage;
@@ -54,6 +55,7 @@ public class MainJFrame extends javax.swing.JFrame {
         this.doctordatabase=doctordatabase;
         this.communitydatabase=communitydatabase;
         this.hospitaldatabase=hospitaldatabase;
+        this.appointmentdatabase=appointmentdatabase;
         //jDisplayImage.setIcon(setIcon( "/Users/shreyasrai/Desktop/CO-OP/Rai_Shreyas_002769838/Assignment2/hospi.jpg"));
     }
 
@@ -115,6 +117,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(0, 204, 153));
         jButton5.setText("Community Admin");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton5);
 
         jButton4.setBackground(new java.awt.Color(0, 204, 153));
@@ -196,7 +203,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        System1 systempanel = new System1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        System1 systempanel = new System1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         //jSplitPane1.setRightComponent(systempanel);    // TODO add your handling code here:
         jSplitPane1.setBottomComponent(systempanel);        // TODO add your handling code here:
         
@@ -204,21 +211,27 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Hospital1 hospitalpanel = new Hospital1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        Hospital1 hospitalpanel = new Hospital1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         jSplitPane1.setBottomComponent(hospitalpanel);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     Doctor1 doctorpanel = new Doctor1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+     Doctor1 doctorpanel = new Doctor1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         jSplitPane1.setBottomComponent(doctorpanel);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Patient1 patientpanel = new Patient1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        Patient1 patientpanel = new Patient1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         jSplitPane1.setBottomComponent(patientpanel);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        Community1 com = new Community1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+        jSplitPane1.setBottomComponent(com);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
    
 

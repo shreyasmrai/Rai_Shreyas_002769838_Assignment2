@@ -5,6 +5,7 @@
 package UI;
 
 import javax.swing.JOptionPane;
+import model.AppointmentDatabase;
 import model.CommunityDatabase;
 import model.DoctorDatabase;
 import model.HospitalDatabase;
@@ -23,7 +24,7 @@ public class System1 extends javax.swing.JPanel {
     PersonDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
-    public System1(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
+    public System1(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
         initComponents();
         
         this.doctordatabase=doctordatabase;

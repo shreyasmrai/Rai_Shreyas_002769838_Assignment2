@@ -1316,7 +1316,7 @@ public class System2 extends javax.swing.JFrame {
             model.setValueAt(hcity.getText(), i, 5);
             model.setValueAt(hstate.getText(), i, 6);
             model.setValueAt(hPIN.getText(), i, 7);
-                        model.setValueAt(hpswd.getText(), i, 8);
+            model.setValueAt(hpswd.getText(), i, 8);
 
            
            

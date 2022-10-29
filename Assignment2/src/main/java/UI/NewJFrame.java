@@ -8,6 +8,9 @@ import model.CommunityDatabase;
 import model.DoctorDatabase;
 import model.HospitalDatabase;
 import model.PersonDatabase;
+import model.Appointment;
+import model.AppointmentDatabase;
+import model.Community;
 
 /**
  *
@@ -22,6 +25,7 @@ public class NewJFrame extends javax.swing.JFrame {
     PersonDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
+    AppointmentDatabase appointmentdatabase;
     
     public NewJFrame() {
         initComponents();
@@ -29,6 +33,8 @@ public class NewJFrame extends javax.swing.JFrame {
         persondatabase = new PersonDatabase();
         communitydatabase=new CommunityDatabase();
         hospitaldatabase=new HospitalDatabase();
+        appointmentdatabase=new AppointmentDatabase();
+        //initDatabase();
     }
 
     /**
@@ -117,4 +123,12 @@ public class NewJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
+
+//    private void initDatabase() {
+//        //create commmunity
+//        Community c1=new Community("Roxbury","1","Boston","MA","02119","USA");
+//        Community c2=new Community("Dorchester","2","Boston","MA","02115","USA");
+//        communitydatabase.addNewCommunity(c1);
+//        communitydatabase.addNewCommunity(c2);
+//    }
 }

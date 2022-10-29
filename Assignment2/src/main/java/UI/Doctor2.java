@@ -4,6 +4,9 @@
  */
 package UI;
 
+import javax.swing.table.DefaultTableModel;
+import model.Appointment;
+import model.AppointmentDatabase;
 import model.CommunityDatabase;
 import model.Doctor;
 import model.DoctorDatabase;
@@ -24,15 +27,17 @@ public class Doctor2 extends javax.swing.JFrame {
     DoctorDatabase doctordatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
+    AppointmentDatabase appointmentdatabase;
     Person person;
     Doctor doctor;
-    public Doctor2(Doctor doctor, DoctorDatabase doctordatabase, PersonDatabase persondatabase1, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
+    public Doctor2(Doctor doctor, DoctorDatabase doctordatabase, PersonDatabase persondatabase1, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase1) {
         initComponents();
         
         this.doctordatabase=doctordatabase;
         this.persondatabase=persondatabase;
         this.communitydatabase=communitydatabase;
         this.hospitaldatabase=hospitaldatabase;
+        this.appointmentdatabase=appointmentdatabase;
         this.doctor = doctor;
         
         fillPDoctorDetails();
@@ -52,6 +57,7 @@ public class Doctor2 extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         cTable = new javax.swing.JTable();
+        jButton4 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -92,6 +98,12 @@ public class Doctor2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
+
         jLabel8.setBackground(new java.awt.Color(0, 204, 204));
         jLabel8.setFont(new java.awt.Font("Showcard Gothic", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 153, 153));
@@ -118,15 +130,27 @@ public class Doctor2 extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(cTable);
 
+        jButton4.setText("Refresh");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(303, 303, 303)
-                .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(303, 303, 303)
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(397, 397, 397)
+                        .addComponent(jButton4)))
+                .addContainerGap(354, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +159,9 @@ public class Doctor2 extends javax.swing.JFrame {
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(710, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(jButton4)
+                .addContainerGap(312, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Encounter Management", jPanel3);
@@ -241,7 +267,7 @@ public class Doctor2 extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(50, 50, 50)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(469, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Vital Sign Management", jPanel4);
@@ -473,6 +499,18 @@ public class Doctor2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_docidActionPerformed
 
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        // TODO add your handling code here:
+        
+    
+        
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        displayEncounter();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -492,6 +530,7 @@ public class Doctor2 extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -535,5 +574,23 @@ public class Doctor2 extends javax.swing.JFrame {
     dochospi.setText(doctor.getDochospital());
     docexp.setText(doctor.getDocexperience());
     docspeciality.setText(doctor.getDocspeciality());
+    }
+
+    private void displayEncounter() {
+        DefaultTableModel model = (DefaultTableModel) cTable.getModel();
+       model.setRowCount(2);
+       for(Appointment app : appointmentdatabase.getAppointmentDatabase()){
+           
+           Object[] row2 = new Object[5];
+           row2[0] = app;
+           //row1[1] = per.getPname();
+           row2[1] = app.getHos();
+           row2[2] = app.getCom();
+           row2[3] = app.getTime();
+
+           row2[4]=app.getName();
+           model.addRow(row2);
+           
+       }
     }
 }

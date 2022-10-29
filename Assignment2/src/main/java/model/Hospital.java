@@ -18,6 +18,16 @@ public class Hospital {
     private String hcity;
     private String hstate;
         private String hpswd;
+      private Community community;  
+
+    public Community getCommunity() {
+        return community;
+    }
+
+    public void setCommunity(Community community) {
+        this.community = community;
+    }
+        
 
     public String getHpswd() {
         return hpswd;
@@ -96,6 +106,12 @@ public class Hospital {
     @Override
     public String toString(){
         return hname;
+    }
+    
+     @Override
+    public boolean equals(Object obj) {
+        final Hospital h = (Hospital) obj;
+        return this.hname==h.hname && this.hpswd==h.hpswd;
     }
     
     
