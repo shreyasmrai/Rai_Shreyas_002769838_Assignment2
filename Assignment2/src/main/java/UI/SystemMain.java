@@ -15,8 +15,8 @@ import javax.swing.table.DefaultTableModel;
 import model.CommunityDatabase;
 import model.VitalSignDatabase;
 import model.Doctor;
-import model.Person;
-import model.PersonDatabase;
+import model.Patient;
+import model.PatientDatabase;
 import model.Community;
 import model.HospitalDatabase;
 import model.Hospital;
@@ -28,10 +28,10 @@ import model.DoctorDatabase;
  *
  * @author shreyasrai
  */
-public class System2 extends javax.swing.JFrame {
+public class SystemMain extends javax.swing.JFrame {
 
     DoctorDatabase doctordatabase;
-    PersonDatabase persondatabase;
+    PatientDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
      AppointmentDatabase appointmentdatabase;
@@ -46,7 +46,7 @@ public class System2 extends javax.swing.JFrame {
      * @param hospitaldatabase
      * @param appointmentdatabase
      */
-    public System2(DoctorDatabase doctordatabase, VitalSignDatabase vitalsigndatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
+    public SystemMain(DoctorDatabase doctordatabase, VitalSignDatabase vitalsigndatabase, PatientDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
         initComponents();
         
         this.doctordatabase = doctordatabase;
@@ -1490,21 +1490,21 @@ public class System2 extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
          dispose();
-        //MainJFrame1 mjf = new MainJFrame1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        //MainJFrame1 mjf = new LoginPage(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
         //mjf.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
          dispose();
-        MainJFrame1 mjf = new MainJFrame1(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+        LoginPage mjf = new LoginPage(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         mjf.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
          dispose();
-        MainJFrame1 mjf = new MainJFrame1(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+        LoginPage mjf = new LoginPage(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         mjf.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -1524,7 +1524,7 @@ public class System2 extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         dispose();
-        MainJFrame1 mjf = new MainJFrame1(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+        LoginPage mjf = new LoginPage(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         mjf.setVisible(true);
 
         // close current frame
@@ -1537,7 +1537,7 @@ public class System2 extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) pTable.getModel();
         if(i >= 0)
         {
-            Person per = persondatabase.addNewPerson();
+            Patient per = persondatabase.addNewPerson();
 
             model.setValueAt(pname.getText(), i, 0);
             model.setValueAt(pid.getText(), i, 1);
@@ -1566,7 +1566,7 @@ public class System2 extends javax.swing.JFrame {
             return;
         }
         DefaultTableModel model = (DefaultTableModel) pTable.getModel();
-        Person selectedPer = (Person) model.getValueAt(selected, 0);
+        Patient selectedPer = (Patient) model.getValueAt(selected, 0);
 
         // doctordatabase.deleteemp(selectedEmp);
         persondatabase.deletedper(selectedPer);
@@ -1586,15 +1586,15 @@ public class System2 extends javax.swing.JFrame {
 
     private void pcreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcreateActionPerformed
         // TODO add your handling code here:
-        model.Person per = persondatabase.addNewPerson();
+        model.Patient per = persondatabase.addNewPerson();
 
-        per.setPname(pname.getText());
+        per.setPatientName(pname.getText());
         per.setPid(Integer.parseInt(pid.getText()));
-        per.setPphone(Integer.parseInt(pphone.getText()));
-        per.setPemail(pemail.getText());
-        per.setPgender(pgender.getText());
-        per.setPage(Integer.parseInt(page.getText()));
-        per.setPbg(pbg.getText());
+        per.setPatientPhone(Integer.parseInt(pphone.getText()));
+        per.setPatientEmail(pemail.getText());
+        per.setPatientGender(pgender.getText());
+        per.setPatientAge(Integer.parseInt(page.getText()));
+        per.setPatientBG(pbg.getText());
         per.setPw(Integer.parseInt(pw.getText()));
         per.setPpswd(ppswd.getText());
 
@@ -1697,17 +1697,17 @@ public class System2 extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) pTable.getModel();
        model.setRowCount(0);
        
-       for(Person per : persondatabase.getPersonDatabase()){
+       for(Patient per : persondatabase.getPersonDatabase()){
            
            Object[] row2 = new Object[9];
            row2[0] = per;
            //row1[1] = per.getPname();
            row2[1] = per.getPid();
-           row2[2] = per.getPphone();
-           row2[3] = per.getPemail();
-           row2[4] = per.getPgender();
-           row2[5] = per.getPage();
-           row2[6] = per.getPbg();
+           row2[2] = per.getPatientPhone();
+           row2[3] = per.getPatientEmail();
+           row2[4] = per.getPatientGender();
+           row2[5] = per.getPatientAge();
+           row2[6] = per.getPatientBG();
            row2[7] = per.getPw();
                       row2[8] = per.getPpswd();
 

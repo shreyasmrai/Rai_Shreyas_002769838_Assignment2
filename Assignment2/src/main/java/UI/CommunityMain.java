@@ -13,16 +13,16 @@ import model.Doctor;
 import model.DoctorDatabase;
 import model.Hospital;
 import model.HospitalDatabase;
-import model.PersonDatabase;
+import model.PatientDatabase;
 import model.VitalSignDatabase;
 
 /**
  *
  * @author shreyasrai
  */
-public class Community2 extends javax.swing.JFrame {
+public class CommunityMain extends javax.swing.JFrame {
 DoctorDatabase doctordatabase;
-    PersonDatabase persondatabase;
+    PatientDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
      AppointmentDatabase appointmentdatabase;
@@ -31,7 +31,7 @@ DoctorDatabase doctordatabase;
      * Creates new form Community2
      * @param communitydatabase
      */
-    public Community2(CommunityDatabase communitydatabase) {
+    public CommunityMain(CommunityDatabase communitydatabase) {
         initComponents();
         this.doctordatabase = doctordatabase;
         this.persondatabase = persondatabase;

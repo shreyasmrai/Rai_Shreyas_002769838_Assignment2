@@ -12,8 +12,8 @@ import model.CommunityDatabase;
 import model.Doctor;
 import model.VitalSignDatabase;
 import model.HospitalDatabase;
-import model.Person;
-import model.PersonDatabase;
+import model.Patient;
+import model.PatientDatabase;
 import model.AppointmentDatabase;
 import model.Appointment;
 import model.Community;
@@ -25,21 +25,21 @@ import model.Hospital;
  *
  * @author shreyasrai
  */
-public class Patient2 extends javax.swing.JFrame {
+public class PatientMain extends javax.swing.JFrame {
 
     /**
-     * Creates new form Patient2
+     * Creates new form PatientMain
      */
     DoctorDatabase doctordatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
-    PersonDatabase persondatabase;
+    PatientDatabase persondatabase;
     AppointmentDatabase appointmentdatabase;
     VitalSignDatabase vitalsigndatabase;
     
-    Person person;
+    Patient person;
     
-    public Patient2(Person person, DoctorDatabase doctordatabase, PersonDatabase persondatabase1, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
+    public PatientMain(Patient person, DoctorDatabase doctordatabase, PatientDatabase persondatabase1, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
         initComponents();
         this.persondatabase = persondatabase;
         this.appointmentdatabase=appointmentdatabase;
@@ -517,14 +517,14 @@ public class Patient2 extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-     person.setPname(pname.getText());
-     person.setPemail(pemail.getText());
-     person.setPage(Integer.parseInt(page.getText()));
-     person.setPgender(pgender.getText());
+     person.setPatientName(pname.getText());
+     person.setPatientEmail(pemail.getText());
+     person.setPatientAge(Integer.parseInt(page.getText()));
+     person.setPatientGender(pgender.getText());
      person.setPid(Integer.parseInt(pid.getText()));
-     person.setPphone(Integer.parseInt(pmobile.getText()));
+     person.setPatientPhone(Integer.parseInt(pmobile.getText()));
      person.setPw(Integer.parseInt(pw.getText()));
-     person.setPbg(pbg.getText());
+     person.setPatientBG(pbg.getText());
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -641,14 +641,14 @@ public class Patient2 extends javax.swing.JFrame {
     private javax.swing.JTextField time;
     // End of variables declaration//GEN-END:variables
 private void fillPersonDetails() {
-    pname.setText(person.getPname());
+    pname.setText(person.getPatientName());
     pid.setText(Integer.toString(person.getPid()));
-    page.setText(Integer.toString(person.getPage()));
-    pgender.setText(person.getPgender());
-    pmobile.setText(Integer.toString(person.getPphone()));
-    pemail.setText(person.getPemail());
+    page.setText(Integer.toString(person.getPatientAge()));
+    pgender.setText(person.getPatientGender());
+    pmobile.setText(Integer.toString(person.getPatientPhone()));
+    pemail.setText(person.getPatientEmail());
     pw.setText(Integer.toString(person.getPw()));
-    pbg.setText(person.getPbg());
+    pbg.setText(person.getPatientBG());
 }
 
     private void setToTextField() {
@@ -680,7 +680,7 @@ private void fillPersonDetails() {
            row2[2] = app.getCommunity().getCname();
            row2[3] = app.getTime();
 
-           row2[4]=app.getPerson().getPname();
+           row2[4]=app.getPerson().getPatientName();
            row2[5]=app.getVitalsign().getVname();
 
           // row2[5]=app.getVitalsign().getVname();

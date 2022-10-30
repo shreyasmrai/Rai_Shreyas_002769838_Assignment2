@@ -14,7 +14,7 @@ import model.CommunityDatabase;
 import model.Doctor;
 import model.VitalSignDatabase;
 import model.HospitalDatabase;
-import model.PersonDatabase;
+import model.PatientDatabase;
 import model.Hospital;
 import model.AppointmentDatabase;
 import model.Appointment;
@@ -24,14 +24,14 @@ import model.DoctorDatabase;
  *
  * @author shreyasrai
  */
-public class MainJFrame1 extends javax.swing.JFrame {
+public class LoginPage extends javax.swing.JFrame {
 
     /**
      * Creates new form MainJFrame11
      */
     
     DoctorDatabase doctordatabase;
-    PersonDatabase persondatabase;
+    PatientDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
     AppointmentDatabase appointmentdatabase;
@@ -51,7 +51,7 @@ public class MainJFrame1 extends javax.swing.JFrame {
         return i;
 
     }
-    public MainJFrame1(DoctorDatabase doctordatabase, VitalSignDatabase vitalsigndatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
+    public LoginPage(DoctorDatabase doctordatabase, VitalSignDatabase vitalsigndatabase, PatientDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
         initComponents();
         //this.doctordatabase=doctordatabase;
         this.persondatabase=persondatabase;
@@ -217,33 +217,33 @@ public class MainJFrame1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        System1 systempanel = new System1(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+        SystemLogin systempanel = new SystemLogin(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         //jSplitPane1.setRightComponent(systempanel);    // TODO add your handling code here:
         jSplitPane1.setBottomComponent(systempanel);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Hospital1 hp = new Hospital1(doctordatabase,vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+        HospitalLogin hp = new HospitalLogin(doctordatabase,vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         jSplitPane1.setBottomComponent(hp);
        // jSplitPane1.setBottomComponent(systempanell);  
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     Doctor1 doctorpanel = new Doctor1(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+     DoctorLogin doctorpanel = new DoctorLogin(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         jSplitPane1.setBottomComponent(doctorpanel);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Patient1 patientpanel = new Patient1(doctordatabase,vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+        PatientLogin patientpanel = new PatientLogin(doctordatabase,vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         jSplitPane1.setBottomComponent(patientpanel);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        Community1 communitypanel = new Community1(doctordatabase,persondatabase,communitydatabase,hospitaldatabase,appointmentdatabase);
+        CommunityLogin communitypanel = new CommunityLogin(doctordatabase,persondatabase,communitydatabase,hospitaldatabase,appointmentdatabase);
         jSplitPane1.setBottomComponent(communitypanel);
     }//GEN-LAST:event_jButton5ActionPerformed
 

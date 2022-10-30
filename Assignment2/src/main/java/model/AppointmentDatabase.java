@@ -31,7 +31,7 @@ public class AppointmentDatabase {
         return appointments;
     }
 
-    public ArrayList<Appointment> getAppointmentDatabase(Person person) {
+    public ArrayList<Appointment> getAppointmentDatabase(Patient person) {
         ArrayList<Appointment> appointments = new ArrayList<>();
         for(Appointment p: appointment){
             if(p.getPerson().equals(person)){

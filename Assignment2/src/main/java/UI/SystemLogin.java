@@ -10,25 +10,25 @@ import model.CommunityDatabase;
 import model.DoctorDatabase;
 import model.VitalSignDatabase;
 import model.HospitalDatabase;
-import model.PersonDatabase;
+import model.PatientDatabase;
 
 /**
  *
  * @author shreyasrai
  */
-public class System1 extends javax.swing.JPanel {
+public class SystemLogin extends javax.swing.JPanel {
 
     /**
-     * Creates new form System1
+     * Creates new form SystemLogin
      */
     DoctorDatabase doctordatabase;
-    PersonDatabase persondatabase;
+    PatientDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
     AppointmentDatabase appointmentdatabase;
     VitalSignDatabase vitalsigndatabase;
     
-    public System1(DoctorDatabase doctordatabase, VitalSignDatabase vitalsigndatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
+    public SystemLogin(DoctorDatabase doctordatabase, VitalSignDatabase vitalsigndatabase, PatientDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
         initComponents();
         
         this.doctordatabase=doctordatabase;
@@ -119,9 +119,9 @@ public class System1 extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     if( userD.getText().matches("system") && pswdD.getText().matches("system")){
         //h
-        System2 system = new System2(doctordatabase,vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+        SystemMain system = new SystemMain(doctordatabase,vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         system.setVisible(true);
-        MainJFrame1 mjf = new MainJFrame1(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase); 
+        LoginPage mjf = new LoginPage(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase); 
         mjf.setVisible(false);
         //system.dispose();
         }

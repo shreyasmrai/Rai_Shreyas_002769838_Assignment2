@@ -10,7 +10,7 @@ package model;
  */
 public class Appointment {
 
-    public Appointment(String time, Community community, Hospital hospital, Doctor doctor, Person person, VitalSign vitalsign) {
+    public Appointment(String time, Community community, Hospital hospital, Doctor doctor, Patient person, VitalSign vitalsign) {
         this.time = time;
         this.community = community;
         this.hospital = hospital;
@@ -19,7 +19,7 @@ public class Appointment {
         this.vitalsign=vitalsign;
         //vital
     }
-        public Appointment(String time, Community community, Hospital hospital, Doctor doctor, Person person) {
+        public Appointment(String time, Community community, Hospital hospital, Doctor doctor, Patient person) {
         this.time = time;
         this.community = community;
         this.hospital = hospital;
@@ -38,7 +38,7 @@ public class Appointment {
        private Community community;
        private Hospital hospital;
        private Doctor doctor;
-       private Person person;
+       private Patient person;
        private VitalSign vitalsign;
 
     public VitalSign getVitalsign() {
@@ -85,11 +85,11 @@ public class Appointment {
         this.doctor = doctor;
     }
 
-    public Person getPerson() {
+    public Patient getPerson() {
         return person;
     }
 
-    public void setPerson(Person person) {
+    public void setPerson(Patient person) {
         this.person = person;
     }
        

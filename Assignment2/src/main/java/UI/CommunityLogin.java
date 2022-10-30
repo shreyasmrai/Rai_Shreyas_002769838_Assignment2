@@ -5,45 +5,30 @@
 package UI;
 
 import javax.swing.JOptionPane;
+import model.AppointmentDatabase;
 import model.CommunityDatabase;
-import model.Doctor;
-import model.Hospital;
+import model.DoctorDatabase;
 import model.VitalSignDatabase;
 import model.HospitalDatabase;
-import model.Person;
-import model.PersonDatabase;
-import model.Appointment;
-import model.AppointmentDatabase;
-import model.DoctorDatabase;
+import model.PatientDatabase;
 
 /**
  *
  * @author shreyasrai
  */
-public class Hospital1 extends javax.swing.JPanel {
+public class CommunityLogin extends javax.swing.JPanel {
 DoctorDatabase doctordatabase;
-    PersonDatabase persondatabase;
+    PatientDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
-        AppointmentDatabase appointmentdatabase;  
-            VitalSignDatabase vitalsigndatabase;
-
-        
+     AppointmentDatabase appointmentdatabase;
+     VitalSignDatabase vitalsigndatabase;
     /**
-     * Creates new form Hospital1
-     * @param doctordatabase
-     * @param persondatabase
-     * @param communitydatabase
-     * @param hospitaldatabase
+     * Creates new form Community1
      */
-    public Hospital1(DoctorDatabase doctordatabase,VitalSignDatabase vitalsigndatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
+    public CommunityLogin(DoctorDatabase doctordatabase, PatientDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
         initComponents();
-        this.doctordatabase=doctordatabase;
-        this.persondatabase=persondatabase;
         this.communitydatabase=communitydatabase;
-        this.hospitaldatabase=hospitaldatabase;
-        this.appointmentdatabase=appointmentdatabase;
-        this.vitalsigndatabase=vitalsigndatabase;
     }
 
     /**
@@ -55,24 +40,24 @@ DoctorDatabase doctordatabase;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        unamed = new javax.swing.JLabel();
-        pswdd = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         userP = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         pswdP = new javax.swing.JPasswordField();
 
         setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("ENTER HOPITAL LOGIN DETAILS");
+        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("ENTER COMMUNITY LOGIN DETAILS");
 
-        unamed.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        unamed.setText("User Name");
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel2.setText("User Name");
 
-        pswdd.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        pswdd.setText("Password");
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel3.setText("Password");
 
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton1.setText("Submit");
@@ -87,72 +72,62 @@ DoctorDatabase doctordatabase;
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1010, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
+                        .addGap(119, 119, 119)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(unamed)
-                            .addComponent(pswdd))
-                        .addGap(99, 99, 99)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(userP)
-                            .addComponent(pswdP, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(pswdP, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(191, 191, 191)
+                .addGap(46, 46, 46)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(unamed)
-                    .addComponent(userP))
-                .addGap(25, 25, 25)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pswdd)
+                    .addComponent(jLabel3)
                     .addComponent(pswdP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
+                .addGap(42, 42, 42)
                 .addComponent(jButton1)
-                .addGap(194, 194, 194))
+                .addGap(141, 141, 141))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String username = userP.getText();
-        String pswd = pswdP.getText();
-        Hospital h = hospitaldatabase.getHospital(username, pswd);
-        
-        //if( userP.getText().matches("patient") && pswdP.getText().matches("patient")){
-         //   Patient2 patient = new Patient2(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
-         //   patient.setVisible(true);
-         if(h!=null){
-             Hospital2 hospital = new Hospital2(h,doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
-             hospital.setVisible(true);
-            MainJFrame1 mjf = new MainJFrame1(doctordatabase,vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase); 
-            mjf.setVisible(false);
-            
+        // TODO add your handling code here:
+        if( userP.getText().matches("community") && pswdP.getText().matches("community")){
+            CommunityMain community = new CommunityMain(communitydatabase);
+            community.setVisible(true);
+
         }else{
             JOptionPane.showMessageDialog(this, "Incorrect credential");
-        }  
-         
-           // TODO add your handling code here:
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPasswordField pswdP;
-    private javax.swing.JLabel pswdd;
-    private javax.swing.JLabel unamed;
     private javax.swing.JTextField userP;
     // End of variables declaration//GEN-END:variables
 }

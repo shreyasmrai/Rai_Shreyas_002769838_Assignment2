@@ -11,34 +11,34 @@ package UI;
 import model.CommunityDatabase;
 import model.VitalSignDatabase;
 import model.HospitalDatabase;
-import model.PersonDatabase;
+import model.PatientDatabase;
 import model.AppointmentDatabase;
 import model.Community;
 import model.Doctor;
 import model.DoctorDatabase;
 import model.Hospital;
-import model.Person;
+import model.Patient;
 import model.VitalSign;
 
 /**
  *
  * @author shreyasrai
  */
-public class NewJFrame2 extends javax.swing.JFrame {
+public class Welcome extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame1
      */
     DoctorDatabase doctordatabase;
-    PersonDatabase persondatabase;
+    PatientDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
     AppointmentDatabase appointmentdatabase;
     VitalSignDatabase vitalsigndatabase;
-    public NewJFrame2() {
+    public Welcome() {
         initComponents();
         doctordatabase = new DoctorDatabase();
-        persondatabase = new PersonDatabase();
+        persondatabase = new PatientDatabase();
         communitydatabase=new CommunityDatabase();
         hospitaldatabase=new HospitalDatabase();
         appointmentdatabase=new AppointmentDatabase();
@@ -97,7 +97,7 @@ public class NewJFrame2 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        MainJFrame1 mjf = new MainJFrame1(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+        LoginPage mjf = new LoginPage(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         mjf.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -119,20 +119,21 @@ public class NewJFrame2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame2().setVisible(true);
+                new Welcome().setVisible(true);
             }
         });
     }
@@ -157,8 +158,8 @@ public class NewJFrame2 extends javax.swing.JFrame {
         doctordatabase.addNewDoctor(d2);
         
         //create patient
-        Person p1=new Person("Cliff",24,"Male",12345,"dd@d.com","B+",78,1,"cliff",d1);
-        Person p2=new Person("Joseph",64,"Male",12345,"dd@d.com","B+",78,2,"joseph",d2);
+        Patient p1=new Patient("Cliff",24,"Male",12345,"dd@d.com","B+",78,1,"cliff",d1);
+        Patient p2=new Patient("Joseph",64,"Male",12345,"dd@d.com","B+",78,2,"joseph",d2);
         persondatabase.addNewPerson(p1);
         persondatabase.addNewPerson(p2);
         

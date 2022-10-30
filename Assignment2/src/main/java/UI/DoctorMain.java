@@ -12,8 +12,8 @@ import model.CommunityDatabase;
 import model.Doctor;
 import model.VitalSignDatabase;
 import model.HospitalDatabase;
-import model.Person;
-import model.PersonDatabase;
+import model.Patient;
+import model.PatientDatabase;
 import model.AppointmentDatabase;
 import model.Appointment;
 import model.Community;
@@ -25,22 +25,22 @@ import model.VitalSign;
  *
  * @author shreyasrai
  */
-public class Doctor2 extends javax.swing.JFrame {
+public class DoctorMain extends javax.swing.JFrame {
 
     /**
-     * Creates new form Doctor2
+     * Creates new form DoctorMain
      */
     DoctorDatabase doctordatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
-    PersonDatabase persondatabase;
+    PatientDatabase persondatabase;
     AppointmentDatabase appointmentdatabase;
     Appointment appointment;
     VitalSignDatabase vitalsigndatabase;
     Hospital hospital;
     
     Doctor doctor;
-    public Doctor2(Doctor doctor, DoctorDatabase doctordatabase,VitalSignDatabase vitalsigndatabase,PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
+    public DoctorMain(Doctor doctor, DoctorDatabase doctordatabase,VitalSignDatabase vitalsigndatabase,PatientDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
         initComponents();
         this.doctordatabase = doctordatabase;
         this.appointmentdatabase=appointmentdatabase;
@@ -882,19 +882,19 @@ private void fillDoctorDetails() {
            row2[1] = app.getHospital().getHname();
            row2[2] = app.getCommunity().getCname();
            row2[3] = app.getTime();
-           row2[4]=app.getPerson().getPname();
+           row2[4]=app.getPerson().getPatientName();
            row2[5]=app.getVitalsign().getVname();
            model.addRow(row2);
            
        }
     }
     private void fillPersonDropDown() {
-        ArrayList<Person> persons = persondatabase.getPersonDatabase();
+        ArrayList<Patient> persons = persondatabase.getPersonDatabase();
         //dropcomm.setModel(new DefaultComboBoxModel<String>(communities.toArray(new String[0])));
         if(persons!=null && persons.size()>0){
         DefaultComboBoxModel model = new DefaultComboBoxModel<String>();
-        for(Person p: persons){
-            model.addElement(p.getPname());
+        for(Patient p: persons){
+            model.addElement(p.getPatientName());
         }
         droppatient.setModel(model);
         setToTextField4();

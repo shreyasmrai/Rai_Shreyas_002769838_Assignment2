@@ -14,8 +14,8 @@ import javax.swing.table.DefaultTableModel;
 import model.CommunityDatabase;
 import model.VitalSignDatabase;
 import model.Doctor;
-import model.Person;
-import model.PersonDatabase;
+import model.Patient;
+import model.PatientDatabase;
 import model.Community;
 import model.HospitalDatabase;
 import model.Hospital;
@@ -26,10 +26,10 @@ import model.DoctorDatabase;
  *
  * @author shreyasrai
  */
-public class Hospital2 extends javax.swing.JFrame {
+public class HospitalMain extends javax.swing.JFrame {
     
     DoctorDatabase doctordatabase;
-    PersonDatabase persondatabase;
+    PatientDatabase persondatabase;
     CommunityDatabase communitydatabase;
     AppointmentDatabase appointmentdatabase;
     HospitalDatabase hospitaldatabase;
@@ -46,7 +46,7 @@ public class Hospital2 extends javax.swing.JFrame {
      * @param hospitaldatabase
      * @param appointmentdatabase
      */
-    public Hospital2(Hospital h, DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
+    public HospitalMain(Hospital h, DoctorDatabase doctordatabase, PatientDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
         initComponents();
         
         this.doctordatabase = doctordatabase;
@@ -1287,15 +1287,15 @@ public class Hospital2 extends javax.swing.JFrame {
 
     private void pcreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcreateActionPerformed
         // TODO add your handling code here:
-        model.Person per = persondatabase.addNewPerson();
+        model.Patient per = persondatabase.addNewPerson();
 
-        per.setPname(pname.getText());
+        per.setPatientName(pname.getText());
         per.setPid(Integer.parseInt(pid.getText()));
-        per.setPphone(Integer.parseInt(pphone.getText()));
-        per.setPemail(pemail.getText());
-        per.setPgender(pgender.getText());
-        per.setPage(Integer.parseInt(page.getText()));
-        per.setPbg(pbg.getText());
+        per.setPatientPhone(Integer.parseInt(pphone.getText()));
+        per.setPatientEmail(pemail.getText());
+        per.setPatientGender(pgender.getText());
+        per.setPatientAge(Integer.parseInt(page.getText()));
+        per.setPatientBG(pbg.getText());
         per.setPw(Integer.parseInt(pw.getText()));
         per.setPpswd(ppswd.getText());
 
@@ -1319,7 +1319,7 @@ public class Hospital2 extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) pTable.getModel();
         if(i >= 0)
         {
-            Person per = persondatabase.addNewPerson();
+            Patient per = persondatabase.addNewPerson();
 
             model.setValueAt(pname.getText(), i, 0);
             model.setValueAt(pid.getText(), i, 1);
@@ -1587,17 +1587,17 @@ public class Hospital2 extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) pTable.getModel();
        model.setRowCount(0);
        
-       for(Person per : persondatabase.getPersonDatabase()){
+       for(Patient per : persondatabase.getPersonDatabase()){
            
            Object[] row2 = new Object[9];
            row2[0] = per;
            //row1[1] = per.getPname();
            row2[1] = per.getPid();
-           row2[2] = per.getPphone();
-           row2[3] = per.getPemail();
-           row2[4] = per.getPgender();
-           row2[5] = per.getPage();
-           row2[6] = per.getPbg();
+           row2[2] = per.getPatientPhone();
+           row2[3] = per.getPatientEmail();
+           row2[4] = per.getPatientGender();
+           row2[5] = per.getPatientAge();
+           row2[6] = per.getPatientBG();
            row2[7] = per.getPw();
                       row2[8] = per.getPpswd();
 
