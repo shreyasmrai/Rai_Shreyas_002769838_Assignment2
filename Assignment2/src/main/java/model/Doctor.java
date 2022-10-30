@@ -8,11 +8,26 @@ package model;
  *
  * @author shreyasrai
  */
-public class Doctor extends Person {
+public class Doctor extends Appointment {
+
+    public Doctor() {
+    }
+
+    public Doctor(String docname, String docphone, String docemail, String docgender, String docage, String docspeciality, String docexperience, int did, String dpswd, Hospital hospital) {
+        this.docname = docname;
+        this.docphone = docphone;
+        this.docemail = docemail;
+        this.docgender = docgender;
+        this.docage = docage;
+        this.docspeciality = docspeciality;
+        this.docexperience = docexperience;
+        this.did = did;
+        this.dpswd = dpswd;
+        this.hospital = hospital;
+    }
 
     
     private String docname;
-    private String dochospital;
     private String docphone;
     private String docemail;
     private String docgender;
@@ -21,7 +36,6 @@ public class Doctor extends Person {
     private String docexperience;
     private int did;
     private String dpswd;
-    
     private Hospital hospital;
 
     public Hospital getHospital() {
@@ -80,13 +94,9 @@ public class Doctor extends Person {
         this.docname = docname;
     }
 
-    public String getDochospital() {
-        return dochospital;
-    }
-
-    public void setDochospital(String dochospital) {
-        this.dochospital = dochospital;
-    }
+//    public String getDochospital() {
+//        return hospital.getHname();
+//    }
 
     public String getDocphone() {
         return docphone;
@@ -116,10 +126,10 @@ public class Doctor extends Person {
     public String toString(){
         return docname;
     }
-    
-    @Override
+        @Override
     public boolean equals(Object obj) {
         final Doctor d = (Doctor) obj;
         return this.docname==d.docname && this.dpswd==d.dpswd;
     }
 }
+

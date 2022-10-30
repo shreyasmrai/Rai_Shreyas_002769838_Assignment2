@@ -10,23 +10,24 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import model.AppointmentDatabase;
 import model.CommunityDatabase;
 import model.Doctor;
-import model.DoctorDatabase;
+import model.VitalSignDatabase;
 import model.HospitalDatabase;
 import model.PersonDatabase;
 import model.Hospital;
-import model.Person;
+import model.AppointmentDatabase;
+import model.Appointment;
+import model.DoctorDatabase;
 
 /**
  *
  * @author shreyasrai
  */
-public class MainJFrame extends javax.swing.JFrame {
+public class MainJFrame1 extends javax.swing.JFrame {
 
     /**
-     * Creates new form MainJFrame
+     * Creates new form MainJFrame11
      */
     
     DoctorDatabase doctordatabase;
@@ -34,6 +35,8 @@ public class MainJFrame extends javax.swing.JFrame {
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
     AppointmentDatabase appointmentdatabase;
+    VitalSignDatabase vitalsigndatabase;
+
     
     
     ImageIcon myImage;
@@ -48,7 +51,7 @@ public class MainJFrame extends javax.swing.JFrame {
         return i;
 
     }
-    public MainJFrame(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase) {
+    public MainJFrame1(DoctorDatabase doctordatabase, VitalSignDatabase vitalsigndatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
         initComponents();
         //this.doctordatabase=doctordatabase;
         this.persondatabase=persondatabase;
@@ -56,6 +59,9 @@ public class MainJFrame extends javax.swing.JFrame {
         this.communitydatabase=communitydatabase;
         this.hospitaldatabase=hospitaldatabase;
         this.appointmentdatabase=appointmentdatabase;
+        this.vitalsigndatabase=vitalsigndatabase;
+        
+     
         //jDisplayImage.setIcon(setIcon( "/Users/shreyasrai/Desktop/CO-OP/Rai_Shreyas_002769838/Assignment2/hospi.jpg"));
     }
 
@@ -78,9 +84,11 @@ public class MainJFrame extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jImage = new javax.swing.JPanel();
         jDisplayImage = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1650, 1080));
 
         jSplitPane1.setDividerLocation(50);
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
@@ -88,7 +96,8 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 153));
+        jButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jButton1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jButton1.setText("Doctor");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,7 +106,8 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1);
 
-        jButton2.setBackground(new java.awt.Color(0, 204, 153));
+        jButton2.setBackground(new java.awt.Color(0, 153, 204));
+        jButton2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jButton2.setText("Hospital");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +116,8 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2);
 
-        jButton3.setBackground(new java.awt.Color(0, 204, 153));
+        jButton3.setBackground(new java.awt.Color(0, 153, 204));
+        jButton3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jButton3.setText("Patient");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,7 +126,8 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3);
 
-        jButton5.setBackground(new java.awt.Color(0, 204, 153));
+        jButton5.setBackground(new java.awt.Color(0, 153, 204));
+        jButton5.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jButton5.setText("Community Admin");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,7 +136,8 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         jPanel1.add(jButton5);
 
-        jButton4.setBackground(new java.awt.Color(0, 204, 153));
+        jButton4.setBackground(new java.awt.Color(0, 153, 204));
+        jButton4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jButton4.setText("System");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,29 +148,36 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setTopComponent(jPanel1);
 
-        jImage.setBackground(new java.awt.Color(0, 153, 153));
+        jImage.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\smiti\\Downloads\\hospital-management-system-software.jpg")); // NOI18N
 
         javax.swing.GroupLayout jImageLayout = new javax.swing.GroupLayout(jImage);
         jImage.setLayout(jImageLayout);
         jImageLayout.setHorizontalGroup(
             jImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jImageLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jDisplayImage, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 852, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(319, 319, 319)
+                .addComponent(jDisplayImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(274, 274, 274))
         );
         jImageLayout.setVerticalGroup(
             jImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jImageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDisplayImage, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
+                .addGroup(jImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jDisplayImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jImageLayout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 79, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
         jSplitPane1.setRightComponent(jImage);
 
         jLabel1.setBackground(new java.awt.Color(0, 153, 153));
-        jLabel1.setFont(new java.awt.Font("YuMincho +36p Kana", 3, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel1.setFont(new java.awt.Font("Bodoni MT Black", 3, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hospital Management System");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -166,19 +186,16 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSplitPane1)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSplitPane1)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -203,34 +220,34 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        System1 systempanel = new System1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+        System1 systempanel = new System1(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         //jSplitPane1.setRightComponent(systempanel);    // TODO add your handling code here:
         jSplitPane1.setBottomComponent(systempanel);        // TODO add your handling code here:
-        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Hospital1 hospitalpanel = new Hospital1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
-        jSplitPane1.setBottomComponent(hospitalpanel);
+        Hospital1 hp = new Hospital1(doctordatabase,vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+        jSplitPane1.setBottomComponent(hp);
+       // jSplitPane1.setBottomComponent(systempanell);  
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     Doctor1 doctorpanel = new Doctor1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+     Doctor1 doctorpanel = new Doctor1(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         jSplitPane1.setBottomComponent(doctorpanel);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Patient1 patientpanel = new Patient1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
+        Patient1 patientpanel = new Patient1(doctordatabase,vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         jSplitPane1.setBottomComponent(patientpanel);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        Community1 com = new Community1(doctordatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
-        jSplitPane1.setBottomComponent(com);
+        Community1 communitypanel = new Community1(doctordatabase,persondatabase,communitydatabase,hospitaldatabase,appointmentdatabase);
+        jSplitPane1.setBottomComponent(communitypanel);
     }//GEN-LAST:event_jButton5ActionPerformed
 
    
@@ -244,6 +261,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jDisplayImage;
     private javax.swing.JPanel jImage;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;

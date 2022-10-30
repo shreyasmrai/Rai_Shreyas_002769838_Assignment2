@@ -24,21 +24,13 @@ public class PersonDatabase {
     public void setPersonDatabase(ArrayList<Person> person) {
         this.person = person;
     }
-    
-    //public boolean validatePerson(Person p){
-    //    return person.contains(p);
-    //}
-    
-    public Person getPerson(String username, String pswd){
-        for(Person p: person){
-            if(p.getPname().equals(username) && p.getPpswd().equals(pswd)){
-                return p;
-            }
-        }
-        return null;
-    }
    
-    public Person addNewPerson(){
+    public Person addNewPerson(Person newPer){
+       // Person newPer = new Person();
+        person.add(newPer);
+        return newPer;
+    }
+        public Person addNewPerson(){
         Person newPer = new Person();
         person.add(newPer);
         return newPer;
@@ -46,6 +38,42 @@ public class PersonDatabase {
    
     public void deletedper(Person p){
         person.remove(p);
+    }
+    public ArrayList<Person> getPerson(Doctor doctor) {
+        ArrayList<Person> persons=new ArrayList<>();
+        for(Person p: person){
+            if(p.getDoctor().equals(doctor)){
+                persons.add(p);
+            }
+        }
+        return persons;
+    }    
+    
+    public ArrayList<Person> getPersons(String doctor) {
+        ArrayList<Person> persons=new ArrayList<>();
+        for(Person p: person){
+            if(p.getDoctor().getDocname().equals(doctor)){
+                persons.add(p);
+            }
+        }
+        return persons;
+    } 
+    
+    public Person getPerson(String per) {
+        for(Person p: person){
+            if(p.getPname().equals(per)){
+                return p;
+            }
+        }
+        return null;
+    } 
+    public Person getPerson(String username, String pswd){
+        for(Person p: person){
+            if(p.getPname().equals(username) && p.getPpswd().equals(pswd)){
+                return p;
+            }
+        }
+        return null;
     }
    
 }

@@ -6,46 +6,51 @@ package model;
 
 /**
  *
- * @author smiti
+ * @author shreyasrai
  */
 public class Appointment {
-    private String com;
-    private String hos;
-    private String doc;
+
+    public Appointment(String time, Community community, Hospital hospital, Doctor doctor, Person person, VitalSign vitalsign) {
+        this.time = time;
+        this.community = community;
+        this.hospital = hospital;
+        this.doctor = doctor;
+        this.person = person;
+        this.vitalsign=vitalsign;
+        //vital
+    }
+        public Appointment(String time, Community community, Hospital hospital, Doctor doctor, Person person) {
+        this.time = time;
+        this.community = community;
+        this.hospital = hospital;
+        this.doctor = doctor;
+        this.person = person;
+        //vital
+    }
+
+    public Appointment() {
+    }
+    //private String com;
+    //private String hos;
+    //private String doc;
     private String time;
-        private String name;
+    //private String name;
+       private Community community;
+       private Hospital hospital;
+       private Doctor doctor;
+       private Person person;
+       private VitalSign vitalsign;
 
-    public String getName() {
-        return name;
+    public VitalSign getVitalsign() {
+        if(vitalsign==null){
+            return new VitalSign("0", "NA","NA","NA");
+        }
+        return vitalsign;
+        
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-    public String getCom() {
-        return com;
-    }
-
-    public void setCom(String com) {
-        this.com = com;
-    }
-
-    public String getHos() {
-        return hos;
-    }
-
-    public void setHos(String hos) {
-        this.hos = hos;
-    }
-
-    public String getDoc() {
-        return doc;
-    }
-
-    public void setDoc(String doc) {
-        this.doc = doc;
+    public void setVitalsign(VitalSign vitalsign) {
+        this.vitalsign = vitalsign;
     }
 
     public String getTime() {
@@ -55,10 +60,40 @@ public class Appointment {
     public void setTime(String time) {
         this.time = time;
     }
-    
-    @Override
-    public String toString(){
-        return doc;
+
+    public Community getCommunity() {
+        return community;
     }
+
+    public void setCommunity(Community community) {
+        this.community = community;
+    }
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+       
+
+    
     
 }

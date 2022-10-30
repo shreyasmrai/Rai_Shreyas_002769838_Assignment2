@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import model.AppointmentDatabase;
 import model.CommunityDatabase;
 import model.DoctorDatabase;
+import model.VitalSignDatabase;
 import model.HospitalDatabase;
 import model.PersonDatabase;
 
@@ -24,14 +25,18 @@ public class System1 extends javax.swing.JPanel {
     PersonDatabase persondatabase;
     CommunityDatabase communitydatabase;
     HospitalDatabase hospitaldatabase;
-    public System1(DoctorDatabase doctordatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
+    AppointmentDatabase appointmentdatabase;
+    VitalSignDatabase vitalsigndatabase;
+    
+    public System1(DoctorDatabase doctordatabase, VitalSignDatabase vitalsigndatabase, PersonDatabase persondatabase, CommunityDatabase communitydatabase, HospitalDatabase hospitaldatabase, AppointmentDatabase appointmentdatabase) {
         initComponents();
         
         this.doctordatabase=doctordatabase;
         this.persondatabase=persondatabase;
         this.communitydatabase=communitydatabase;
         this.hospitaldatabase=hospitaldatabase;
-        
+        this.appointmentdatabase=appointmentdatabase;
+        this.vitalsigndatabase=vitalsigndatabase;
     }
 
     /**
@@ -50,12 +55,19 @@ public class System1 extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         pswdD = new javax.swing.JPasswordField();
 
-        jLabel1.setText("System Login");
+        setBackground(new java.awt.Color(184, 212, 239));
 
+        jLabel1.setBackground(new java.awt.Color(187, 216, 246));
+        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel1.setText("SYSTEM LOGIN");
+
+        unamed.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         unamed.setText("User Name");
 
+        pswdd.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         pswdd.setText("Password");
 
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton1.setText("Submit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,30 +80,30 @@ public class System1 extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(339, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(443, 443, 443))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(unamed)
                             .addComponent(pswdd))
-                        .addGap(99, 99, 99)
+                        .addGap(64, 64, 64)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(userD, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                            .addComponent(pswdD)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jButton1)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                            .addComponent(pswdD, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                            .addComponent(userD))
+                        .addGap(301, 301, 301))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(336, 336, 336))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addGap(44, 44, 44)
+                .addGap(47, 47, 47)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(121, 121, 121)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(unamed)
                     .addComponent(userD))
@@ -101,18 +113,18 @@ public class System1 extends javax.swing.JPanel {
                     .addComponent(pswdD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(74, 74, 74)
                 .addComponent(jButton1)
-                .addGap(50, 50, 50))
+                .addGap(241, 241, 241))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     if( userD.getText().matches("system") && pswdD.getText().matches("system")){
         //h
-        System2 system = new System2(doctordatabase, persondatabase, communitydatabase, hospitaldatabase);
+        System2 system = new System2(doctordatabase,vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase);
         system.setVisible(true);
-        //MainJFrame mjf = new MainJFrame(doctordatabase, persondatabase, communitydatabase, hospitaldatabase); 
-        //mjf.setVisible(false);
-        
+        MainJFrame1 mjf = new MainJFrame1(doctordatabase, vitalsigndatabase, persondatabase, communitydatabase, hospitaldatabase, appointmentdatabase); 
+        mjf.setVisible(false);
+        //system.dispose();
         }
     else{
             JOptionPane.showMessageDialog(this, "Incorrect credential");

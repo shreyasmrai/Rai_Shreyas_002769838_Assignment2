@@ -44,7 +44,10 @@
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="0" type="rgb"/>
+          <Color blue="cc" green="99" red="0" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI Black" size="14" style="0"/>
         </Property>
       </Properties>
 
@@ -96,48 +99,43 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="dochospi" alignment="0" pref="131" max="32767" attributes="0"/>
-                                      <Component id="docphone" alignment="0" max="32767" attributes="0"/>
                                       <Component id="docemail" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="docgender" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="docname" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace pref="358" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="docphone" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="docname" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="docgender" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                          <Component id="hospitaltext" min="-2" pref="117" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="hospitaldrop" pref="146" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace pref="466" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButton3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                           <EmptySpace max="32767" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel7" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                                               <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jButton3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                                  <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
-                                              </Group>
+                                              <Component id="jLabel36" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                                           </Group>
+                                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="dpswd" alignment="0" max="32767" attributes="0"/>
-                                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                          <Component id="docspeciality" alignment="1" pref="77" max="32767" attributes="0"/>
-                                                          <Component id="docage" alignment="1" max="32767" attributes="0"/>
-                                                          <Component id="docexperience" alignment="1" max="32767" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="did" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                              </Group>
+                                              <Component id="dpswd" linkSize="3" max="32767" attributes="0"/>
+                                              <Component id="docspeciality" linkSize="3" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="docexperience" linkSize="3" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="did" linkSize="3" min="-2" pref="198" max="-2" attributes="0"/>
+                                              <Component id="docage" linkSize="3" min="-2" pref="240" max="-2" attributes="0"/>
                                           </Group>
+                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -146,12 +144,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="doccreate" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="277" max="32767" attributes="0"/>
+                          <EmptySpace pref="435" max="32767" attributes="0"/>
                           <Component id="jLabel31" min="-2" pref="250" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="255" max="-2" attributes="0"/>
                       </Group>
@@ -161,63 +159,76 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                          <Component id="jLabel31" min="-2" pref="17" max="-2" attributes="0"/>
+                          <Component id="jLabel31" min="-2" pref="23" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane1" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
+                              <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jScrollPane1" min="-2" pref="199" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="docname" alignment="3" max="32767" attributes="0"/>
-                                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="docage" alignment="3" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="dochospital" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="dochospi" alignment="3" max="32767" attributes="0"/>
-                                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="docspeciality" alignment="3" max="32767" attributes="0"/>
+                                      <Component id="hospitaltext" alignment="3" max="32767" attributes="0"/>
+                                      <Component id="hospitaldrop" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="docphone" alignment="3" max="32767" attributes="0"/>
-                                      <Component id="docexperience" alignment="3" max="32767" attributes="0"/>
-                                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="dpswd" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="docemail" alignment="3" max="32767" attributes="0"/>
-                                      </Group>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="docemail" alignment="3" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="docgender" alignment="3" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="docage" alignment="3" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="docspeciality" alignment="3" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="docexperience" alignment="3" max="32767" attributes="0"/>
+                                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="dpswd" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="did" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="doccreate" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="doccreate" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -225,16 +236,22 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="12" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Name"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="dochospi">
+                <Component class="javax.swing.JTextField" name="hospitaltext">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dochospiActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hospitaltextActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="dochospital">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="12" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Hospital"/>
                   </Properties>
                 </Component>
@@ -252,6 +269,9 @@
                   <SubComponents>
                     <Component class="javax.swing.JTable" name="docTable">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="cc" red="99" type="rgb"/>
+                        </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="8" rowCount="4">
                             <Column editable="false" title="Name" type="java.lang.Object"/>
@@ -276,6 +296,9 @@
                 </Container>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="12" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Phone"/>
                   </Properties>
                 </Component>
@@ -286,6 +309,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="12" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Email"/>
                   </Properties>
                 </Component>
@@ -296,6 +322,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel4">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="12" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Gender"/>
                   </Properties>
                 </Component>
@@ -306,6 +335,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="doccreate">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="12" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="CREATE"/>
                   </Properties>
                   <Events>
@@ -314,6 +346,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="12" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Age"/>
                   </Properties>
                 </Component>
@@ -321,6 +356,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel6">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="12" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Speciality"/>
                   </Properties>
                 </Component>
@@ -330,11 +368,17 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel7">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="12" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Experience"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton1">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="12" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="UPDATE"/>
                   </Properties>
                   <Events>
@@ -344,13 +388,16 @@
                 <Component class="javax.swing.JLabel" name="jLabel31">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Baloo Chettan 2" size="24" style="1"/>
+                      <Font name="Arial Rounded MT Bold" size="24" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="DOCTOR"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel29">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="12" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Password"/>
                   </Properties>
                 </Component>
@@ -358,6 +405,12 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton3">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="12" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="LogOut"/>
                   </Properties>
                   <Events>
@@ -371,6 +424,9 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel36">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Black" size="12" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="ID"/>
                   </Properties>
                 </Component>
@@ -378,6 +434,19 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="didActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="hospitaldrop">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="hospitaldropItemStateChanged"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
@@ -404,7 +473,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
@@ -414,17 +483,22 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="pemail" alignment="0" pref="68" max="32767" attributes="0"/>
-                                                  <Component id="pphone" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="pid" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="pgender" alignment="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="pname" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="pname" alignment="0" pref="241" max="32767" attributes="0"/>
+                                          <Component id="pid" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="pphone" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="pemail" max="32767" attributes="0"/>
+                                          <Component id="pgender" alignment="0" max="32767" attributes="0"/>
                                       </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
+                                      <Component id="pcreate" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="pupdate" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel21" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
@@ -433,24 +507,22 @@
                                           <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="pbg" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="page" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="pw" alignment="1" pref="77" max="32767" attributes="0"/>
-                                          <Component id="ppswd" alignment="1" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="pbg" linkSize="1" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="pw" linkSize="1" alignment="1" pref="77" max="32767" attributes="0"/>
+                                              <Component id="ppswd" linkSize="1" alignment="1" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="page" linkSize="1" min="-2" pref="221" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                      <Component id="pcreate" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                                      <Component id="pupdate" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -458,16 +530,16 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="jLabel32" min="-2" pref="250" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="235" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="257" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="jLabel32" min="-2" pref="17" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jLabel32" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane3" min="-2" pref="199" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -491,7 +563,7 @@
                                   <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="ppswd" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="277" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -504,9 +576,9 @@
                                   <Component id="pid" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="pphone" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel16" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                                  <Component id="pphone" alignment="3" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -516,22 +588,22 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="pemail" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel18" min="-2" pref="23" max="-2" attributes="0"/>
                                   <Component id="pgender" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel18" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="pcreate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="pupdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="pcreate" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="pupdate" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -546,6 +618,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="pTable">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="cc" red="99" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="8" rowCount="4">
                         <Column editable="false" title="Name" type="java.lang.Object"/>
@@ -570,26 +645,41 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel15">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Name"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="dochospital2">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="ID"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Phone"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel17">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Email"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel18">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Gender"/>
               </Properties>
             </Component>
@@ -617,11 +707,17 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel19">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Age"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Blood Group"/>
               </Properties>
             </Component>
@@ -631,6 +727,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel21">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Weight"/>
               </Properties>
             </Component>
@@ -638,6 +737,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="pcreate">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="CREATE"/>
               </Properties>
               <Events>
@@ -646,6 +748,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="pupdate">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="UPDATE"/>
               </Properties>
               <Events>
@@ -655,13 +760,19 @@
             <Component class="javax.swing.JLabel" name="jLabel32">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Baloo Chettan 2" size="24" style="1"/>
+                  <Font name="Arial Rounded MT Bold" size="24" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="PATIENT"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="LogOut"/>
               </Properties>
               <Events>
@@ -670,6 +781,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel28">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Password"/>
               </Properties>
             </Component>
@@ -696,7 +810,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" pref="770" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" pref="928" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
@@ -710,14 +824,18 @@
                                           <Component id="jLabel8" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="hemail" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="hphone" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="hid" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="hname" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="hcommunity" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="communitytext" min="-2" pref="88" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="communitydrop" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="hemail" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="hphone" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="hid" linkSize="4" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="hname" linkSize="4" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel14" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                                           <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -725,21 +843,21 @@
                                           <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="hstate" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="hcity" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="hPIN" alignment="1" pref="77" max="32767" attributes="0"/>
-                                          <Component id="hpswd" alignment="1" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="hPIN" linkSize="5" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="hpswd" linkSize="5" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                                          <Component id="hcity" linkSize="5" min="-2" pref="209" max="-2" attributes="0"/>
+                                          <Component id="hstate" linkSize="5" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                       <Component id="hcreate" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
                                       <Component id="hupdate" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="127" max="32767" attributes="0"/>
+                              <EmptySpace min="298" pref="32" max="32767" attributes="0"/>
                               <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                           </Group>
@@ -749,16 +867,16 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="jLabel22" min="-2" pref="250" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                      <Component id="jLabel22" min="-2" pref="17" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="199" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -767,22 +885,22 @@
                                   <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="hcity" alignment="3" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="hstate" alignment="3" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="hPIN" alignment="3" max="32767" attributes="0"/>
-                                  <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="hpswd" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hPIN" alignment="3" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="hpswd" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -810,9 +928,15 @@
                                       <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="hcommunity" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel11" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel11" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="communitytext" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="communitydrop" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                           </Group>
@@ -837,6 +961,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="hTable">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="cc" red="99" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="8" rowCount="4">
                         <Column editable="false" title="Name" type="java.lang.Object"/>
@@ -861,26 +988,41 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Name"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="dochospital1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="ID"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Phone"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Email"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Community"/>
               </Properties>
             </Component>
@@ -901,18 +1043,19 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hemailActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="hcommunity">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hcommunityActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="City"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel13">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="State"/>
               </Properties>
             </Component>
@@ -922,6 +1065,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="PIN"/>
               </Properties>
             </Component>
@@ -929,6 +1075,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="hcreate">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="CREATE"/>
               </Properties>
               <Events>
@@ -937,6 +1086,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="hupdate">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="UPDATE"/>
               </Properties>
               <Events>
@@ -946,13 +1098,16 @@
             <Component class="javax.swing.JLabel" name="jLabel22">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Baloo Chettan 2" size="24" style="1"/>
+                  <Font name="Arial Rounded MT Bold" size="24" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="HOSPITAL"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel33">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Password"/>
               </Properties>
             </Component>
@@ -963,11 +1118,35 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton4">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="LogOut"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="communitytext">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="communitytextActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="communitydrop">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="communitydropItemStateChanged"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -987,71 +1166,78 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane4" pref="776" max="32767" attributes="0"/>
+                              <Component id="jScrollPane4" pref="928" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jLabel26" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel25" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel24" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="dochospital3" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel23" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="cstate" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="ccity" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="cid" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="cname" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="cpin" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
-                                      <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                      <Component id="ccountry" min="-2" pref="77" max="-2" attributes="0"/>
-                                      <EmptySpace pref="283" max="32767" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jLabel25" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="dochospital3" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                      <Component id="ccreate" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                                      <Component id="cupdate" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabel23" min="-2" pref="81" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="cstate" linkSize="2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="ccity" linkSize="2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cid" linkSize="2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cname" linkSize="2" min="-2" pref="165" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel27" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="jLabel26" min="-2" pref="72" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="ccountry" pref="160" max="32767" attributes="0"/>
+                                  <Component id="cpin" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="jLabel30" min="-2" pref="250" max="-2" attributes="0"/>
+                      <Component id="jLabel30" min="-2" pref="280" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
+                      <Component id="ccreate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                      <Component id="cupdate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                      <Component id="jLabel30" min="-2" pref="17" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="jLabel30" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jScrollPane4" min="-2" pref="199" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ccountry" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="jLabel27" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="ccountry" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cpin" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel26" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="158" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel23" alignment="3" max="32767" attributes="0"/>
                                   <Component id="cname" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1064,32 +1250,22 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="ccity" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel24" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel24" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel25" min="-2" pref="26" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="cstate" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabel25" min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="cstate" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="cpin" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel26" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="ccreate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cupdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ccreate" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cupdate" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1104,6 +1280,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="cTable">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="cc" red="99" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="6" rowCount="4">
                         <Column editable="false" title="Patient Name" type="java.lang.Object"/>
@@ -1126,26 +1305,41 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel23">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Patient Name"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="dochospital3">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Patient ID"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel24">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Doctor Name"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel25">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Hospital"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel26">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Doctor ID"/>
               </Properties>
             </Component>
@@ -1173,6 +1367,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel27">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Date"/>
               </Properties>
             </Component>
@@ -1180,6 +1377,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="ccreate">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="CREATE"/>
               </Properties>
               <Events>
@@ -1188,6 +1388,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="cupdate">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="UPDATE"/>
               </Properties>
               <Events>
@@ -1197,13 +1400,19 @@
             <Component class="javax.swing.JLabel" name="jLabel30">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Baloo Chettan 2" size="24" style="1"/>
+                  <Font name="Arial Rounded MT Bold" size="24" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="ENCOUNTER"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButton5">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="LogOut"/>
               </Properties>
               <Events>

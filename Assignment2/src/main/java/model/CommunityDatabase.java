@@ -20,12 +20,25 @@ public class CommunityDatabase {
     public ArrayList<Community> getCommunityDatabase() {
         return community;
     }
+    public Community getCommunity(String comm) {
+        for(Community c: community){
+            if(c.getCname().equals(comm)){
+            return c;
+        }
+        }
+        return null;
+    }
 
     public void setDoctorDatabase(ArrayList<Community> community) {
         this.community = community;
     }
    
-    public Community addNewCommunity(){
+    public Community addNewCommunity(Community newCom){
+        //Community newCom = new Community();
+        community.add(newCom);
+        return newCom;
+    }
+        public Community addNewCommunity(){
         Community newCom = new Community();
         community.add(newCom);
         return newCom;

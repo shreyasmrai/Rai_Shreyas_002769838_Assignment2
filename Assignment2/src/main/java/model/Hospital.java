@@ -9,16 +9,25 @@ package model;
  * @author shreyasrai
  */
 public class Hospital {
+   
+    public Hospital() {
+    }
+
+    public Hospital(String hname, int hphone, String hemail, int hid, String hpswd, Community community) {
+        this.hname = hname;
+        this.hphone = hphone;
+        this.hemail = hemail;
+        this.hid = hid;
+        this.hpswd = hpswd;
+        this.community = community;
+    }
+
     private String hname;
-    private int hPIN;
-    private String hcommunity;
     private int hphone;
     private String hemail;
     private int hid;
-    private String hcity;
-    private String hstate;
-        private String hpswd;
-      private Community community;  
+    private String hpswd;
+    private Community community;
 
     public Community getCommunity() {
         return community;
@@ -27,7 +36,7 @@ public class Hospital {
     public void setCommunity(Community community) {
         this.community = community;
     }
-        
+   
 
     public String getHpswd() {
         return hpswd;
@@ -47,19 +56,11 @@ public class Hospital {
     }
 
     public int gethPIN() {
-        return hPIN;
-    }
-
-    public void sethPIN(int hPIN) {
-        this.hPIN = hPIN;
+        return community.getCpin();
     }
 
     public String getHcommunity() {
-        return hcommunity;
-    }
-
-    public void setHcommunity(String hcommunity) {
-        this.hcommunity = hcommunity;
+        return community.getCname();
     }
 
     public int getHphone() {
@@ -87,31 +88,21 @@ public class Hospital {
     }
 
     public String getHcity() {
-        return hcity;
-    }
-
-    public void setHcity(String hcity) {
-        this.hcity = hcity;
+        return community.getCcity();
     }
 
     public String getHstate() {
-        return hstate;
+        return community.getCstate();
     }
 
-    public void setHstate(String hstate) {
-        this.hstate = hstate;
-    }
-    
-    
     @Override
     public String toString(){
         return hname;
     }
-    
-     @Override
+    @Override
     public boolean equals(Object obj) {
         final Hospital h = (Hospital) obj;
-        return this.hname==h.hname && this.hpswd==h.hpswd;
+        return this.hname.equals(h.hname) && this.hpswd.equals(h.hpswd);
     }
     
     

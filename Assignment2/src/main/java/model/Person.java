@@ -8,7 +8,36 @@ package model;
  *
  * @author shreyasrai
  */
-public class Person extends Hospital {
+public class Person {
+
+    public Person() {
+    }
+
+    public Person(String pname, int page, String pgender, int pphone, String pemail, String pbg, int pw, int pid, String ppswd, Doctor doctor) {
+        this.pname = pname;
+        this.page = page;
+        this.pgender = pgender;
+        this.pphone = pphone;
+        this.pemail = pemail;
+        this.pbg = pbg;
+        this.pw = pw;
+        this.pid = pid;
+        this.ppswd = ppswd;
+        this.doctor = doctor;
+    }
+
+    public Person(String pname, int page, String pgender, int pphone, String pemail, String pbg, int pw, int pid, String ppswd) {
+        this.pname = pname;
+        this.page = page;
+        this.pgender = pgender;
+        this.pphone = pphone;
+        this.pemail = pemail;
+        this.pbg = pbg;
+        this.pw = pw;
+        this.pid = pid;
+        this.ppswd = ppswd;
+        
+    }
     private String pname;
     private int page;
     private String pgender;
@@ -18,7 +47,6 @@ public class Person extends Hospital {
     private int pw;
     private int pid;
     private String ppswd;
-    
     private Doctor doctor;
 
     public Doctor getDoctor() {
@@ -110,7 +138,4 @@ public class Person extends Hospital {
         final Person p = (Person) obj;
         return this.pname==p.pname && this.ppswd==p.ppswd;
     }
-        
-    
-   
 }

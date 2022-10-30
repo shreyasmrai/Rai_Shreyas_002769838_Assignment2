@@ -9,15 +9,34 @@ package model;
  * @author shreyasrai
  */
 public class Community {
+
+    public Community() {
+    }
+
+    public Community(String cname, int cid, String ccity, String cstate, int cpin, String ccountry) {
+        this.cname = cname;
+        this.cid = cid;
+        this.ccity = ccity;
+        this.cstate = cstate;
+        this.cpin = cpin;
+        this.ccountry = ccountry;
+    }
     private String cname;
     private int cid;
     private String ccity;
     private String cstate;
     private int cpin;
     private String ccountry;
+    private String housename;
 
+    public String getHousename() {
+        return housename;
+    }
 
-     
+    public void setHousename(String housename) {
+        this.housename = housename;
+    }
+
     public String getCname() {
         return cname;
     }
@@ -70,4 +89,3 @@ public class Community {
         return cname;
     }
 }
-
