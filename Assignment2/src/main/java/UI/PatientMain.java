@@ -490,6 +490,9 @@ public class PatientMain extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        boolean valid = validateData();
+        
+        if (valid){
         model.Appointment app = appointmentdatabase.addNewAppointment();
         
         
@@ -508,7 +511,7 @@ public class PatientMain extends javax.swing.JFrame {
         hos.setText("");
         time.setText("");
         doc.setText("");
-
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void pwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwActionPerformed
@@ -707,4 +710,22 @@ private void fillPersonDetails() {
             }
             drophosp.setModel(model);
         }    }
+    private boolean validateData() {
+                if (doc.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter Doctor");
+            return false;
+        }
+                if (time.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter Time");
+            return false;
+        }
+                        if (hos.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter Hospital");
+            return false;
+        }
+                                if (com.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter Community");
+            return false;
+        }
+return true;    }
 }

@@ -364,7 +364,6 @@ public class DoctorMain extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(vtable);
 
-        jButton6.setBackground(new java.awt.Color(204, 204, 204));
         jButton6.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jButton6.setText("LogOut");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -378,39 +377,43 @@ public class DoctorMain extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton6)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addGap(327, 327, 327)
-                            .addComponent(jLabel18))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addGap(316, 316, 316)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGap(86, 86, 86)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(vname, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                                .addComponent(vid)
-                                .addComponent(symptoms)
-                                .addComponent(severity)))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addGap(25, 25, 25)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(327, 327, 327)
+                        .addComponent(jLabel18))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(86, 86, 86)
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(vname)
+                                            .addComponent(vid)
+                                            .addComponent(symptoms)
+                                            .addComponent(severity, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                        .addGap(111, 111, 111)
+                                        .addComponent(jButton1)
+                                        .addGap(154, 154, 154)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton6))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 874, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(31, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(412, 412, 412))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(vname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -429,12 +432,10 @@ public class DoctorMain extends javax.swing.JFrame {
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(severity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(jButton6)
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton6))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Vital Sign Management", jPanel4);
@@ -660,6 +661,9 @@ public class DoctorMain extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        boolean valid = validateData1();
+        
+        if (valid){
         model.VitalSign v = vitalsigndatabase.addNewVitalSign();
        
         v.setVid(vid.getText());
@@ -668,7 +672,7 @@ public class DoctorMain extends javax.swing.JFrame {
         v.setSeverity(severity.getText());
         displayVital();
         fillVitalDropDown();
-        
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -723,6 +727,9 @@ public class DoctorMain extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        boolean valid = validateData();
+        
+        if (valid){
         model.Appointment app = appointmentdatabase.addNewAppointment();
         app.setCommunity(communitydatabase.getCommunity(com.getText()));
         app.setHospital(hospitaldatabase.getHospital(hos.getText()));
@@ -740,6 +747,7 @@ public class DoctorMain extends javax.swing.JFrame {
         time.setText("");
         patient.setText("");
         vital.setText("");
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void droppatientItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_droppatientItemStateChanged
@@ -966,7 +974,50 @@ private void fillDoctorDetails() {
 
         }
     }
-    
+    private boolean validateData() {
+        if (patient.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter Patient");
+            return false;
+        }
+                if (time.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter Time");
+            return false;
+        }
+                        if (hos.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter Hospital");
+            return false;
+        }
+                                if (com.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter Community");
+            return false;
+        }
+                                        if (vital.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter Vital Sign");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validateData1() {
+        
+        if (!vid.getText().matches("[0-9]+") || vid.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter proper ID");
+            return false;
+        }
+                        if (vname.getText().length() < 1 && vname.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Name");
+            return false;
+        }
+                        if (symptoms.getText().length() < 1 && symptoms.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Symptoms");
+            return false;
+        }
+                        if (severity.getText().length() < 1 && severity.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Severity");
+            return false;
+        }
+        return true;
+    }
 
 
 

@@ -7,6 +7,7 @@ package UI;
 
 import java.awt.Image;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -572,16 +573,17 @@ public class SystemMain extends javax.swing.JFrame {
                                     .addComponent(dochospital3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(42, 42, 42)
-                                .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(cstate, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ccity, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cid, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cname, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cpin, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(121, 121, 121)
+                                .addGroup(jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cpin)
+                                    .addComponent(cname, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                                    .addComponent(cid)
+                                    .addComponent(ccity)
+                                    .addComponent(cstate))
+                                .addGap(71, 71, 71)
                                 .addComponent(jLabel27)
                                 .addGap(58, 58, 58)
-                                .addComponent(ccountry, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ccountry, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel_patient1Layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(ccreate)
@@ -598,9 +600,6 @@ public class SystemMain extends javax.swing.JFrame {
                 .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(224, 224, 224))
         );
-
-        jPanel_patient1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {ccity, cid, cname, cpin, cstate});
-
         jPanel_patient1Layout.setVerticalGroup(
             jPanel_patient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_patient1Layout.createSequentialGroup()
@@ -1148,6 +1147,9 @@ public class SystemMain extends javax.swing.JFrame {
 
     private void doccreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doccreateActionPerformed
         // TODO add your handling code here:
+        boolean valid = validateData();
+        
+        if (valid){
         
         model.Doctor doc = doctordatabase.addNewDoctor();
         
@@ -1176,7 +1178,7 @@ public class SystemMain extends javax.swing.JFrame {
         docexperience.setText("");
          dpswd.setText("");
         did.setText("");
-        
+        }
     }//GEN-LAST:event_doccreateActionPerformed
 
     private void docdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docdeleteActionPerformed
@@ -1296,6 +1298,9 @@ public class SystemMain extends javax.swing.JFrame {
 
     private void hcreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hcreateActionPerformed
         // TODO add your handling code here:
+        boolean valid = validateDatah();
+        
+        if (valid){
         model.Hospital hos = hospitaldatabase.addNewHospital();
         
         
@@ -1317,6 +1322,7 @@ public class SystemMain extends javax.swing.JFrame {
         communitytext.setText("");
          hpswd.setText("");
          fillHospitalDropDown();
+        }
     }//GEN-LAST:event_hcreateActionPerformed
 
     private void hdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hdeleteActionPerformed
@@ -1408,6 +1414,9 @@ public class SystemMain extends javax.swing.JFrame {
 
     private void ccreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ccreateActionPerformed
         // TODO add your handling code here:
+        boolean valid = validateDatac();
+        
+        if (valid){
         model.Community com = communitydatabase.addNewCommunity();
         
         //doc.setDocname(docname.getText());
@@ -1428,6 +1437,7 @@ public class SystemMain extends javax.swing.JFrame {
         ccity.setText("");
         cpin.setText("");
         ccountry.setText("");
+        }
     }//GEN-LAST:event_ccreateActionPerformed
 
     private void cdeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdeleteActionPerformed
@@ -1586,6 +1596,9 @@ public class SystemMain extends javax.swing.JFrame {
 
     private void pcreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcreateActionPerformed
         // TODO add your handling code here:
+        boolean valid = validateDatap();
+        
+        if (valid){
         model.Patient per = persondatabase.addNewPerson();
 
         per.setPatientName(pname.getText());
@@ -1610,6 +1623,7 @@ public class SystemMain extends javax.swing.JFrame {
         pbg.setText("");
         pw.setText("");
         ppswd.setText("");
+        }
     }//GEN-LAST:event_pcreateActionPerformed
 
     private void pgenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pgenderActionPerformed
@@ -1920,6 +1934,159 @@ public class SystemMain extends javax.swing.JFrame {
     }
 
     
+private boolean validateData() {
+               
+                if(docage.getText().length() < 1 || docage.getText().startsWith("-") || !docage.getText().matches("[0-9]+")){
+                                    JOptionPane.showMessageDialog(this, "Age cannot be negative");
+                                    return false;
+
+        }
+                       if (docphone.getText().length() < 1 || !docphone.getText().matches("[0-9]+") || docphone.getText().length() != 10) {
+            JOptionPane.showMessageDialog(this, "Enter proper 10 digit  Number");
+            return false;
+        }
+                       if (!(Pattern.matches("^[a-zA-Z0-9]+[@]{1}+[a-zA-Z0-9]+[.]{1}+[a-zA-Z0-9]+$", docemail.getText()))|| docemail.getText().length() < 1)
+        {
+           // txtEmail.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please enter a valid email", "Error", JOptionPane.ERROR_MESSAGE);
+                    return false;
+
+        }
+                               if (docgender.getText().length() < 1 || docgender.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Valid Gender");
+            return false;
+        }
+                                if (docexperience.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter Valid Experienece");
+            return false;
+        }
+           if (docspeciality.getText().length() < 1 || docspeciality.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Speciality");
+            return false;
+        }
+             if (!did.getText().matches("[0-9]+") || did.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter proper ID");
+            return false;
+        }
+                        if (docname.getText().length() < 1 || docname.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Speciality");
+            return false;
+        }
+                         if (dpswd.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter Password");
+            return false;
+        }
+                       
+                     
+                return true;
+    }
+
+    private boolean validateDatah() {
+       
+                     if (!hid.getText().matches("[0-9]+") || hid.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter proper ID");
+            return false;
+        }
+                        if (hname.getText().length() < 1 || hname.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Speciality");
+            return false;
+        }
+                        if (hphone.getText().length() < 1 || !hphone.getText().matches("[0-9]+") || hphone.getText().length() != 10) {
+            JOptionPane.showMessageDialog(this, "Enter proper 10 digit  Number");
+            return false;
+        }
+                       if (!(Pattern.matches("^[a-zA-Z0-9]+[@]{1}+[a-zA-Z0-9]+[.]{1}+[a-zA-Z0-9]+$", hemail.getText())) || hemail.getText().length() < 1)
+        {
+           // txtEmail.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please enter a valid email", "Error", JOptionPane.ERROR_MESSAGE);
+                    return false;
+
+        }
+                                               if (hpswd.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter Password");
+            return false;
+        }
+                       
+        return true;
+    }
+
+    private boolean validateDatap() {
+                        if (!pid.getText().matches("[0-9]+") || pid.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter proper ID");
+            return false;
+        }
+                      if(page.getText().length() < 1 || page.getText().startsWith("-") || !page.getText().matches("[0-9]+")){
+                                    JOptionPane.showMessageDialog(this, "Age cannot be negative");
+                                    return false;
+
+        }
+                                           if(pw.getText().length() < 1||pw.getText().startsWith("-") || !pw.getText().matches("[0-9]+")){
+                                    JOptionPane.showMessageDialog(this, "Weight cannot be negative");
+                                    return false;
+
+        }
+                                                                if(pbg.getText().length() < 1||pbg.getText().startsWith("-") || pbg.getText().startsWith("+") || pbg.getText().matches("[0-9]+")){
+                                    JOptionPane.showMessageDialog(this, "Enter valid Blood Group");
+                                    return false;
+
+        }
+                        if (pgender.getText().length() < 1 || pgender.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Valid Gender");
+            return false;
+        }
+                        if (pname.getText().length() < 1 || pname.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter name");
+            return false;
+        }
+                        if (pphone.getText().length() < 1||!pphone.getText().matches("[0-9]+") || pphone.getText().length() != 10) {
+            JOptionPane.showMessageDialog(this, "Enter proper 10 digit  Number");
+            return false;
+        }
+                       if (pemail.getText().length() < 1||!(Pattern.matches("^[a-zA-Z0-9]+[@]{1}+[a-zA-Z0-9]+[.]{1}+[a-zA-Z0-9]+$", pemail.getText())))
+        {
+           // txtEmail.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please enter a valid email", "Error", JOptionPane.ERROR_MESSAGE);
+                    return false;
+
+        }
+                                               if (ppswd.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter Password");
+            return false;
+        }
+                       
+        return true;
+    }
+
+    private boolean validateDatac() {
+if (!cid.getText().matches("[0-9]+") || cid.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter proper ID");
+            return false;
+        }
+                        if (cname.getText().length() < 1 || cname.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Name");
+            return false;
+        }
+                        if (!cpin.getText().matches("[0-9]+") || cpin.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter proper PIN");
+            return false;
+        }
+                        if (ccity.getText().length() < 1 || ccity.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter City");
+            return false;
+        }
+                        if (cstate.getText().length() < 1 || cstate.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter State");
+            return false;
+        }
+                        if (ccountry.getText().length() < 1 || ccountry.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Country");
+            return false;
+        }
+
+                       
+                       
+        return true;
+    }
 
 
 }

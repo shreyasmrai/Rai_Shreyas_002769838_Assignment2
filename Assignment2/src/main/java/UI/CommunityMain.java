@@ -599,7 +599,9 @@ DoctorDatabase doctordatabase;
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        boolean valid = validateData();
         
+        if (valid){
         model.Community com = communitydatabase.addNewCommunity();
         
         com.setCname(cmname.getText());
@@ -616,7 +618,7 @@ DoctorDatabase doctordatabase;
         cmid.setText("");
         cmcity.setText("");
         cmpin.setText("");
-      
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -660,11 +662,14 @@ DoctorDatabase doctordatabase;
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        boolean valid = validateData1();
+        
+        if (valid){
          model.Community com = communitydatabase.addNewCommunity();
         
         com.setCname(cityname.getText());
         com.setCpin(Integer.parseInt(citypin.getText()));
-                com.setCstate(citystate.getText());
+        com.setCstate(citystate.getText());
         com.setCcountry(citycountry.getText());
 
 
@@ -678,7 +683,7 @@ DoctorDatabase doctordatabase;
         citypin.setText("");
         citystate.setText("");
         citycountry.setText("");
-      
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void cityTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cityTableMouseClicked
@@ -700,6 +705,9 @@ DoctorDatabase doctordatabase;
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        boolean valid = validateData2();
+        
+        if (valid){
          model.Community com = communitydatabase.addNewCommunity();
          
                 com.setHousename(housename.getText());
@@ -718,6 +726,7 @@ DoctorDatabase doctordatabase;
         housepin.setText("");
         housestate.setText("");
         housecommunity.setText("");
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -894,5 +903,75 @@ DefaultTableModel model = (DefaultTableModel) houseTable.getModel();
 
 
            model.addRow(row2);
-    }    }
+    } 
+       
+    }
+    
+    private boolean validateData() {
+                if (!cmid.getText().matches("[0-9]+") || cmid.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter proper ID");
+            return false;
+        }
+                        if (cmname.getText().length() < 1 && cmname.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Name");
+            return false;
+        }
+                        if (cmcity.getText().length() < 1 && cmcity.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter City");
+            return false;
+        }
+                        if (!cmpin.getText().matches("[0-9]+") || cmpin.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter proper PIN");
+            return false;
+        }
+                        
+return true;    }
+
+    private boolean validateData1() {
+        if (cityname.getText().length() < 1 && cityname.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Name");
+            return false;
+        }
+                        if (citystate.getText().length() < 1 && citystate.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter State");
+            return false;
+        }
+                        if (citycountry.getText().length() < 1 && citycountry.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Country");
+            return false;
+        }
+                        if (!citypin.getText().matches("[0-9]+") || citypin.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter proper PIN");
+            return false;
+        }
+        
+        return true;
+    }
+
+    private boolean validateData2() {
+                if (housename.getText().length() < 1 && housename.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Name");
+            return false;
+        }
+                        if (housestate.getText().length() < 1 && housestate.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter State");
+            return false;
+        }
+                        if (housecity.getText().length() < 1 && housecity.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter City");
+            return false;
+        }
+                        
+                        if (housecommunity.getText().length() < 1 && housecommunity.getText().matches("[0-9]")) {
+            JOptionPane.showMessageDialog(this, "Enter Community");
+            return false;
+        }
+                        if (!housepin.getText().matches("[0-9]+") || housepin.getText().length() < 1) {
+            JOptionPane.showMessageDialog(this, "Enter proper PIN");
+            return false;
+        }
+        
+return true;    
+    }
+    
 }
