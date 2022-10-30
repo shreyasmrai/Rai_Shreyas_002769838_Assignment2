@@ -110,10 +110,10 @@ public class Patient2 extends javax.swing.JFrame {
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Showcard Gothic", 1, 36)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel8.setForeground(new java.awt.Color(0, 153, 153));
         jLabel8.setText("ENCOUNTER HISTORY");
 
-        cTable.setBackground(new java.awt.Color(153, 204, 255));
+        cTable.setBackground(new java.awt.Color(0, 153, 153));
         cTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -166,7 +166,7 @@ public class Patient2 extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(184, 212, 239));
         jLabel1.setFont(new java.awt.Font("Showcard Gothic", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText("PATIENT DETAILS");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
@@ -190,7 +190,7 @@ public class Patient2 extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(153, 204, 255));
+        jButton2.setBackground(new java.awt.Color(0, 153, 153));
         jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         jButton2.setText("UPDATE");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -367,7 +367,7 @@ public class Patient2 extends javax.swing.JFrame {
 
         jLabel18.setBackground(new java.awt.Color(255, 255, 255));
         jLabel18.setFont(new java.awt.Font("Showcard Gothic", 1, 36)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel18.setForeground(new java.awt.Color(0, 153, 153));
         jLabel18.setText("BOOK APPOINTMENT");
 
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N

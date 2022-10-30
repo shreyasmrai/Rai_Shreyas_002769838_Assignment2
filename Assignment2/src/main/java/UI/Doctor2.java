@@ -141,11 +141,11 @@ public class Doctor2 extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setPreferredSize(new java.awt.Dimension(1000, 1000));
 
-        jLabel1.setBackground(new java.awt.Color(0, 204, 204));
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Showcard Gothic", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 204, 255));
         jLabel1.setText("DOCTOR DETAILS");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
@@ -165,7 +165,7 @@ public class Doctor2 extends javax.swing.JFrame {
 
         dochospital.setEditable(false);
 
-        jButton2.setBackground(new java.awt.Color(153, 204, 255));
+        jButton2.setBackground(new java.awt.Color(0, 153, 153));
         jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         jButton2.setText("UPDATE");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -186,7 +186,7 @@ public class Doctor2 extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         jLabel19.setText("EXPERIENCE");
 
-        jButton3.setBackground(new java.awt.Color(204, 204, 204));
+        jButton3.setBackground(new java.awt.Color(0, 153, 153));
         jButton3.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jButton3.setText("LogOut");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -244,13 +244,13 @@ public class Doctor2 extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(docspeciality)
                                     .addComponent(docexperience))))))
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
-                .addGap(358, 358, 358)
+                .addGap(82, 82, 82)
                 .addComponent(jButton3)
-                .addGap(38, 38, 38))
+                .addGap(314, 314, 314))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(106, 106, 106)
@@ -301,14 +301,11 @@ public class Doctor2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(docemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jButton2)))
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
+                .addContainerGap(202, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(100, 100, 100)
@@ -322,7 +319,7 @@ public class Doctor2 extends javax.swing.JFrame {
 
         jLabel18.setBackground(new java.awt.Color(255, 255, 255));
         jLabel18.setFont(new java.awt.Font("Showcard Gothic", 1, 36)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel18.setForeground(new java.awt.Color(0, 153, 153));
         jLabel18.setText("VITAL SIGNS");
 
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
@@ -345,7 +342,7 @@ public class Doctor2 extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         jLabel20.setText("SYMPTOMS");
 
-        vtable.setBackground(new java.awt.Color(153, 204, 255));
+        vtable.setBackground(new java.awt.Color(0, 153, 153));
         vtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -444,7 +441,7 @@ public class Doctor2 extends javax.swing.JFrame {
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Showcard Gothic", 1, 36)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel8.setForeground(new java.awt.Color(0, 153, 153));
         jLabel8.setText("ENCOUNTERS");
 
         jButton5.setBackground(new java.awt.Color(204, 204, 204));
@@ -456,7 +453,7 @@ public class Doctor2 extends javax.swing.JFrame {
             }
         });
 
-        cTable.setBackground(new java.awt.Color(153, 204, 255));
+        cTable.setBackground(new java.awt.Color(0, 153, 153));
         cTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

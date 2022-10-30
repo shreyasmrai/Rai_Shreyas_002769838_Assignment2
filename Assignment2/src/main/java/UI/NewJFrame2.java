@@ -138,19 +138,20 @@ public class NewJFrame2 extends javax.swing.JFrame {
     }
     private void initDatabase() {
         //create community
-        Community c1=new Community("Community 1",1,"New York","New York",123456,"USA");
-        Community c2=new Community("Community 2",1,"Boston","MA",02115,"USA");
+        Community c1=new Community("Roxbury",101,"Boston","MA",11099,"USA");
+        Community c2=new Community("Jamaica Plain",02,"Boston","MA",02115,"USA");
+        Community c3=new Community("Dorchester",03,"Boston","MA","02119","USA");
         communitydatabase.addNewCommunity(c1);
         communitydatabase.addNewCommunity(c2);
 
         //create hospital
-        Hospital h1=new Hospital("Krims Hospital",123,"abc@a.com",1,"krims",c1);
-        Hospital h2=new Hospital("Tata Hospital",123,"abc@a.com",2,"tata",c2);
+        Hospital h1=new Hospital("Medical Center",85700000,"medical@gmail.com",1,"medicalcenter",c1);
+        Hospital h2=new Hospital("Turffs Hospital",123,"turffs@gmail.com",2,"turffs",c2);
         hospitaldatabase.addNewHospital(h1);
         hospitaldatabase.addNewHospital(h2);
         
         //create doctor
-        Doctor d1=new Doctor("Dr Reddy","1234","doc@gmail.com","Male","45","Cardiologist","10 years",1,"reddy",h1);
+        Doctor d1=new Doctor("Jason","85769300","jason@gmail.com","Male","32","Orthologist","12",11,"jason",h1);
         Doctor d2=new Doctor("Dr Henry","1234","doc@gmail.com","Male","45","Ortho","10 years",1,"henry",h2);
         doctordatabase.addNewDoctor(d1);
         doctordatabase.addNewDoctor(d2);

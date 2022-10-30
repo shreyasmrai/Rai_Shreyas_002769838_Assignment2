@@ -181,7 +181,7 @@ public class Hospital2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTabbedPane1.setBackground(new java.awt.Color(0, 153, 204));
+        jTabbedPane1.setBackground(new java.awt.Color(0, 153, 153));
         jTabbedPane1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
 
         jPanel_doc.setBackground(new java.awt.Color(0, 153, 153));
@@ -204,7 +204,7 @@ public class Hospital2 extends javax.swing.JFrame {
             }
         });
 
-        docTable.setBackground(new java.awt.Color(153, 204, 255));
+        docTable.setBackground(new java.awt.Color(0, 153, 153));
         docTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -451,7 +451,7 @@ public class Hospital2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Doctor", jPanel_doc);
 
-        pTable.setBackground(new java.awt.Color(153, 204, 255));
+        pTable.setBackground(new java.awt.Color(0, 153, 153));
         pTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -682,7 +682,7 @@ public class Hospital2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Patient", jPanel_hospital);
 
-        hTable.setBackground(new java.awt.Color(153, 204, 255));
+        hTable.setBackground(new java.awt.Color(0, 153, 153));
         hTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -923,7 +923,7 @@ public class Hospital2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Hospital", jPanel_patient);
 
-        cTable.setBackground(new java.awt.Color(153, 204, 255));
+        cTable.setBackground(new java.awt.Color(0, 153, 153));
         cTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},

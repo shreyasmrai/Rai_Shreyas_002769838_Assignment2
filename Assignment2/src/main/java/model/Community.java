@@ -10,7 +10,7 @@ package model;
  */
 public class Community {
 
-    public Community() {
+    public Community(String dorchester, int par, String boston, String ma, String string, String usa) {
     }
 
     public Community(String cname, int cid, String ccity, String cstate, int cpin, String ccountry) {

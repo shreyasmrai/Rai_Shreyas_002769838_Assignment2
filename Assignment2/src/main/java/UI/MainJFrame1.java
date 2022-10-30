@@ -88,7 +88,6 @@ public class MainJFrame1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1650, 1080));
 
         jSplitPane1.setDividerLocation(50);
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
@@ -96,7 +95,7 @@ public class MainJFrame1 extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jButton1.setBackground(new java.awt.Color(0, 153, 153));
         jButton1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jButton1.setText("Doctor");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +105,7 @@ public class MainJFrame1 extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1);
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 204));
+        jButton2.setBackground(new java.awt.Color(0, 153, 153));
         jButton2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jButton2.setText("Hospital");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +115,7 @@ public class MainJFrame1 extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2);
 
-        jButton3.setBackground(new java.awt.Color(0, 153, 204));
+        jButton3.setBackground(new java.awt.Color(0, 153, 153));
         jButton3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jButton3.setText("Patient");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +125,7 @@ public class MainJFrame1 extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3);
 
-        jButton5.setBackground(new java.awt.Color(0, 153, 204));
+        jButton5.setBackground(new java.awt.Color(0, 153, 153));
         jButton5.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jButton5.setText("Community Admin");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +135,7 @@ public class MainJFrame1 extends javax.swing.JFrame {
         });
         jPanel1.add(jButton5);
 
-        jButton4.setBackground(new java.awt.Color(0, 153, 204));
+        jButton4.setBackground(new java.awt.Color(0, 153, 153));
         jButton4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jButton4.setText("System");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -149,8 +148,6 @@ public class MainJFrame1 extends javax.swing.JFrame {
         jSplitPane1.setTopComponent(jPanel1);
 
         jImage.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\smiti\\Downloads\\hospital-management-system-software.jpg")); // NOI18N
 
         javax.swing.GroupLayout jImageLayout = new javax.swing.GroupLayout(jImage);
         jImage.setLayout(jImageLayout);

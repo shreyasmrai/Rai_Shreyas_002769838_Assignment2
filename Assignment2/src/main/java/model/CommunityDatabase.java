@@ -39,7 +39,7 @@ public class CommunityDatabase {
         return newCom;
     }
         public Community addNewCommunity(){
-        Community newCom = new Community();
+        Community newCom = new Community("Dorchester", 3, "Boston", "MA", "02119", "USA");
         community.add(newCom);
         return newCom;
     }
