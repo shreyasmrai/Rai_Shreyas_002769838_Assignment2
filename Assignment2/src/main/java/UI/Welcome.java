@@ -63,7 +63,7 @@ public class Welcome extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setFont(new java.awt.Font("Snap ITC", 1, 36)); // NOI18N
-        jButton1.setText("WELCOME TO HOSPITAL MANAGEMENT");
+        jButton1.setText("CLICK HERE TO START");
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +158,7 @@ public class Welcome extends javax.swing.JFrame {
         doctordatabase.addNewDoctor(d2);
         
         //create patient
-        Patient p1=new Patient("Cliff",24,"Male",12345,"dd@d.com","B+",78,1,"cliff",d1);
+        Patient p1=new Patient("Jon",24,"Male",12345,"dd@d.com","B+",78,1,"jon",d1);
         Patient p2=new Patient("Joseph",64,"Male",12345,"dd@d.com","B+",78,2,"joseph",d2);
         persondatabase.addNewPerson(p1);
         persondatabase.addNewPerson(p2);

@@ -55,7 +55,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Snap ITC" size="36" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="WELCOME TO HOSPITAL MANAGEMENT"/>
+        <Property name="text" type="java.lang.String" value="CLICK HERE TO START"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
       <Events>
